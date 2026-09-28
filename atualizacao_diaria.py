@@ -29,7 +29,7 @@ import migrar_atividade
 import migrar_produto
 from incremental import (
     buscar_delta, LazyMap, carregar_labels, carregar_enum_items, status_labels_para,
-    diferenciar, obter_atual, Log, enviar_email, montar_corpo,
+    diferenciar, obter_atual, Log, enviar_email, montar_corpo, periodo,
 )
 
 
@@ -362,7 +362,7 @@ def main():
         return
 
     corpo = montar_corpo(log, dias)
-    assunto = f"Atualizacao diaria Bitrix - ultimos {dias} dia(s)"
+    assunto = f"Atualizacao diaria Bitrix - {periodo(dias)}"
     try:
         enviar_email(assunto, corpo, xlsx)
         print("e-mail enviado", flush=True)

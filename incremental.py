@@ -351,6 +351,14 @@ def enviar_email(assunto, corpo_html, caminho_anexo):
         s.sendmail(cfg["user"], [cfg["to"]], msg.as_string())
 
 
+def periodo(dias):
+    """Formata a janela para exibição: 7 -> 'última semana', 14 -> 'últimas 2 semanas', senão 'últimos N dia(s)'."""
+    if dias % 7 == 0:
+        semanas = dias // 7
+        return "última semana" if semanas == 1 else f"últimas {semanas} semanas"
+    return "último dia" if dias == 1 else f"últimos {dias} dias"
+
+
 def montar_corpo(log, dias):
     """HTML curto com o resumo (criados/atualizados por entidade)."""
     resumo = log.resumo()
@@ -368,7 +376,7 @@ def montar_corpo(log, dias):
         )
 
     html = f"""<html><body style="font-family: Arial, sans-serif; font-size: 14px;">
-<h3>Atualização diária Bitrix — últimos {dias} dia(s)</h3>
+<h3>Atualização diária Bitrix — {periodo(dias)}</h3>
 <p>Total: <b>{tot_criados} criados</b>, <b>{tot_atualizados} atualizados</b>,
 {tot_sem} sem alteração, {tot_erros} erros.</p>
 <table border="1" cellpadding="4" cellspacing="0" style="border-collapse: collapse;">
