@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 
 from oracle_client import OracleClient
 from bitrix_client import BitrixClient
@@ -60,4 +61,5 @@ def coletar_amostras(n=10):
 
 if __name__ == "__main__":
     coletar_describes()
-    coletar_amostras(10)
+    if "--describes" not in sys.argv:
+        coletar_amostras(10)

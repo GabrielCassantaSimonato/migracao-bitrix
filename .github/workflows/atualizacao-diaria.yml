@@ -25,6 +25,13 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
+      - name: Gerar caches (describes Oracle / fields Bitrix)
+        env:
+          ORACLE_USER: ${{ secrets.ORACLE_USER }}
+          ORACLE_PASS: ${{ secrets.ORACLE_PASS }}
+          BITRIX_WEBHOOK: ${{ secrets.BITRIX_WEBHOOK }}
+        run: python coletar.py --describes
+
       - name: Rodar sincronizacao incremental
         env:
           ORACLE_USER: ${{ secrets.ORACLE_USER }}
