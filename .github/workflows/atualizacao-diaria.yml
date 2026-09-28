@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       dias:
-        description: "Janela em dias (ex.: 14 na primeira carga)"
+        description: "Janela em dias (ex.: 7 = 1 semana)"
         required: false
-        default: "1"
+        default: "7"
 
 jobs:
   sync:
@@ -35,4 +35,4 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
-        run: python atualizacao_diaria.py --dias ${{ github.event.inputs.dias || '1' }}
+        run: python atualizacao_diaria.py --dias ${{ github.event.inputs.dias || '7' }}
