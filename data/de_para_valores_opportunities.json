@@ -1,0 +1,303 @@
+{
+  "UF_CRM_1779798653": {
+    "oracle_field": "OrigemDoLead_c",
+    "titulo": "Origem do Lead",
+    "label_bitrix": "Origem do lead",
+    "de_para": {
+      "AREA_PARCERIAS": "6527",
+      "EVENTO_GC": "6529",
+      "EVENTO": "6531",
+      "GERENTE_PROJETO": "6533",
+      "GERENTE_NEGOCIOS": "6535",
+      "INDICACAO_INFOR": "6537",
+      "INDICACAO_ORACLE": "6539",
+      "INDICACAO_SAP": "6541",
+      "INDICACAO_CLIENTE": "6543",
+      "INDICACAO_FUNCIONARIO": "6545",
+      "INDICACAO_PARCEIRO": "6547",
+      "PROSPECCAO_INTERNA": "6549",
+      "PROSPECCAO_WEB_TO_LEAD_SITE": "6551",
+      "PROSPECCAO_WEB_TO_LEAD_TEL": "6553",
+      "SUPORTE": "6555"
+    }
+  },
+  "UF_CRM_1779798816": {
+    "oracle_field": "PapelDeContato_c",
+    "titulo": "Papel de Contato",
+    "label_bitrix": "Papel do contato",
+    "de_para": {
+      "INFLUENCIADOR_DESFAVORAVEL": "6561",
+      "DECISOR_DESFAVORAVEL": "6563",
+      "DECISOR_FAVORAVEL": "6565",
+      "INFLUENCIADOR_FAVORAVEL": "6567",
+      "NEUTRO": "6569"
+    }
+  },
+  "UF_CRM_1779799066": {
+    "oracle_field": "TipoDeOportunidade_c",
+    "titulo": "Tipo de Oportunidade",
+    "label_bitrix": "Tipo de oportunidade",
+    "de_para": {
+      "LU": "6573",
+      "LU_ANUAL": "6575",
+      "LU_ANUAL_SE_IMP": "6577",
+      "LU_CLOUD": "6579",
+      "LU_CLOUD_SE": "6581",
+      "LUMA": "6583",
+      "LUMA_SE_IMP": "6585",
+      "LICENCA_SE_ATUALIZACAO": "6587",
+      "MA": "6589",
+      "MA_EXTENDIDA": "6591",
+      "REGULARIZACAO_DE_LICENCAS": "6593",
+      "SE_AMS": "6595",
+      "SE_ALOCACAO": "6597",
+      "SE_ATUALIZACAO": "6599",
+      "SE_CHANGE": "6601",
+      "SE_CUSTOMIZACAO": "6603",
+      "SE_IMPLANTACAO": "6605",
+      "SE_MAPEAMENTO": "6607",
+      "SE_MIGRACAO_CLOUD": "6609",
+      "SE_OPERACAO_CLOUD": "6611",
+      "SE_SUPORTE_OPERACAO": "6613",
+      "SE_TREINAMENTO": "6615",
+      "SLA": "6617"
+    }
+  },
+  "UF_CRM_1779802471": {
+    "oracle_field": "TipoDeVenda_c",
+    "titulo": "Tipo de Venda",
+    "label_bitrix": "Tipo de venda",
+    "de_para": {
+      "VENDA_NOVA": "6701",
+      "VENDA_ESTABELECIMENTOS": "6703"
+    }
+  },
+  "UF_CRM_1779815063": {
+    "oracle_field": "TemPOOuOC_c",
+    "titulo": "Tem PO ou OC",
+    "label_bitrix": "Tem PO ou OC",
+    "de_para": {
+      "NAO": "7033",
+      "SIM": "7031"
+    }
+  },
+  "UF_CRM_1779802336": {
+    "oracle_field": "Implantador_c",
+    "titulo": "Implantador",
+    "label_bitrix": "Implantador",
+    "de_para": {
+      "AMS": "6681",
+      "DPI1_DRC": "6683",
+      "DPI1_TDF": "6685",
+      "DPI2": "6687",
+      "DPI2_PARCEIRO": "6689",
+      "OPERACOES_CLOUD": "10275",
+      "PARCEIRO": "6691",
+      "TRE": "6693"
+    }
+  },
+  "UF_CRM_1779805472": {
+    "oracle_field": "PendenciaFechamento_c",
+    "titulo": "Pendência Fechamento",
+    "label_bitrix": "Pendência fechamento",
+    "de_para": {
+      "ASSINATURA": "6965",
+      "JURIDICO": "6967",
+      "PO": "6969"
+    }
+  },
+  "UF_CRM_1779813199": {
+    "oracle_field": "VerticalProjetos_c",
+    "titulo": "Vertical de Projetos",
+    "label_bitrix": "Vertical de projetos",
+    "de_para": {
+      "INFOR_OPEN": "7015",
+      "MICROSOFT_DYNAMICS": "10327",
+      "OPEN_LEGADO": "7025",
+      "ORACLE_CLOUD": "7027",
+      "ORACLE_R12_CLOUD": "7017",
+      "S4_HANA": "7029",
+      "S4_ECC": "7019",
+      "SYNCHRO4DRC": "7023",
+      "SYN4TDF": "7021",
+      "TOTVS": "10329"
+    }
+  },
+  "UF_CRM_1768850832": {
+    "oracle_field": "FamiliaDeProdutos_c",
+    "titulo": "Família de Produtos",
+    "label_bitrix": "Família de produtos",
+    "de_para": {
+      "CIAP": "7775",
+      "CNPJ_ADICIONAL": "7777",
+      "CONTAB": "11253",
+      "CREDPIS": "7781",
+      "ECD": "7785",
+      "ECD_ECF": "7787",
+      "ECF": "7789",
+      "EMISSOR_FISCAL": "7793",
+      "FIS_CON_DFE_EXP": "11259",
+      "FIS": "7797",
+      "FIS_CON": "7799",
+      "FIS_DFE": "7769",
+      "FIS_GOV": "7771",
+      "INBOUND": "11265",
+      "INT_ORA": "7803",
+      "INT_SAP": "7805",
+      "MDEST": "7807",
+      "MONITORAMENTO": "7809",
+      "OBRIGACOES": "11275",
+      " OPECON": "11273",
+      "REINF": "7815",
+      "RECUP_ST": "7817",
+      "SYNCHRO4ME": "11281",
+      "SYNCHRO4TDF": "7825",
+      "TAX_ENGINE": "11283"
+    }
+  },
+  "UF_CRM_1779802413": {
+    "oracle_field": "ModalidadeProjeto_c",
+    "titulo": "Modalidade Projeto",
+    "label_bitrix": "Modalidade projeto",
+    "de_para": {
+      "CPC": "6695",
+      "ONLINE": "6697",
+      "PRESENCIAL": "6699"
+    }
+  },
+  "UF_CRM_1779803415583": {
+    "oracle_field": "Probability_c",
+    "titulo": "Probabilidade",
+    "label_bitrix": "Probabilidade",
+    "de_para": {
+      "0": "6709",
+      "1": "6711",
+      "10": "6713",
+      "25": "6715",
+      "50": "6717",
+      "75": "6719",
+      "90": "6721",
+      "100": "6723"
+    }
+  },
+  "UF_CRM_1779798687": {
+    "oracle_field": "TerceiroComissionadoLov_c",
+    "titulo": "Terceiro Comissionado",
+    "label_bitrix": "Terceiro comissionado",
+    "de_para": {
+      "Y": "6557",
+      "N": "6559"
+    }
+  },
+  "UF_CRM_1779805401": {
+    "oracle_field": "ParceiroParticipouFechamento_c",
+    "titulo": "Parceiro Participou Fechamento?",
+    "label_bitrix": "Parceiro participou fechamento",
+    "de_para": {
+      "Y": "6961",
+      "N": "6963"
+    }
+  },
+  "UF_CRM_1779802494": {
+    "oracle_field": "PossuiRFP_c",
+    "titulo": "Possui RFP",
+    "label_bitrix": "Possui RFP",
+    "de_para": {
+      "NAO": "6707",
+      "SIM": "6705"
+    }
+  },
+  "UF_CRM_1779813037": {
+    "oracle_field": "GerenteDeProjeto_c",
+    "titulo": "Gerente de Projeto",
+    "label_bitrix": "Gerente de projeto",
+    "de_para": {
+      "ADRIANA_AVILA": "6971",
+      "ADRIANA": "6973",
+      "ALAN": "6975",
+      "CAIO": "6977",
+      "CRISTIANO": "6979",
+      "OUTI": "6981",
+      "FERNANDA": "6983",
+      "Joselito": "6985",
+      "LEILA_LUZ": "6987",
+      "LUCIENE": "6989",
+      "MARIANA_BOTELHO": "6991",
+      "MICHEL": "6993",
+      "MIRADALVA": "6995",
+      "PATRICIA": "6997",
+      "PAULA_OLIVEIRA": "6999",
+      "PRISCILA": "7001",
+      "RICARDO_LEITE": "7003",
+      "RODRIGO": "7005",
+      "SERGIO_MESQUITA": "7007",
+      "MAZZA": "7009",
+      "VANESSA": "7011",
+      "WEBSTER": "7013"
+    }
+  },
+  "UF_CRM_1779804392": {
+    "oracle_field": "PrincipalMotivoDeEncerramento_c",
+    "titulo": "",
+    "label_bitrix": "Principal motivo de encerramento",
+    "de_para": {
+      "ABERTURA_EQUIVOCADA": "6745",
+      "BAIXA_PRIORIDADE": "6747",
+      "BUDGET_NAO_APROVADO": "6749",
+      "COBERTURA_FUNCIONAL": "6751",
+      "DEPENDENCIA_INFLUENCIA": "6753",
+      "DIFICULDADE_USO": "6755",
+      "FACILIDADE_USO": "6757",
+      "INSATISFACAO_SYNCHRO": "6759",
+      "MELHOR_PREPOSICAO": "6761",
+      "MUDANCA_ORGANIZACIONAL": "6763",
+      "NEGLIGENCIAMENTO": "6765",
+      "OBRIGATORIEDADE_DEMANDA": "6769",
+      "PRECO_TCO": "6771",
+      "PRODUTO_DESCONTINUADO": "6775",
+      "PRODUTO_SERVICO": "6773",
+      "QUALIDADE_ATENDIMENTO": "6777",
+      "REFERENCIA_NEGATIVA": "6779",
+      "REFERENCIA_POSITIVA": "6781",
+      "ROI_GANHO_PERDIDO": "6783",
+      "ROI_INSUFICIENTE": "6785",
+      "SATISFACAO_SYNCHRO": "6787",
+      "SEM_INTENCAO_COMPRA": "6767",
+      "SOBRECARGA_DEMANDA": "6789",
+      "SUBSTITUIDA_OPORTUNIDADE": "6791",
+      "TECNOLOGIA_GANHO_PERDIDO": "6793"
+    }
+  },
+  "UF_CRM_1779804564": {
+    "oracle_field": "MotivoSecundario_c",
+    "titulo": "",
+    "label_bitrix": "Motivo secundário",
+    "de_para": {
+      "ABERTURA_EQUIVOCADA": "6795",
+      "BAIXA_PRIORIDADE": "6797",
+      "BUDGET_NAO_APROVADO": "6799",
+      "COBERTURA_FUNCIONAL": "6801",
+      "DEPENDENCIA_INFLUENCIA": "6803",
+      "DIFICULDADE_USO": "6805",
+      "FACILIDADE_USO": "6807",
+      "INSATISFACAO_SYNCHRO": "6809",
+      "MELHOR_PREPOSICAO": "6811",
+      "MUDANCA_ORGANIZACIONAL": "6813",
+      "NEGLIGENCIAMENTO": "6815",
+      "OBRIGATORIEDADE_DEMANDA": "6819",
+      "PRECO_TCO": "6821",
+      "PRODUTO_DESCONTINUADO": "6825",
+      "PRODUTO_SERVICO": "6823",
+      "QUALIDADE_ATENDIMENTO": "6827",
+      "REFERENCIA_NEGATIVA": "6829",
+      "REFERENCIA_POSITIVA": "6831",
+      "ROI_GANHO_PERDIDO": "6833",
+      "ROI_INSUFICIENTE": "6835",
+      "SATISFACAO_SYNCHRO": "6837",
+      "SEM_INTENCAO_COMPRA": "6817",
+      "SOBRECARGA_DEMANDA": "6839",
+      "SUBSTITUIDA_OPORTUNIDADE": "6841",
+      "TECNOLOGIA_GANHO_PERDIDO": "6843"
+    }
+  }
+}

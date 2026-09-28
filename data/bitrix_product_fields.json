@@ -1,0 +1,202 @@
+{
+  "ID": {
+    "type": "integer",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "ID"
+  },
+  "CATALOG_ID": {
+    "type": "integer",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Catalog"
+  },
+  "PRICE": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Price"
+  },
+  "CURRENCY_ID": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Currency"
+  },
+  "NAME": {
+    "type": "string",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Name"
+  },
+  "CODE": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "CODE"
+  },
+  "DESCRIPTION": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Description"
+  },
+  "DESCRIPTION_TYPE": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Description type"
+  },
+  "ACTIVE": {
+    "type": "char",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Active"
+  },
+  "SECTION_ID": {
+    "type": "integer",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Section"
+  },
+  "SORT": {
+    "type": "integer",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Sort"
+  },
+  "VAT_ID": {
+    "type": "integer",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Tax rate"
+  },
+  "VAT_INCLUDED": {
+    "type": "char",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Tax included"
+  },
+  "MEASURE": {
+    "type": "integer",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Unit of measurement"
+  },
+  "XML_ID": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "External ID"
+  },
+  "PREVIEW_PICTURE": {
+    "type": "product_file",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Preview image"
+  },
+  "DETAIL_PICTURE": {
+    "type": "product_file",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Full image"
+  },
+  "DATE_CREATE": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Created on"
+  },
+  "TIMESTAMP_X": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": true,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Modified on"
+  },
+  "MODIFIED_BY": {
+    "type": "integer",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Modified by"
+  },
+  "CREATED_BY": {
+    "type": "integer",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Created by"
+  },
+  "PROPERTY_305": {
+    "type": "product_property",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "propertyType": "S",
+    "userType": "",
+    "title": "Id produtos oracle"
+  }
+}

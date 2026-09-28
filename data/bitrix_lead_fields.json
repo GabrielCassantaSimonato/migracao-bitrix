@@ -1,0 +1,7991 @@
+{
+  "ID": {
+    "type": "integer",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "ID"
+  },
+  "TITLE": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Lead Name"
+  },
+  "HONORIFIC": {
+    "type": "crm_status",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "statusType": "HONORIFIC",
+    "title": "Salutation"
+  },
+  "NAME": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Name"
+  },
+  "SECOND_NAME": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Second name"
+  },
+  "LAST_NAME": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last name"
+  },
+  "BIRTHDATE": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Date of birth"
+  },
+  "COMPANY_TITLE": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Company name"
+  },
+  "SOURCE_ID": {
+    "type": "crm_status",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "statusType": "SOURCE",
+    "title": "Source"
+  },
+  "SOURCE_DESCRIPTION": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Source information"
+  },
+  "STATUS_ID": {
+    "type": "crm_status",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "statusType": "STATUS",
+    "title": "Stage"
+  },
+  "STATUS_DESCRIPTION": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "More about this stage"
+  },
+  "STATUS_SEMANTIC_ID": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Status details"
+  },
+  "POST": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Position"
+  },
+  "ADDRESS": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Address"
+  },
+  "ADDRESS_2": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Address (line 2)"
+  },
+  "ADDRESS_CITY": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "City"
+  },
+  "ADDRESS_POSTAL_CODE": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Zip"
+  },
+  "ADDRESS_REGION": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Region"
+  },
+  "ADDRESS_PROVINCE": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "State / Province"
+  },
+  "ADDRESS_COUNTRY": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Country"
+  },
+  "ADDRESS_COUNTRY_CODE": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Country Code"
+  },
+  "ADDRESS_LOC_ADDR_ID": {
+    "type": "integer",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Location address ID"
+  },
+  "CURRENCY_ID": {
+    "type": "crm_currency",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Currency"
+  },
+  "OPPORTUNITY": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Total"
+  },
+  "IS_MANUAL_OPPORTUNITY": {
+    "type": "char",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "IS_MANUAL_OPPORTUNITY"
+  },
+  "OPENED": {
+    "type": "char",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Available to everyone"
+  },
+  "COMMENTS": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Comment"
+  },
+  "HAS_PHONE": {
+    "type": "char",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Has phone"
+  },
+  "HAS_EMAIL": {
+    "type": "char",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Has email"
+  },
+  "HAS_IMOL": {
+    "type": "char",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Has Open Channel"
+  },
+  "ASSIGNED_BY_ID": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Responsible person"
+  },
+  "CREATED_BY_ID": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Created by"
+  },
+  "MODIFY_BY_ID": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Modified by"
+  },
+  "MOVED_BY_ID": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "MOVED_BY_ID"
+  },
+  "DATE_CREATE": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Created on"
+  },
+  "DATE_MODIFY": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Modified on"
+  },
+  "MOVED_TIME": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "MOVED_TIME"
+  },
+  "COMPANY_ID": {
+    "type": "crm_company",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Company",
+    "settings": {
+      "parentEntityTypeId": 4
+    }
+  },
+  "CONTACT_ID": {
+    "type": "crm_contact",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "isDeprecated": true,
+    "title": "Contact"
+  },
+  "CONTACT_IDS": {
+    "type": "crm_contact",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": false,
+    "title": "CONTACT_IDS"
+  },
+  "IS_RETURN_CUSTOMER": {
+    "type": "char",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Repeat lead"
+  },
+  "DATE_CLOSED": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Completed on"
+  },
+  "ORIGINATOR_ID": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "External source"
+  },
+  "ORIGIN_ID": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Item ID in data source"
+  },
+  "UTM_SOURCE": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Ad system"
+  },
+  "UTM_MEDIUM": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Medium"
+  },
+  "UTM_CAMPAIGN": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Ad campaign UTM"
+  },
+  "UTM_CONTENT": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Campaign contents"
+  },
+  "UTM_TERM": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Campaign search term"
+  },
+  "PARENT_ID_1196": {
+    "type": "crm_entity",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Parceiros",
+    "settings": {
+      "parentEntityTypeId": 1196
+    }
+  },
+  "PARENT_ID_1220": {
+    "type": "crm_entity",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Atividades",
+    "settings": {
+      "parentEntityTypeId": 1220
+    }
+  },
+  "LAST_ACTIVITY_TIME": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "LAST_ACTIVITY_TIME"
+  },
+  "LAST_ACTIVITY_BY": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "LAST_ACTIVITY_BY"
+  },
+  "LAST_COMMUNICATION_TIME": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "LAST_COMMUNICATION_TIME"
+  },
+  "PHONE": {
+    "type": "crm_multifield",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": false,
+    "title": "Phone"
+  },
+  "EMAIL": {
+    "type": "crm_multifield",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": false,
+    "title": "E-mail"
+  },
+  "WEB": {
+    "type": "crm_multifield",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": false,
+    "title": "Website"
+  },
+  "IM": {
+    "type": "crm_multifield",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": false,
+    "title": "Messenger"
+  },
+  "LINK": {
+    "type": "crm_multifield",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": false,
+    "title": "LINK"
+  },
+  "UF_CRM_1779733625": {
+    "type": "enumeration",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "6169",
+        "VALUE": "Área de parcerias"
+      },
+      {
+        "ID": "6173",
+        "VALUE": "Evento GC"
+      },
+      {
+        "ID": "11229",
+        "VALUE": "Evento Prospecção"
+      },
+      {
+        "ID": "11231",
+        "VALUE": "Gerente de Projeto"
+      },
+      {
+        "ID": "11233",
+        "VALUE": "Gerente de contas"
+      },
+      {
+        "ID": "6179",
+        "VALUE": "Indicação Infor"
+      },
+      {
+        "ID": "6181",
+        "VALUE": "Indicação Oracle"
+      },
+      {
+        "ID": "6183",
+        "VALUE": "Indicação SAP"
+      },
+      {
+        "ID": "11235",
+        "VALUE": "Indicação de Cliente"
+      },
+      {
+        "ID": "11237",
+        "VALUE": "Indicação de Funcionário"
+      },
+      {
+        "ID": "11239",
+        "VALUE": "Indicação de Parceiro"
+      },
+      {
+        "ID": "11241",
+        "VALUE": "Prospecção - Interna"
+      },
+      {
+        "ID": "11243",
+        "VALUE": "Prospecção WEB to Lead Site"
+      },
+      {
+        "ID": "11245",
+        "VALUE": "Prospecção WEB to Lead Telefone"
+      },
+      {
+        "ID": "6195",
+        "VALUE": "Suporte"
+      }
+    ],
+    "title": "UF_CRM_1779733625",
+    "listLabel": "Origem do lead",
+    "formLabel": "Origem do lead",
+    "filterLabel": "Origem do lead",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779733678": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "6197",
+        "VALUE": "Cold"
+      },
+      {
+        "ID": "6199",
+        "VALUE": "Hot"
+      },
+      {
+        "ID": "6201",
+        "VALUE": "Warm"
+      }
+    ],
+    "title": "UF_CRM_1779733678",
+    "listLabel": "Temperatura do lead",
+    "formLabel": "Temperatura do lead",
+    "filterLabel": "Temperatura do lead",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779733806": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "6203",
+        "VALUE": "Blog"
+      },
+      {
+        "ID": "6205",
+        "VALUE": "Email"
+      },
+      {
+        "ID": "6207",
+        "VALUE": "Eventos"
+      },
+      {
+        "ID": "6209",
+        "VALUE": "Google"
+      },
+      {
+        "ID": "6211",
+        "VALUE": "Indicação Cliente"
+      },
+      {
+        "ID": "6213",
+        "VALUE": "Indicação Colaborador"
+      },
+      {
+        "ID": "6215",
+        "VALUE": "Ja Conhecia Synchro"
+      },
+      {
+        "ID": "6217",
+        "VALUE": "MKT"
+      },
+      {
+        "ID": "6219",
+        "VALUE": "Portal Synchro"
+      },
+      {
+        "ID": "6221",
+        "VALUE": "Redes Sociais"
+      },
+      {
+        "ID": "6223",
+        "VALUE": "Synchro Na Midia"
+      }
+    ],
+    "title": "UF_CRM_1779733806",
+    "listLabel": "Como chegou até a Synchro",
+    "formLabel": "Como chegou até a Synchro",
+    "filterLabel": "Como chegou até a Synchro",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779733909": {
+    "type": "employee",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779733909",
+    "listLabel": "Agente de prospecção",
+    "formLabel": "Agente de prospecção",
+    "filterLabel": "Agente de prospecção",
+    "settings": {
+      "DEFAULT_VALUE": []
+    }
+  },
+  "UF_CRM_1779733783767": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779733783767",
+    "listLabel": "Data da última transferência",
+    "formLabel": "Data da última transferência",
+    "filterLabel": "Data da última transferência",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_1779733799946": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779733799946",
+    "listLabel": "Data transferência lead",
+    "formLabel": "Data transferência lead",
+    "filterLabel": "Data transferência lead",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_1779733813259": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779733813259",
+    "listLabel": "campanha",
+    "formLabel": "campanha",
+    "filterLabel": "campanha",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779734386": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "6225",
+        "VALUE": "Auditoria"
+      },
+      {
+        "ID": "6227",
+        "VALUE": "Automação entregas"
+      },
+      {
+        "ID": "6229",
+        "VALUE": "Documentos Eletronico"
+      },
+      {
+        "ID": "6231",
+        "VALUE": "ECF"
+      },
+      {
+        "ID": "6233",
+        "VALUE": "ESOCIAL"
+      },
+      {
+        "ID": "6235",
+        "VALUE": "Governança"
+      },
+      {
+        "ID": "6237",
+        "VALUE": "MDEST E"
+      },
+      {
+        "ID": "6239",
+        "VALUE": "Reinf"
+      },
+      {
+        "ID": "6241",
+        "VALUE": "SYNCHRO4TDF"
+      },
+      {
+        "ID": "6243",
+        "VALUE": "Serviços"
+      },
+      {
+        "ID": "6245",
+        "VALUE": "Soluções Fiscais"
+      },
+      {
+        "ID": "6247",
+        "VALUE": "Soluções Fiscais - Módulos Cloud"
+      },
+      {
+        "ID": "6249",
+        "VALUE": "Soluções Fiscais Modulos"
+      },
+      {
+        "ID": "6251",
+        "VALUE": "Taxhub"
+      },
+      {
+        "ID": "11285",
+        "VALUE": "DeRE"
+      }
+    ],
+    "title": "UF_CRM_1779734386",
+    "listLabel": "Interesse inicial",
+    "formLabel": "Interesse inicial",
+    "filterLabel": "Interesse inicial",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779734475": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "6253",
+        "VALUE": "Conhecer a solução"
+      },
+      {
+        "ID": "6255",
+        "VALUE": "Cotação de mercado"
+      },
+      {
+        "ID": "6257",
+        "VALUE": "Insatisfação com fornecedor atual"
+      },
+      {
+        "ID": "6259",
+        "VALUE": "Nova empresa no Brasil"
+      },
+      {
+        "ID": "6261",
+        "VALUE": "Novas obrigatoriedades"
+      },
+      {
+        "ID": "6263",
+        "VALUE": "Rolout"
+      }
+    ],
+    "title": "UF_CRM_1779734475",
+    "listLabel": "Motivo de interesse",
+    "formLabel": "Motivo de interesse",
+    "filterLabel": "Motivo de interesse",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779734915": {
+    "type": "crm",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779734915",
+    "listLabel": "Parceiro Principal",
+    "formLabel": "Parceiro Principal",
+    "filterLabel": "Parceiro Principal",
+    "settings": {
+      "DYNAMIC_1196": "Y",
+      "LEAD": null
+    }
+  },
+  "UF_CRM_1779735545": {
+    "type": "enumeration",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "6265",
+        "VALUE": "LU"
+      },
+      {
+        "ID": "6267",
+        "VALUE": "LU Anual"
+      },
+      {
+        "ID": "6269",
+        "VALUE": "LU Anual + SE Imp"
+      },
+      {
+        "ID": "6271",
+        "VALUE": "LU Cloud"
+      },
+      {
+        "ID": "6273",
+        "VALUE": "LU Cloud + SE imp"
+      },
+      {
+        "ID": "6275",
+        "VALUE": "LUMA"
+      },
+      {
+        "ID": "6277",
+        "VALUE": "LUMA + SE imp"
+      },
+      {
+        "ID": "6279",
+        "VALUE": "Licença + SE atualização"
+      },
+      {
+        "ID": "6281",
+        "VALUE": "MA"
+      },
+      {
+        "ID": "6283",
+        "VALUE": "MA Extendida"
+      },
+      {
+        "ID": "6285",
+        "VALUE": "Regularização de Licenças"
+      },
+      {
+        "ID": "6287",
+        "VALUE": "SE AMS"
+      },
+      {
+        "ID": "6289",
+        "VALUE": "SE Alocação"
+      },
+      {
+        "ID": "6291",
+        "VALUE": "SE Atualização"
+      },
+      {
+        "ID": "6293",
+        "VALUE": "SE Change"
+      },
+      {
+        "ID": "6295",
+        "VALUE": "SE Customização"
+      },
+      {
+        "ID": "6297",
+        "VALUE": "SE Implantação"
+      },
+      {
+        "ID": "6299",
+        "VALUE": "SE Mapeamento"
+      },
+      {
+        "ID": "6301",
+        "VALUE": "SE Migração Cloud"
+      },
+      {
+        "ID": "6303",
+        "VALUE": "SE Operação Cloud"
+      },
+      {
+        "ID": "6305",
+        "VALUE": "SE Suporte Operação"
+      },
+      {
+        "ID": "6307",
+        "VALUE": "SE Treinamento"
+      },
+      {
+        "ID": "6309",
+        "VALUE": "SLA"
+      }
+    ],
+    "title": "UF_CRM_1779735545",
+    "listLabel": "Tipo de oportunidade",
+    "formLabel": "Tipo de oportunidade",
+    "filterLabel": "Tipo de oportunidade",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779735693": {
+    "type": "enumeration",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "6311",
+        "VALUE": "AE"
+      },
+      {
+        "ID": "6313",
+        "VALUE": "AE+GOA"
+      },
+      {
+        "ID": "6315",
+        "VALUE": "CIAP"
+      },
+      {
+        "ID": "6317",
+        "VALUE": "CNPJs Adicionais"
+      },
+      {
+        "ID": "6319",
+        "VALUE": "CTe"
+      },
+      {
+        "ID": "6321",
+        "VALUE": "Contab"
+      },
+      {
+        "ID": "6323",
+        "VALUE": "CredPIS"
+      },
+      {
+        "ID": "6325",
+        "VALUE": "ECD"
+      },
+      {
+        "ID": "6327",
+        "VALUE": "ECD+ECF"
+      },
+      {
+        "ID": "6329",
+        "VALUE": "ECF"
+      },
+      {
+        "ID": "6331",
+        "VALUE": "EFD Contribuições"
+      },
+      {
+        "ID": "6333",
+        "VALUE": "EFD ICMS IPI"
+      },
+      {
+        "ID": "6335",
+        "VALUE": "Emissor Fiscal"
+      },
+      {
+        "ID": "6337",
+        "VALUE": "Fis"
+      },
+      {
+        "ID": "6339",
+        "VALUE": "Fis+Con"
+      },
+      {
+        "ID": "6341",
+        "VALUE": "Fis+Con+DFe+EXP"
+      },
+      {
+        "ID": "6343",
+        "VALUE": "Fis+DFe"
+      },
+      {
+        "ID": "6345",
+        "VALUE": "Fis+Gov"
+      },
+      {
+        "ID": "6347",
+        "VALUE": "GDT"
+      },
+      {
+        "ID": "6349",
+        "VALUE": "GOA"
+      },
+      {
+        "ID": "6351",
+        "VALUE": "Inbound"
+      },
+      {
+        "ID": "6353",
+        "VALUE": "Insight"
+      },
+      {
+        "ID": "6355",
+        "VALUE": "Int ORA"
+      },
+      {
+        "ID": "6357",
+        "VALUE": "Int SAP"
+      },
+      {
+        "ID": "6359",
+        "VALUE": "MDest"
+      },
+      {
+        "ID": "6361",
+        "VALUE": "Monitoramento"
+      },
+      {
+        "ID": "6363",
+        "VALUE": "NFSe"
+      },
+      {
+        "ID": "6365",
+        "VALUE": "NFe"
+      },
+      {
+        "ID": "6367",
+        "VALUE": "OPECON"
+      },
+      {
+        "ID": "6369",
+        "VALUE": "Obrigações"
+      },
+      {
+        "ID": "6371",
+        "VALUE": "REINF"
+      },
+      {
+        "ID": "6373",
+        "VALUE": "Recebimento Fiscal"
+      },
+      {
+        "ID": "6375",
+        "VALUE": "Recup ST"
+      },
+      {
+        "ID": "6377",
+        "VALUE": "Sustentação"
+      },
+      {
+        "ID": "6379",
+        "VALUE": "Synchro4TDF"
+      },
+      {
+        "ID": "6381",
+        "VALUE": "Synchro4me"
+      },
+      {
+        "ID": "6383",
+        "VALUE": "eTaxEngine"
+      }
+    ],
+    "title": "UF_CRM_1779735693",
+    "listLabel": "Família de produtos",
+    "formLabel": "Família de produtos",
+    "filterLabel": "Família de produtos",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779736432": {
+    "type": "crm",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779736432",
+    "listLabel": "Nome do contato principal",
+    "formLabel": "Nome do contato principal",
+    "filterLabel": "Nome do contato principal",
+    "settings": {
+      "CONTACT": "Y",
+      "LEAD": null
+    }
+  },
+  "UF_CRM_1779736831": {
+    "type": "enumeration",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "6385",
+        "VALUE": "Administrador"
+      },
+      {
+        "ID": "6387",
+        "VALUE": "Advogado"
+      },
+      {
+        "ID": "6389",
+        "VALUE": "Analista"
+      },
+      {
+        "ID": "6391",
+        "VALUE": "Arquiteto"
+      },
+      {
+        "ID": "6393",
+        "VALUE": "Assessor"
+      },
+      {
+        "ID": "6395",
+        "VALUE": "Assistente"
+      },
+      {
+        "ID": "6397",
+        "VALUE": "Auxiliar"
+      },
+      {
+        "ID": "6399",
+        "VALUE": "CFO"
+      },
+      {
+        "ID": "6401",
+        "VALUE": "Chefe"
+      },
+      {
+        "ID": "6403",
+        "VALUE": "CIO"
+      },
+      {
+        "ID": "6405",
+        "VALUE": "Consultor"
+      },
+      {
+        "ID": "6407",
+        "VALUE": "Contador"
+      },
+      {
+        "ID": "6409",
+        "VALUE": "Controller"
+      },
+      {
+        "ID": "6411",
+        "VALUE": "Coordenador"
+      },
+      {
+        "ID": "6413",
+        "VALUE": "Decisor"
+      },
+      {
+        "ID": "6415",
+        "VALUE": "Desenvolvedor"
+      },
+      {
+        "ID": "6417",
+        "VALUE": "Diretor"
+      },
+      {
+        "ID": "6419",
+        "VALUE": "Distribuidor"
+      },
+      {
+        "ID": "6421",
+        "VALUE": "Engenheiro"
+      },
+      {
+        "ID": "6423",
+        "VALUE": "Especialista"
+      },
+      {
+        "ID": "6425",
+        "VALUE": "Executivo"
+      },
+      {
+        "ID": "6427",
+        "VALUE": "Fiscal"
+      },
+      {
+        "ID": "6429",
+        "VALUE": "Gerente"
+      },
+      {
+        "ID": "6431",
+        "VALUE": "Gestor"
+      },
+      {
+        "ID": "6433",
+        "VALUE": "Líder"
+      },
+      {
+        "ID": "6435",
+        "VALUE": "Presidente"
+      },
+      {
+        "ID": "6437",
+        "VALUE": "Responsável"
+      },
+      {
+        "ID": "6439",
+        "VALUE": "Secretário"
+      },
+      {
+        "ID": "6441",
+        "VALUE": "Superintendente"
+      },
+      {
+        "ID": "6443",
+        "VALUE": "Supervisor"
+      },
+      {
+        "ID": "6445",
+        "VALUE": "Técnico"
+      },
+      {
+        "ID": "6447",
+        "VALUE": "Vice-Presidente"
+      }
+    ],
+    "title": "UF_CRM_1779736831",
+    "listLabel": "Cargo",
+    "formLabel": "Cargo",
+    "filterLabel": "Cargo",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779736883": {
+    "type": "enumeration",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "6449",
+        "VALUE": "Administrativo"
+      },
+      {
+        "ID": "6451",
+        "VALUE": "Análise"
+      },
+      {
+        "ID": "6453",
+        "VALUE": "Banco de dados"
+      },
+      {
+        "ID": "6455",
+        "VALUE": "Comercial"
+      },
+      {
+        "ID": "6457",
+        "VALUE": "Compras"
+      },
+      {
+        "ID": "6459",
+        "VALUE": "Conta"
+      },
+      {
+        "ID": "6461",
+        "VALUE": "Contábil"
+      },
+      {
+        "ID": "6463",
+        "VALUE": "Contratos"
+      },
+      {
+        "ID": "6465",
+        "VALUE": "Controladoria"
+      },
+      {
+        "ID": "6467",
+        "VALUE": "Controle"
+      },
+      {
+        "ID": "6469",
+        "VALUE": "Financeiro"
+      },
+      {
+        "ID": "6471",
+        "VALUE": "Fiscal"
+      },
+      {
+        "ID": "6473",
+        "VALUE": "Industrial"
+      },
+      {
+        "ID": "6475",
+        "VALUE": "Infraestrutura"
+      },
+      {
+        "ID": "6477",
+        "VALUE": "Jurídico"
+      },
+      {
+        "ID": "6479",
+        "VALUE": "Logística"
+      },
+      {
+        "ID": "6481",
+        "VALUE": "Marketing"
+      },
+      {
+        "ID": "6483",
+        "VALUE": "Negócios"
+      },
+      {
+        "ID": "6485",
+        "VALUE": "Operações"
+      },
+      {
+        "ID": "6487",
+        "VALUE": "PMO"
+      },
+      {
+        "ID": "6489",
+        "VALUE": "Presidência"
+      },
+      {
+        "ID": "6491",
+        "VALUE": "Produto"
+      },
+      {
+        "ID": "6493",
+        "VALUE": "Projeto"
+      },
+      {
+        "ID": "6495",
+        "VALUE": "RH"
+      },
+      {
+        "ID": "6497",
+        "VALUE": "Sistemas"
+      },
+      {
+        "ID": "6499",
+        "VALUE": "Solução"
+      },
+      {
+        "ID": "6501",
+        "VALUE": "Sourcing"
+      },
+      {
+        "ID": "6503",
+        "VALUE": "Suporte"
+      },
+      {
+        "ID": "6505",
+        "VALUE": "Suprimento"
+      },
+      {
+        "ID": "6507",
+        "VALUE": "Tesouraria"
+      },
+      {
+        "ID": "6509",
+        "VALUE": "Tecnologia da Informação"
+      },
+      {
+        "ID": "6511",
+        "VALUE": "Treinamento"
+      },
+      {
+        "ID": "6513",
+        "VALUE": "Tributária"
+      }
+    ],
+    "title": "UF_CRM_1779736883",
+    "listLabel": "Área",
+    "formLabel": "Área",
+    "filterLabel": "Área",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779736957": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "6515",
+        "VALUE": "Contato inacessível"
+      },
+      {
+        "ID": "6517",
+        "VALUE": "Empresa fora dos valores da Synchro"
+      },
+      {
+        "ID": "6519",
+        "VALUE": "Fora do público alvo (definido para a empresa de prospecção)"
+      },
+      {
+        "ID": "6521",
+        "VALUE": "Necessidade fora do escopo da Synchro"
+      },
+      {
+        "ID": "6523",
+        "VALUE": "Recusou-se a ouvir a Synchro"
+      },
+      {
+        "ID": "6525",
+        "VALUE": "Sondando para compra futura"
+      }
+    ],
+    "title": "UF_CRM_1779736957",
+    "listLabel": "Motivos da rejeição",
+    "formLabel": "Motivos da rejeição",
+    "filterLabel": "Motivos da rejeição",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779736994079": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779736994079",
+    "listLabel": "Motivo da rejeição detalhado",
+    "formLabel": "Motivo da rejeição detalhado",
+    "filterLabel": "Motivo da rejeição detalhado",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737106726": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737106726",
+    "listLabel": "Data da rejeição do lead",
+    "formLabel": "Data da rejeição do lead",
+    "filterLabel": "Data da rejeição do lead",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_1779737155385": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737155385",
+    "listLabel": "Telefone alternativo",
+    "formLabel": "Telefone alternativo",
+    "filterLabel": "Telefone alternativo",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737180017": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737180017",
+    "listLabel": "Celular",
+    "formLabel": "Celular",
+    "filterLabel": "Celular",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737212811": {
+    "type": "string",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737212811",
+    "listLabel": "Descrição da oportunidade",
+    "formLabel": "Descrição da oportunidade",
+    "filterLabel": "Descrição da oportunidade",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737221467": {
+    "type": "string",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737221467",
+    "listLabel": "Descrição do lead",
+    "formLabel": "Descrição do lead",
+    "filterLabel": "Descrição do lead",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737364507": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737364507",
+    "listLabel": "Empresa",
+    "formLabel": "Empresa",
+    "filterLabel": "Empresa",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737372632": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737372632",
+    "listLabel": "Razão social",
+    "formLabel": "Razão social",
+    "filterLabel": "Razão social",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737388814": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737388814",
+    "listLabel": "CNPJ",
+    "formLabel": "CNPJ",
+    "filterLabel": "CNPJ",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737402101": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737402101",
+    "listLabel": "Atividade lead",
+    "formLabel": "Atividade lead",
+    "filterLabel": "Atividade lead",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737412822": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737412822",
+    "listLabel": "Setor",
+    "formLabel": "Setor",
+    "filterLabel": "Setor",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737419145": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737419145",
+    "listLabel": "Segmento",
+    "formLabel": "Segmento",
+    "filterLabel": "Segmento",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737431087": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737431087",
+    "listLabel": "Propriedade",
+    "formLabel": "Propriedade",
+    "filterLabel": "Propriedade",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737438362": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737438362",
+    "listLabel": "ERP",
+    "formLabel": "ERP",
+    "filterLabel": "ERP",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737453615": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737453615",
+    "listLabel": "Solução fiscal",
+    "formLabel": "Solução fiscal",
+    "filterLabel": "Solução fiscal",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737470980": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737470980",
+    "listLabel": "Solfis - outro especificar",
+    "formLabel": "Solfis - outro especificar",
+    "filterLabel": "Solfis - outro especificar",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737485264": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737485264",
+    "listLabel": "Qual BD",
+    "formLabel": "Qual BD",
+    "filterLabel": "Qual BD",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737501439": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737501439",
+    "listLabel": "Range de faturamento",
+    "formLabel": "Range de faturamento",
+    "filterLabel": "Range de faturamento",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737514019": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737514019",
+    "listLabel": "Faixa de funcionários",
+    "formLabel": "Faixa de funcionários",
+    "filterLabel": "Faixa de funcionários",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737523154": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737523154",
+    "listLabel": "URL",
+    "formLabel": "URL",
+    "filterLabel": "URL",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737540909": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737540909",
+    "listLabel": "Quantidade de estabelecimentos fiscais",
+    "formLabel": "Quantidade de estabelecimentos fiscais",
+    "filterLabel": "Quantidade de estabelecimentos fiscais",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737559869": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737559869",
+    "listLabel": "Base mercado",
+    "formLabel": "Base mercado",
+    "filterLabel": "Base mercado",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737571532": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737571532",
+    "listLabel": "Estágio TDF",
+    "formLabel": "Estágio TDF",
+    "filterLabel": "Estágio TDF",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779737584654": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779737584654",
+    "listLabel": "Ranking",
+    "formLabel": "Ranking",
+    "filterLabel": "Ranking",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1780511566352": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1780511566352",
+    "listLabel": "Versão BD",
+    "formLabel": "Versão BD",
+    "filterLabel": "Versão BD",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1781533315099": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1781533315099",
+    "listLabel": "Proprietário antigo",
+    "formLabel": "Proprietário antigo",
+    "filterLabel": "Proprietário antigo",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1789385673917": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1789385673917",
+    "listLabel": "Id lead oracle",
+    "formLabel": "Id lead oracle",
+    "filterLabel": "Id lead oracle",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_IS_REPEATED_APPROACH": {
+    "type": "boolean",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_IS_REPEATED_APPROACH",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": 0,
+      "DISPLAY": "CHECKBOX",
+      "LABEL": [
+        "",
+        ""
+      ],
+      "LABEL_CHECKBOX": ""
+    }
+  },
+  "UF_CRM_ORDER_IDS": {
+    "type": "integer",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": true,
+    "title": "UF_CRM_ORDER_IDS",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_PRODUCT_IDS": {
+    "type": "integer",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": true,
+    "title": "UF_CRM_PRODUCT_IDS",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_CLOSEDATE": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_CLOSEDATE",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      },
+      "USE_SECOND": "Y",
+      "USE_TIMEZONE": "N"
+    }
+  },
+  "UF_CRM_EVENT_DATE": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_EVENT_DATE",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      },
+      "USE_SECOND": "Y",
+      "USE_TIMEZONE": "N"
+    }
+  },
+  "UF_CRM_EVENT_DESCRIPTION": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_EVENT_DESCRIPTION",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_CLOSED": {
+    "type": "boolean",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_CLOSED",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": 0,
+      "DISPLAY": "CHECKBOX",
+      "LABEL": [
+        "",
+        ""
+      ],
+      "LABEL_CHECKBOX": ""
+    }
+  },
+  "UF_CRM_ORIGINATOR_ID": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_ORIGINATOR_ID",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_ORIGIN_ID": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_ORIGIN_ID",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_BEGINDATE": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_BEGINDATE",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_LEAD_ID": {
+    "type": "integer",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_LEAD_ID",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_PROBABILITY": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_PROBABILITY",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_OPPORTUNITY_ACCOUNT": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_OPPORTUNITY_ACCOUNT",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_ACCOUNT_CURRENCY_ID": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9023",
+        "VALUE": "Dólar EUA"
+      },
+      {
+        "ID": "9025",
+        "VALUE": "Reais"
+      }
+    ],
+    "title": "UF_CRM_ACCOUNT_CURRENCY_ID",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_CATEGORY_ID": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9027",
+        "VALUE": "Pipeline padrão"
+      }
+    ],
+    "title": "UF_CRM_CATEGORY_ID",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_TYPE_ID": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9029",
+        "VALUE": "Sales"
+      },
+      {
+        "ID": "9031",
+        "VALUE": "Integrated sales"
+      },
+      {
+        "ID": "9033",
+        "VALUE": "Merchandise sales"
+      },
+      {
+        "ID": "9035",
+        "VALUE": "Services"
+      },
+      {
+        "ID": "9037",
+        "VALUE": "After sales service"
+      }
+    ],
+    "title": "UF_CRM_TYPE_ID",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_EVENT_ID": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9039",
+        "VALUE": "Information"
+      },
+      {
+        "ID": "9041",
+        "VALUE": "Phone call"
+      },
+      {
+        "ID": "9043",
+        "VALUE": "E-mail has been sent"
+      }
+    ],
+    "title": "UF_CRM_EVENT_ID",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768849847": {
+    "type": "employee",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768849847",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": []
+    }
+  },
+  "UF_CRM_1779800373": {
+    "type": "employee",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779800373",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": []
+    }
+  },
+  "UF_CRM_1779801097055": {
+    "type": "file",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779801097055",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "LIST_WIDTH": 0,
+      "LIST_HEIGHT": 0,
+      "MAX_SHOW_SIZE": 0,
+      "MAX_ALLOWED_SIZE": 0,
+      "EXTENSIONS": [],
+      "TARGET_BLANK": "Y",
+      "DEFAULT_VIEW": null
+    }
+  },
+  "UF_CRM_1768850856": {
+    "type": "file",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768850856",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "LIST_WIDTH": 0,
+      "LIST_HEIGHT": 0,
+      "MAX_SHOW_SIZE": 0,
+      "MAX_ALLOWED_SIZE": 0,
+      "EXTENSIONS": [],
+      "TARGET_BLANK": "Y",
+      "DEFAULT_VIEW": null
+    }
+  },
+  "UF_CRM_1779814427170": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779814427170",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768932801899": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768932801899",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779814444904": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779814444904",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768932862913": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768932862913",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779800925754": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779800925754",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_6970C87499562": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_6970C87499562",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768850461": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768850461",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_6970C8746C351": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9045",
+        "VALUE": "Blog"
+      },
+      {
+        "ID": "9047",
+        "VALUE": "Email"
+      },
+      {
+        "ID": "9049",
+        "VALUE": "Eventos"
+      },
+      {
+        "ID": "9051",
+        "VALUE": "Google"
+      },
+      {
+        "ID": "9053",
+        "VALUE": "Indicação cliente"
+      },
+      {
+        "ID": "9055",
+        "VALUE": "Indicação colaborador"
+      },
+      {
+        "ID": "9057",
+        "VALUE": "Ja conhecia a Synchro"
+      },
+      {
+        "ID": "9059",
+        "VALUE": "Marketing"
+      },
+      {
+        "ID": "9061",
+        "VALUE": "Portal Synchro"
+      },
+      {
+        "ID": "9063",
+        "VALUE": "Redes sociais"
+      },
+      {
+        "ID": "9065",
+        "VALUE": "Synchro na midia"
+      }
+    ],
+    "title": "UF_CRM_6970C8746C351",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779805301": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9067",
+        "VALUE": "ADP"
+      },
+      {
+        "ID": "9069",
+        "VALUE": "AdopTI"
+      },
+      {
+        "ID": "9071",
+        "VALUE": "Alliance Consultoria"
+      },
+      {
+        "ID": "9073",
+        "VALUE": "Alltax"
+      },
+      {
+        "ID": "9075",
+        "VALUE": "Arquivei"
+      },
+      {
+        "ID": "9077",
+        "VALUE": "Asis Tax Tech"
+      },
+      {
+        "ID": "9079",
+        "VALUE": "Avalara"
+      },
+      {
+        "ID": "9081",
+        "VALUE": "BPO"
+      },
+      {
+        "ID": "9083",
+        "VALUE": "Becomex"
+      },
+      {
+        "ID": "9085",
+        "VALUE": "Beetax"
+      },
+      {
+        "ID": "9087",
+        "VALUE": "Cast"
+      },
+      {
+        "ID": "9089",
+        "VALUE": "Compliance"
+      },
+      {
+        "ID": "9091",
+        "VALUE": "DP Comp"
+      },
+      {
+        "ID": "9093",
+        "VALUE": "Desconhecido"
+      },
+      {
+        "ID": "9095",
+        "VALUE": "Desenvolvimento Interno"
+      },
+      {
+        "ID": "9097",
+        "VALUE": "Easyway"
+      },
+      {
+        "ID": "9099",
+        "VALUE": "Engeneering"
+      },
+      {
+        "ID": "9101",
+        "VALUE": "FH Consulting (Guepardo)"
+      },
+      {
+        "ID": "9103",
+        "VALUE": "Folhamatic (Fatumatic)"
+      },
+      {
+        "ID": "9105",
+        "VALUE": "GSF Fiscal"
+      },
+      {
+        "ID": "9107",
+        "VALUE": "GT Smart"
+      },
+      {
+        "ID": "9109",
+        "VALUE": "Intech"
+      },
+      {
+        "ID": "9111",
+        "VALUE": "Mastersaf"
+      },
+      {
+        "ID": "9113",
+        "VALUE": "NTT Data"
+      },
+      {
+        "ID": "9115",
+        "VALUE": "OFM"
+      },
+      {
+        "ID": "9117",
+        "VALUE": "Parceiro 1by1"
+      },
+      {
+        "ID": "9119",
+        "VALUE": "Parceiro Abaco Consultores"
+      },
+      {
+        "ID": "9121",
+        "VALUE": "Parceiro Bertini"
+      },
+      {
+        "ID": "9123",
+        "VALUE": "Parceiro BlendIt"
+      },
+      {
+        "ID": "9125",
+        "VALUE": "Parceiro CBS Business Consulting"
+      },
+      {
+        "ID": "9127",
+        "VALUE": "Parceiro Coach IT"
+      },
+      {
+        "ID": "9129",
+        "VALUE": "Parceiro Deloitte"
+      },
+      {
+        "ID": "9131",
+        "VALUE": "Parceiro EY"
+      },
+      {
+        "ID": "9133",
+        "VALUE": "Parceiro Flar Consulting"
+      },
+      {
+        "ID": "9135",
+        "VALUE": "Parceiro GESIF"
+      },
+      {
+        "ID": "9137",
+        "VALUE": "Parceiro INFOR"
+      },
+      {
+        "ID": "9139",
+        "VALUE": "Parceiro ITC Convergence"
+      },
+      {
+        "ID": "9141",
+        "VALUE": "Parceiro JP Consulting"
+      },
+      {
+        "ID": "9143",
+        "VALUE": "Parceiro KPMG"
+      },
+      {
+        "ID": "9145",
+        "VALUE": "Parceiro LEADTAX"
+      },
+      {
+        "ID": "9147",
+        "VALUE": "Parceiro META"
+      },
+      {
+        "ID": "9149",
+        "VALUE": "Parceiro MGW"
+      },
+      {
+        "ID": "9151",
+        "VALUE": "Parceiro Maxxconsulting"
+      },
+      {
+        "ID": "9153",
+        "VALUE": "Parceiro Ninecon"
+      },
+      {
+        "ID": "9155",
+        "VALUE": "Parceiro Oracle"
+      },
+      {
+        "ID": "9157",
+        "VALUE": "Parceiro OrigenTech"
+      },
+      {
+        "ID": "9159",
+        "VALUE": "Parceiro PWc"
+      },
+      {
+        "ID": "9161",
+        "VALUE": "Parceiro S2M"
+      },
+      {
+        "ID": "9163",
+        "VALUE": "Parceiro desconhecido"
+      },
+      {
+        "ID": "9165",
+        "VALUE": "Pelissari"
+      },
+      {
+        "ID": "9167",
+        "VALUE": "SAP"
+      },
+      {
+        "ID": "9169",
+        "VALUE": "Seidor"
+      },
+      {
+        "ID": "9171",
+        "VALUE": "Sonda Procwork"
+      },
+      {
+        "ID": "9173",
+        "VALUE": "Sovos"
+      },
+      {
+        "ID": "9175",
+        "VALUE": "Systax"
+      },
+      {
+        "ID": "9177",
+        "VALUE": "TOTVS"
+      },
+      {
+        "ID": "9179",
+        "VALUE": "TaxWeb"
+      },
+      {
+        "ID": "9181",
+        "VALUE": "Thomson Reuters"
+      }
+    ],
+    "title": "UF_CRM_1779805301",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_6970C874C93ED": {
+    "type": "crm",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_6970C874C93ED",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "LEAD": "Y",
+      "CONTACT": "N",
+      "COMPANY": "N",
+      "DEAL": "N"
+    }
+  },
+  "UF_CRM_1779805434": {
+    "type": "crm",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779805434",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "LEAD": "Y",
+      "CONTACT": "N",
+      "COMPANY": "N",
+      "DEAL": "N"
+    }
+  },
+  "UF_CRM_1768937282": {
+    "type": "crm",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768937282",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "LEAD": "Y",
+      "CONTACT": "N",
+      "COMPANY": "N",
+      "DEAL": "N"
+    }
+  },
+  "UF_CRM_1768932890": {
+    "type": "crm",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768932890",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "LEAD": "Y",
+      "CONTACT": "N",
+      "COMPANY": "N",
+      "DEAL": "N"
+    }
+  },
+  "UF_CRM_1768849983": {
+    "type": "crm",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768849983",
+    "listLabel": "Contato principal",
+    "formLabel": "Contato principal",
+    "filterLabel": "Contato principal",
+    "settings": {
+      "LEAD": "Y",
+      "CONTACT": "N",
+      "COMPANY": "N",
+      "DEAL": "N"
+    }
+  },
+  "UF_CRM_1779815097": {
+    "type": "crm",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779815097",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "LEAD": "Y",
+      "CONTACT": "N",
+      "COMPANY": "N",
+      "DEAL": "N"
+    }
+  },
+  "UF_CRM_1779815017": {
+    "type": "crm",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779815017",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "LEAD": "Y",
+      "CONTACT": "N",
+      "COMPANY": "N",
+      "DEAL": "N"
+    }
+  },
+  "UF_CRM_6970C874D834A": {
+    "type": "crm",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_6970C874D834A",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "LEAD": "Y",
+      "CONTACT": "N",
+      "COMPANY": "N",
+      "DEAL": "N"
+    }
+  },
+  "UF_CRM_1779800744": {
+    "type": "crm",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779800744",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "LEAD": "Y",
+      "CONTACT": "N",
+      "COMPANY": "N",
+      "DEAL": "N"
+    }
+  },
+  "UF_CRM_1781025443595": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1781025443595",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_6970C8748B067": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_6970C8748B067",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_1781025406664": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1781025406664",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_6970C8747D795": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_6970C8747D795",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_1768931908": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768931908",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_1768849929": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768849929",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_1781025390166": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1781025390166",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_1779805396315": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779805396315",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_1768931896": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768931896",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_1779805411762": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779805411762",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_1779800131903": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779800131903",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_1781025453635": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1781025453635",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_1768931970": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768931970",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1779805474480": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779805474480",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779802374875": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779802374875",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768929944": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768929944",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768850622": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768850622",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779800946298": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779800946298",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_6970C874EB42E": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_6970C874EB42E",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_6970C87503F9D": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_6970C87503F9D",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768931981": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768931981",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779805504764": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779805504764",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779813210909": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779813210909",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1768932433": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768932433",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1779814937479": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779814937479",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779814848132": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779814848132",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768937293": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768937293",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768932902": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768932902",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_STAGE_ID": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9183",
+        "VALUE": "Diagnóstico"
+      },
+      {
+        "ID": "9185",
+        "VALUE": "Validação da Solução"
+      },
+      {
+        "ID": "9187",
+        "VALUE": "Apresentação da Proposta"
+      },
+      {
+        "ID": "9189",
+        "VALUE": "Negociação"
+      },
+      {
+        "ID": "9191",
+        "VALUE": "Fechamento"
+      },
+      {
+        "ID": "9193",
+        "VALUE": "Encerramento em aprovação ganho"
+      },
+      {
+        "ID": "9195",
+        "VALUE": "Encerramento em aprovação cancelado"
+      },
+      {
+        "ID": "9197",
+        "VALUE": "Encerramento em aprovação perdido"
+      },
+      {
+        "ID": "9199",
+        "VALUE": "Encerrado rejeitado"
+      },
+      {
+        "ID": "9201",
+        "VALUE": "Encerrado Ganho"
+      },
+      {
+        "ID": "9203",
+        "VALUE": "Encerrado Perdido"
+      },
+      {
+        "ID": "9205",
+        "VALUE": "Encerrado Cancelado"
+      }
+    ],
+    "title": "UF_CRM_STAGE_ID",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779799488": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9267",
+        "VALUE": "AMS"
+      },
+      {
+        "ID": "9269",
+        "VALUE": "CIAP"
+      },
+      {
+        "ID": "9271",
+        "VALUE": "CNPJs Adicionais"
+      },
+      {
+        "ID": "9273",
+        "VALUE": "CONTAB"
+      },
+      {
+        "ID": "9275",
+        "VALUE": "CredPIS"
+      },
+      {
+        "ID": "9277",
+        "VALUE": "DFe Manager"
+      },
+      {
+        "ID": "9279",
+        "VALUE": "ECD"
+      },
+      {
+        "ID": "9281",
+        "VALUE": "ECD+ECF"
+      },
+      {
+        "ID": "9283",
+        "VALUE": "ECF"
+      },
+      {
+        "ID": "9285",
+        "VALUE": "EFD PIS/COFINS Synchro4Me"
+      },
+      {
+        "ID": "9287",
+        "VALUE": "Emissor Fiscal"
+      },
+      {
+        "ID": "9289",
+        "VALUE": "FIS+CON+DFE+EXP"
+      },
+      {
+        "ID": "9291",
+        "VALUE": "Fis"
+      },
+      {
+        "ID": "9293",
+        "VALUE": "Fis+Con"
+      },
+      {
+        "ID": "9295",
+        "VALUE": "Fis+DFe"
+      },
+      {
+        "ID": "9297",
+        "VALUE": "Fis+Gov"
+      },
+      {
+        "ID": "9299",
+        "VALUE": "Governança"
+      },
+      {
+        "ID": "9301",
+        "VALUE": "Inbound"
+      },
+      {
+        "ID": "9303",
+        "VALUE": "Int ORA"
+      },
+      {
+        "ID": "9305",
+        "VALUE": "Int SAP"
+      },
+      {
+        "ID": "9307",
+        "VALUE": "MDest"
+      },
+      {
+        "ID": "9309",
+        "VALUE": "Monitoramento"
+      },
+      {
+        "ID": "9311",
+        "VALUE": "Obrigações"
+      },
+      {
+        "ID": "9313",
+        "VALUE": "Opecon"
+      },
+      {
+        "ID": "9315",
+        "VALUE": "REINF"
+      },
+      {
+        "ID": "9317",
+        "VALUE": "Recup ST"
+      },
+      {
+        "ID": "9319",
+        "VALUE": "Synchro4DFe"
+      },
+      {
+        "ID": "9321",
+        "VALUE": "Synchro4DRC"
+      },
+      {
+        "ID": "9323",
+        "VALUE": "Synchro4Me"
+      },
+      {
+        "ID": "9325",
+        "VALUE": "Synchro4TDF"
+      },
+      {
+        "ID": "9327",
+        "VALUE": "eTaxEngine"
+      }
+    ],
+    "title": "UF_CRM_1779799488",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768932331": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "10345",
+        "VALUE": "Adriana Avila"
+      },
+      {
+        "ID": "9329",
+        "VALUE": "Adriana Botafogo"
+      },
+      {
+        "ID": "9331",
+        "VALUE": "Alan Alves"
+      },
+      {
+        "ID": "9333",
+        "VALUE": "Caio Gonçalves"
+      },
+      {
+        "ID": "9335",
+        "VALUE": "Cristiano Nogueira"
+      },
+      {
+        "ID": "9337",
+        "VALUE": "Eduardo Outi"
+      },
+      {
+        "ID": "9339",
+        "VALUE": "Fernanda Ferreira"
+      },
+      {
+        "ID": "9341",
+        "VALUE": "Joselito Viana"
+      },
+      {
+        "ID": "10347",
+        "VALUE": "Leila da Luz"
+      },
+      {
+        "ID": "9343",
+        "VALUE": "Luciene Vignetti"
+      },
+      {
+        "ID": "9345",
+        "VALUE": "Mariana Botelho"
+      },
+      {
+        "ID": "9347",
+        "VALUE": "Michel Coelho"
+      },
+      {
+        "ID": "9349",
+        "VALUE": "Miradalva Barbosa"
+      },
+      {
+        "ID": "9351",
+        "VALUE": "Patricia Vazilva"
+      },
+      {
+        "ID": "9353",
+        "VALUE": "Paula Oliveira"
+      },
+      {
+        "ID": "9355",
+        "VALUE": "Priscila Almeida"
+      },
+      {
+        "ID": "9357",
+        "VALUE": "Ricardo Leite"
+      },
+      {
+        "ID": "9359",
+        "VALUE": "Rodrigo Bueno"
+      },
+      {
+        "ID": "9361",
+        "VALUE": "Sérgio Mesquita"
+      },
+      {
+        "ID": "9363",
+        "VALUE": "Vagner Mazza"
+      },
+      {
+        "ID": "9365",
+        "VALUE": "Vanessa Araujo"
+      },
+      {
+        "ID": "9367",
+        "VALUE": "Webster Lima"
+      }
+    ],
+    "title": "UF_CRM_1768932331",
+    "listLabel": "Gerente de projeto",
+    "formLabel": "Gerente de projeto",
+    "filterLabel": "Gerente de projeto",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779813037": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9369",
+        "VALUE": "Adriana Avila"
+      },
+      {
+        "ID": "9371",
+        "VALUE": "Adriana Botafogo"
+      },
+      {
+        "ID": "9373",
+        "VALUE": "Alan Alves"
+      },
+      {
+        "ID": "9375",
+        "VALUE": "Caio Gonçalves"
+      },
+      {
+        "ID": "9377",
+        "VALUE": "Cristiano Nogueira"
+      },
+      {
+        "ID": "9379",
+        "VALUE": "Eduardo Outi"
+      },
+      {
+        "ID": "9381",
+        "VALUE": "Fernanda Ferreira"
+      },
+      {
+        "ID": "9383",
+        "VALUE": "Joselito Viana"
+      },
+      {
+        "ID": "9385",
+        "VALUE": "Leila da Luz"
+      },
+      {
+        "ID": "9387",
+        "VALUE": "Luciene Vignetti"
+      },
+      {
+        "ID": "9389",
+        "VALUE": "Mariana Botelho"
+      },
+      {
+        "ID": "9391",
+        "VALUE": "Michel Coelho"
+      },
+      {
+        "ID": "9393",
+        "VALUE": "Miradalva Barbosa"
+      },
+      {
+        "ID": "9395",
+        "VALUE": "Patricia Vazilva"
+      },
+      {
+        "ID": "9397",
+        "VALUE": "Paula Oliveira"
+      },
+      {
+        "ID": "9399",
+        "VALUE": "Priscila Almeida"
+      },
+      {
+        "ID": "9401",
+        "VALUE": "Ricardo Leite"
+      },
+      {
+        "ID": "9403",
+        "VALUE": "Rodrigo Bueno"
+      },
+      {
+        "ID": "9405",
+        "VALUE": "Sérgio Mesquita"
+      },
+      {
+        "ID": "9407",
+        "VALUE": "Vagner Mazza"
+      },
+      {
+        "ID": "9409",
+        "VALUE": "Vanessa Araujo"
+      },
+      {
+        "ID": "9411",
+        "VALUE": "Webster Lima"
+      }
+    ],
+    "title": "UF_CRM_1779813037",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779813222514": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779813222514",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1768932445": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768932445",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1779813354832": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779813354832",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1768932456": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768932456",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1779813578166": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779813578166",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1768932465": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768932465",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1779813592926": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779813592926",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1768932475": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768932475",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1779802336": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9413",
+        "VALUE": "AMS"
+      },
+      {
+        "ID": "9415",
+        "VALUE": "DPI1 DRC"
+      },
+      {
+        "ID": "9417",
+        "VALUE": "DPI1 TDF"
+      },
+      {
+        "ID": "9419",
+        "VALUE": "DPI2"
+      },
+      {
+        "ID": "9421",
+        "VALUE": "DPI2 Parceiro"
+      },
+      {
+        "ID": "9423",
+        "VALUE": "Parceiro"
+      },
+      {
+        "ID": "9425",
+        "VALUE": "TRE"
+      }
+    ],
+    "title": "UF_CRM_1779802336",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768929997": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9427",
+        "VALUE": "AMS"
+      },
+      {
+        "ID": "9429",
+        "VALUE": "DPI1 DRC"
+      },
+      {
+        "ID": "9431",
+        "VALUE": "DPI1 TDF"
+      },
+      {
+        "ID": "9433",
+        "VALUE": "DPI2"
+      },
+      {
+        "ID": "9435",
+        "VALUE": "DPI2 Parceiro"
+      },
+      {
+        "ID": "9437",
+        "VALUE": "Parceiro"
+      },
+      {
+        "ID": "9439",
+        "VALUE": "TRE"
+      }
+    ],
+    "title": "UF_CRM_1768929997",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768937316": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768937316",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779814984044": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779814984044",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779814966720": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779814966720",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768937307": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768937307",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_6970C874A7F01": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9441",
+        "VALUE": "Auditoria"
+      },
+      {
+        "ID": "9443",
+        "VALUE": "Automação de entregas"
+      },
+      {
+        "ID": "9445",
+        "VALUE": "Documentos eletrônicos"
+      },
+      {
+        "ID": "9447",
+        "VALUE": "ECF"
+      },
+      {
+        "ID": "9449",
+        "VALUE": "E-Social"
+      },
+      {
+        "ID": "9451",
+        "VALUE": "Governança"
+      },
+      {
+        "ID": "9453",
+        "VALUE": "MDEST"
+      },
+      {
+        "ID": "9455",
+        "VALUE": "Reinf"
+      },
+      {
+        "ID": "9457",
+        "VALUE": "Synchro4TDF"
+      },
+      {
+        "ID": "9459",
+        "VALUE": "Serviços"
+      },
+      {
+        "ID": "9461",
+        "VALUE": "Soluções fiscais"
+      },
+      {
+        "ID": "9463",
+        "VALUE": "Soluções fiscais - Módulos cloud"
+      },
+      {
+        "ID": "9465",
+        "VALUE": "Soluções fiscais Cloud"
+      },
+      {
+        "ID": "9467",
+        "VALUE": "Soluções fiscais Módulos"
+      },
+      {
+        "ID": "9469",
+        "VALUE": "Taxhub"
+      },
+      {
+        "ID": "9471",
+        "VALUE": "eTaxEngine"
+      }
+    ],
+    "title": "UF_CRM_6970C874A7F01",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779813635134": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779813635134",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768932552": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768932552",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779805300194": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779805300194",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768932533": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768932533",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1779813606704": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779813606704",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768930030": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9473",
+        "VALUE": "Cpc"
+      },
+      {
+        "ID": "9475",
+        "VALUE": "Online"
+      },
+      {
+        "ID": "9477",
+        "VALUE": "Presencial"
+      }
+    ],
+    "title": "UF_CRM_1768930030",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779802413": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9479",
+        "VALUE": "Cpc"
+      },
+      {
+        "ID": "9481",
+        "VALUE": "Online"
+      },
+      {
+        "ID": "9483",
+        "VALUE": "Presencial"
+      }
+    ],
+    "title": "UF_CRM_1779802413",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768931831": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768931831",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768931767": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9485",
+        "VALUE": "Abertura equivocada"
+      },
+      {
+        "ID": "9487",
+        "VALUE": "Baixa prioridade"
+      },
+      {
+        "ID": "9489",
+        "VALUE": "Budget não aprovado"
+      },
+      {
+        "ID": "10293",
+        "VALUE": "Cobertura Funcional"
+      },
+      {
+        "ID": "10295",
+        "VALUE": "Dependência/Influência do fornecedor"
+      },
+      {
+        "ID": "10297",
+        "VALUE": "Dificuldade de uso"
+      },
+      {
+        "ID": "10299",
+        "VALUE": "Facilidade de uso"
+      },
+      {
+        "ID": "9491",
+        "VALUE": "Insatisfação com a Synchro"
+      },
+      {
+        "ID": "10301",
+        "VALUE": "Melhor proposição de solução"
+      },
+      {
+        "ID": "9493",
+        "VALUE": "Mudança organizacional"
+      },
+      {
+        "ID": "10303",
+        "VALUE": "Negligenciamento"
+      },
+      {
+        "ID": "9495",
+        "VALUE": "Não havia intenção real de compra"
+      },
+      {
+        "ID": "9497",
+        "VALUE": "Obrigatoriedade/demanda descontinuada"
+      },
+      {
+        "ID": "10305",
+        "VALUE": "Preço/TCO"
+      },
+      {
+        "ID": "10307",
+        "VALUE": "Produto/serviço feito internamente"
+      },
+      {
+        "ID": "10309",
+        "VALUE": "Produto descontinuado/indisponível"
+      },
+      {
+        "ID": "10311",
+        "VALUE": "Qualidade do atendimento"
+      },
+      {
+        "ID": "10313",
+        "VALUE": "Referência negativa"
+      },
+      {
+        "ID": "10315",
+        "VALUE": "Referência positiva"
+      },
+      {
+        "ID": "10317",
+        "VALUE": "ROI"
+      },
+      {
+        "ID": "10319",
+        "VALUE": "ROI Insuficiente"
+      },
+      {
+        "ID": "10321",
+        "VALUE": "Satisfação com a SYNCHRO"
+      },
+      {
+        "ID": "10323",
+        "VALUE": "Sobrecarga de demanda"
+      },
+      {
+        "ID": "9499",
+        "VALUE": "Substituída por outra oportunidade"
+      },
+      {
+        "ID": "10325",
+        "VALUE": "Tecnologia"
+      }
+    ],
+    "title": "UF_CRM_1768931767",
+    "listLabel": "Motivo secundário",
+    "formLabel": "Motivo secundário",
+    "filterLabel": "Motivo secundário",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768931811": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768931811",
+    "listLabel": "Motivo do encerramento detalhado",
+    "formLabel": "Motivo do encerramento detalhado",
+    "filterLabel": "Motivo do encerramento detalhado",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779805261322": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779805261322",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_6970C874B928D": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9501",
+        "VALUE": "Conhecer a solução"
+      },
+      {
+        "ID": "9503",
+        "VALUE": "Cotação de mercado"
+      },
+      {
+        "ID": "9505",
+        "VALUE": "Insatisfação com fornecedor atual"
+      },
+      {
+        "ID": "9507",
+        "VALUE": "Nova empresa no Brasil"
+      },
+      {
+        "ID": "9509",
+        "VALUE": "Novas obrigatoriedades"
+      },
+      {
+        "ID": "9511",
+        "VALUE": "Rolout"
+      }
+    ],
+    "title": "UF_CRM_6970C874B928D",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779804564": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9513",
+        "VALUE": "Abertura equivocada"
+      },
+      {
+        "ID": "9515",
+        "VALUE": "Baixa prioridade"
+      },
+      {
+        "ID": "9517",
+        "VALUE": "Budget não aprovado"
+      },
+      {
+        "ID": "9519",
+        "VALUE": "Cobertura Funcional"
+      },
+      {
+        "ID": "9521",
+        "VALUE": "Dependência/Influência do fornecedor"
+      },
+      {
+        "ID": "9523",
+        "VALUE": "Dificuldade de uso"
+      },
+      {
+        "ID": "9525",
+        "VALUE": "Facilidade de uso"
+      },
+      {
+        "ID": "9527",
+        "VALUE": "Insatisfação com a Synchro"
+      },
+      {
+        "ID": "9529",
+        "VALUE": "Melhor proposição de solução"
+      },
+      {
+        "ID": "9531",
+        "VALUE": "Mudança organizacional"
+      },
+      {
+        "ID": "9533",
+        "VALUE": "Negligenciamento"
+      },
+      {
+        "ID": "9535",
+        "VALUE": "Não havia intenção real de compra"
+      },
+      {
+        "ID": "9537",
+        "VALUE": "Obrigatoriedade/demanda descontinuada"
+      },
+      {
+        "ID": "9539",
+        "VALUE": "Preço/TCO"
+      },
+      {
+        "ID": "9541",
+        "VALUE": "Produto/serviço feito internamente"
+      },
+      {
+        "ID": "9543",
+        "VALUE": "Produto descontinuado/indisponível"
+      },
+      {
+        "ID": "9545",
+        "VALUE": "Qualidade do atendimento"
+      },
+      {
+        "ID": "9547",
+        "VALUE": "Referência negativa"
+      },
+      {
+        "ID": "9549",
+        "VALUE": "Referência positiva"
+      },
+      {
+        "ID": "9551",
+        "VALUE": "ROI"
+      },
+      {
+        "ID": "9553",
+        "VALUE": "ROI Insuficiente"
+      },
+      {
+        "ID": "9555",
+        "VALUE": "Satisfação com a SYNCHRO"
+      },
+      {
+        "ID": "9557",
+        "VALUE": "Sobrecarga de demanda"
+      },
+      {
+        "ID": "9559",
+        "VALUE": "Substituída por outra oportunidade"
+      },
+      {
+        "ID": "9561",
+        "VALUE": "Tecnologia"
+      }
+    ],
+    "title": "UF_CRM_1779804564",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779814917036": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779814917036",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768937254": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768937254",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779801480899": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779801480899",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1769102003762": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1769102003762",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1780421182646": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9563",
+        "VALUE": "aberta"
+      },
+      {
+        "ID": "9565",
+        "VALUE": "fechada"
+      }
+    ],
+    "title": "UF_CRM_1780421182646",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1780337317343": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9567",
+        "VALUE": "aberta"
+      },
+      {
+        "ID": "9569",
+        "VALUE": "fechada"
+      }
+    ],
+    "title": "UF_CRM_1780337317343",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_6970C874335EC": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9571",
+        "VALUE": "Area de parcerias"
+      },
+      {
+        "ID": "9573",
+        "VALUE": "Evento"
+      },
+      {
+        "ID": "9575",
+        "VALUE": "Evento GC"
+      },
+      {
+        "ID": "9577",
+        "VALUE": "Gerente de negócio"
+      },
+      {
+        "ID": "9579",
+        "VALUE": "Gerente de projeto"
+      },
+      {
+        "ID": "9581",
+        "VALUE": "Indicação Infor"
+      },
+      {
+        "ID": "9583",
+        "VALUE": "Indicação Oracle"
+      },
+      {
+        "ID": "9585",
+        "VALUE": "Indicação SAP"
+      },
+      {
+        "ID": "9587",
+        "VALUE": "Indicação de cliente"
+      },
+      {
+        "ID": "9589",
+        "VALUE": "Indicação de funcionário"
+      },
+      {
+        "ID": "9591",
+        "VALUE": "Indicação de parceiro"
+      },
+      {
+        "ID": "9593",
+        "VALUE": "Prospecção Web Site"
+      },
+      {
+        "ID": "9595",
+        "VALUE": "Prospecção Web Telefone"
+      },
+      {
+        "ID": "9597",
+        "VALUE": "Suporte"
+      }
+    ],
+    "title": "UF_CRM_6970C874335EC",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768850375": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768850375",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779800886501": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779800886501",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768849550": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9599",
+        "VALUE": "Indicação de funcionário"
+      },
+      {
+        "ID": "9601",
+        "VALUE": "Area de parcerias"
+      },
+      {
+        "ID": "9603",
+        "VALUE": "Evento"
+      },
+      {
+        "ID": "9605",
+        "VALUE": "Evento GC"
+      },
+      {
+        "ID": "9607",
+        "VALUE": "Gerente de Projeto"
+      },
+      {
+        "ID": "9609",
+        "VALUE": "Gerente de negocios"
+      },
+      {
+        "ID": "9611",
+        "VALUE": "Indicação Infor"
+      },
+      {
+        "ID": "9613",
+        "VALUE": "Indicação ORACLE"
+      },
+      {
+        "ID": "9615",
+        "VALUE": "Indicação da SAP"
+      },
+      {
+        "ID": "9617",
+        "VALUE": "Indicação de cliente"
+      },
+      {
+        "ID": "9619",
+        "VALUE": "Indicação de parceiro"
+      },
+      {
+        "ID": "9621",
+        "VALUE": "Prospecção - Interna"
+      },
+      {
+        "ID": "9623",
+        "VALUE": "Prospecção WEB to Lead Site"
+      },
+      {
+        "ID": "9625",
+        "VALUE": "Prospecção WEB to Lead Telefone"
+      },
+      {
+        "ID": "9627",
+        "VALUE": "Suporte"
+      }
+    ],
+    "title": "UF_CRM_1768849550",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779798653": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9629",
+        "VALUE": "Área de parcerias"
+      },
+      {
+        "ID": "9631",
+        "VALUE": "Evento GC"
+      },
+      {
+        "ID": "9633",
+        "VALUE": "Evento Prospecção"
+      },
+      {
+        "ID": "9635",
+        "VALUE": "Gerente de Projeto"
+      },
+      {
+        "ID": "9637",
+        "VALUE": "Gerente de contas"
+      },
+      {
+        "ID": "9639",
+        "VALUE": "Indicação Infor"
+      },
+      {
+        "ID": "9641",
+        "VALUE": "Indicação Oracle"
+      },
+      {
+        "ID": "9643",
+        "VALUE": "Indicação SAP"
+      },
+      {
+        "ID": "9645",
+        "VALUE": "Indicação de Cliente"
+      },
+      {
+        "ID": "9647",
+        "VALUE": "Indicação de Funcionário"
+      },
+      {
+        "ID": "9649",
+        "VALUE": "Indicação de Parceiro"
+      },
+      {
+        "ID": "9651",
+        "VALUE": "Prospecção - Interna"
+      },
+      {
+        "ID": "9653",
+        "VALUE": "Prospecção WEB to Lead Site"
+      },
+      {
+        "ID": "9655",
+        "VALUE": "Prospecção WEB to Lead Telefone"
+      },
+      {
+        "ID": "9657",
+        "VALUE": "Suporte"
+      }
+    ],
+    "title": "UF_CRM_1779798653",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768850068": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9659",
+        "VALUE": "Influenciador Desfavorável"
+      },
+      {
+        "ID": "9661",
+        "VALUE": "Decisor Desfavorável"
+      },
+      {
+        "ID": "9663",
+        "VALUE": "Decisor Favorável"
+      },
+      {
+        "ID": "9665",
+        "VALUE": "Influenciador Favorável"
+      },
+      {
+        "ID": "9667",
+        "VALUE": "Neutro"
+      }
+    ],
+    "title": "UF_CRM_1768850068",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779798816": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9669",
+        "VALUE": "Influenciador Desfavorável"
+      },
+      {
+        "ID": "9671",
+        "VALUE": "Decisor Desfavorável"
+      },
+      {
+        "ID": "9673",
+        "VALUE": "Decisor Favorável"
+      },
+      {
+        "ID": "9675",
+        "VALUE": "Influenciador Favorável"
+      },
+      {
+        "ID": "9677",
+        "VALUE": "Neutro"
+      }
+    ],
+    "title": "UF_CRM_1779798816",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768931864": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9679",
+        "VALUE": "Sim"
+      },
+      {
+        "ID": "9681",
+        "VALUE": "Não"
+      }
+    ],
+    "title": "UF_CRM_1768931864",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1769105112": {
+    "type": "crm",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1769105112",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "LEAD": "Y",
+      "CONTACT": "N",
+      "COMPANY": "N",
+      "DEAL": "N"
+    }
+  },
+  "UF_CRM_1779805401": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9683",
+        "VALUE": "Sim"
+      },
+      {
+        "ID": "9685",
+        "VALUE": "Não"
+      }
+    ],
+    "title": "UF_CRM_1779805401",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1777920078": {
+    "type": "crm",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1777920078",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "LEAD": "Y",
+      "CONTACT": "N",
+      "COMPANY": "N",
+      "DEAL": "N"
+    }
+  },
+  "UF_CRM_1768931934": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9687",
+        "VALUE": "Assinatura"
+      },
+      {
+        "ID": "9689",
+        "VALUE": "Jurídico"
+      },
+      {
+        "ID": "9691",
+        "VALUE": "PO"
+      }
+    ],
+    "title": "UF_CRM_1768931934",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779805472": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9693",
+        "VALUE": "Assinatura"
+      },
+      {
+        "ID": "9695",
+        "VALUE": "Jurídico"
+      },
+      {
+        "ID": "9697",
+        "VALUE": "PO"
+      }
+    ],
+    "title": "UF_CRM_1779805472",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768930470": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9699",
+        "VALUE": "Não"
+      },
+      {
+        "ID": "9701",
+        "VALUE": "Sim"
+      }
+    ],
+    "title": "UF_CRM_1768930470",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779802494": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9703",
+        "VALUE": "Sim"
+      },
+      {
+        "ID": "9705",
+        "VALUE": "Não"
+      }
+    ],
+    "title": "UF_CRM_1779802494",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768931726": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9707",
+        "VALUE": "Abertura equivocada"
+      },
+      {
+        "ID": "9709",
+        "VALUE": "Baixa prioridade"
+      },
+      {
+        "ID": "9711",
+        "VALUE": "Budget não aprovado"
+      },
+      {
+        "ID": "9713",
+        "VALUE": "Insatisfação com a Synchro"
+      },
+      {
+        "ID": "9715",
+        "VALUE": "Mudança organizacional"
+      },
+      {
+        "ID": "9717",
+        "VALUE": "Não havia intenção real de compra"
+      },
+      {
+        "ID": "9719",
+        "VALUE": "Obrigatoriedade/demanda descontinuada"
+      },
+      {
+        "ID": "9721",
+        "VALUE": "Substituída por outra oportunidade"
+      },
+      {
+        "ID": "9723",
+        "VALUE": "Cobertura Funcional"
+      },
+      {
+        "ID": "9725",
+        "VALUE": "Dependência/Influência"
+      },
+      {
+        "ID": "9727",
+        "VALUE": "Facilidade de uso"
+      },
+      {
+        "ID": "9729",
+        "VALUE": "Melhor proposição"
+      },
+      {
+        "ID": "9731",
+        "VALUE": "Preço/TCO"
+      },
+      {
+        "ID": "9733",
+        "VALUE": "Qualidade de atendimento"
+      },
+      {
+        "ID": "9735",
+        "VALUE": "Referência positiva"
+      },
+      {
+        "ID": "9737",
+        "VALUE": "Satisfação com a Synchro"
+      },
+      {
+        "ID": "9739",
+        "VALUE": "Tecnologia"
+      }
+    ],
+    "title": "UF_CRM_1768931726",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779804392": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9741",
+        "VALUE": "Abertura equivocada"
+      },
+      {
+        "ID": "9743",
+        "VALUE": "Baixa prioridade"
+      },
+      {
+        "ID": "9745",
+        "VALUE": "Budget não aprovado"
+      },
+      {
+        "ID": "9747",
+        "VALUE": "Cobertura Funcional"
+      },
+      {
+        "ID": "9749",
+        "VALUE": "Dependência/Influência do fornecedor"
+      },
+      {
+        "ID": "9751",
+        "VALUE": "Dificuldade de uso"
+      },
+      {
+        "ID": "9753",
+        "VALUE": "Facilidade de uso"
+      },
+      {
+        "ID": "9755",
+        "VALUE": "Insatisfação com a Synchro"
+      },
+      {
+        "ID": "9757",
+        "VALUE": "Melhor proposição de solução"
+      },
+      {
+        "ID": "9759",
+        "VALUE": "Mudança organizacional"
+      },
+      {
+        "ID": "9761",
+        "VALUE": "Negligenciamento"
+      },
+      {
+        "ID": "9763",
+        "VALUE": "Não havia intenção real de compra"
+      },
+      {
+        "ID": "9765",
+        "VALUE": "Obrigatoriedade/demanda descontinuada"
+      },
+      {
+        "ID": "9767",
+        "VALUE": "Preço/TCO"
+      },
+      {
+        "ID": "9769",
+        "VALUE": "Produto/serviço feito internamente"
+      },
+      {
+        "ID": "9771",
+        "VALUE": "Produto descontinuado/indisponível"
+      },
+      {
+        "ID": "9773",
+        "VALUE": "Qualidade do atendimento"
+      },
+      {
+        "ID": "9775",
+        "VALUE": "Referência negativa"
+      },
+      {
+        "ID": "9777",
+        "VALUE": "Referência positiva"
+      },
+      {
+        "ID": "9779",
+        "VALUE": "ROI"
+      },
+      {
+        "ID": "9781",
+        "VALUE": "ROI Insuficiente"
+      },
+      {
+        "ID": "9783",
+        "VALUE": "Satisfação com a SYNCHRO"
+      },
+      {
+        "ID": "9785",
+        "VALUE": "Sobrecarga de demanda"
+      },
+      {
+        "ID": "9787",
+        "VALUE": "Substituída por outra oportunidade"
+      },
+      {
+        "ID": "9789",
+        "VALUE": "Tecnologia"
+      }
+    ],
+    "title": "UF_CRM_1779804392",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768931631": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9791",
+        "VALUE": "0"
+      },
+      {
+        "ID": "9793",
+        "VALUE": "1"
+      },
+      {
+        "ID": "9795",
+        "VALUE": "10"
+      },
+      {
+        "ID": "9797",
+        "VALUE": "25"
+      },
+      {
+        "ID": "9799",
+        "VALUE": "50"
+      },
+      {
+        "ID": "9801",
+        "VALUE": "75"
+      },
+      {
+        "ID": "9803",
+        "VALUE": "90"
+      },
+      {
+        "ID": "9805",
+        "VALUE": "100"
+      }
+    ],
+    "title": "UF_CRM_1768931631",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779803415583": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9807",
+        "VALUE": "0"
+      },
+      {
+        "ID": "9809",
+        "VALUE": "1"
+      },
+      {
+        "ID": "9811",
+        "VALUE": "10"
+      },
+      {
+        "ID": "9813",
+        "VALUE": "25"
+      },
+      {
+        "ID": "9815",
+        "VALUE": "50"
+      },
+      {
+        "ID": "9817",
+        "VALUE": "75"
+      },
+      {
+        "ID": "9819",
+        "VALUE": "90"
+      },
+      {
+        "ID": "9821",
+        "VALUE": "100"
+      }
+    ],
+    "title": "UF_CRM_1779803415583",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768929923": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9823",
+        "VALUE": "Alexane Lemos"
+      },
+      {
+        "ID": "9825",
+        "VALUE": "Anderson Marcilio"
+      },
+      {
+        "ID": "9827",
+        "VALUE": "Andre Afonso"
+      },
+      {
+        "ID": "9829",
+        "VALUE": "Asslan Cohen"
+      },
+      {
+        "ID": "9831",
+        "VALUE": "Carlos Roberto"
+      },
+      {
+        "ID": "9833",
+        "VALUE": "GC"
+      },
+      {
+        "ID": "9835",
+        "VALUE": "Parceiro"
+      },
+      {
+        "ID": "9837",
+        "VALUE": "Shirley"
+      }
+    ],
+    "title": "UF_CRM_1768929923",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779802071": {
+    "type": "employee",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779802071",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": []
+    }
+  },
+  "UF_CRM_1779813103496": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779813103496",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1768932354": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768932354",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_69EB5E4429E2A": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_69EB5E4429E2A",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1779815037077": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779815037077",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1776340100239": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1776340100239",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768932774781": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768932774781",
+    "listLabel": "Razão social (Faturamento)",
+    "formLabel": "Razão social (Faturamento)",
+    "filterLabel": "Razão social (Faturamento)",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779814409516": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779814409516",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768850356": {
+    "type": "boolean",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768850356",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": 0,
+      "DISPLAY": "CHECKBOX",
+      "LABEL": [
+        "",
+        ""
+      ],
+      "LABEL_CHECKBOX": ""
+    }
+  },
+  "UF_CRM_1779800836562": {
+    "type": "boolean",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779800836562",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": 0,
+      "DISPLAY": "CHECKBOX",
+      "LABEL": [
+        "",
+        ""
+      ],
+      "LABEL_CHECKBOX": ""
+    }
+  },
+  "UF_CRM_1779133703166": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779133703166",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1779133754871": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779133754871",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779133690143": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779133690143",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1779815046799": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779815046799",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1776340117205": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1776340117205",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768937403": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768937403",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768932909": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768932909",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779814950681": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779814950681",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779814860575": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779814860575",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768932941": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9839",
+        "VALUE": "Não"
+      },
+      {
+        "ID": "9841",
+        "VALUE": "Sim"
+      }
+    ],
+    "title": "UF_CRM_1768932941",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779815063": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9843",
+        "VALUE": "Sim"
+      },
+      {
+        "ID": "9845",
+        "VALUE": "Não"
+      }
+    ],
+    "title": "UF_CRM_1779815063",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_6970C8745E808": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9847",
+        "VALUE": "Cold"
+      },
+      {
+        "ID": "9849",
+        "VALUE": "Hot"
+      },
+      {
+        "ID": "9851",
+        "VALUE": "Warm"
+      }
+    ],
+    "title": "UF_CRM_6970C8745E808",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768849793": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768849793",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779798687": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9853",
+        "VALUE": "Sim"
+      },
+      {
+        "ID": "9855",
+        "VALUE": "Não"
+      }
+    ],
+    "title": "UF_CRM_1779798687",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768850280": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9857",
+        "VALUE": "LU"
+      },
+      {
+        "ID": "9859",
+        "VALUE": "LU Anual"
+      },
+      {
+        "ID": "9861",
+        "VALUE": "LU Anual + SE Imp"
+      },
+      {
+        "ID": "9863",
+        "VALUE": "LU Cloud"
+      },
+      {
+        "ID": "9865",
+        "VALUE": "LU MA + SE imp"
+      },
+      {
+        "ID": "9867",
+        "VALUE": "LU cloud + SE imp"
+      },
+      {
+        "ID": "9869",
+        "VALUE": "LUMA"
+      },
+      {
+        "ID": "9871",
+        "VALUE": "Licença + SE atualização"
+      },
+      {
+        "ID": "9873",
+        "VALUE": "MA"
+      },
+      {
+        "ID": "9875",
+        "VALUE": "MA extendida"
+      },
+      {
+        "ID": "9877",
+        "VALUE": "Regularização de Licenças"
+      },
+      {
+        "ID": "9879",
+        "VALUE": "SE AMS"
+      },
+      {
+        "ID": "9881",
+        "VALUE": "SE Change"
+      },
+      {
+        "ID": "9883",
+        "VALUE": "SE Operação Cloud"
+      },
+      {
+        "ID": "9885",
+        "VALUE": "SE alocação"
+      },
+      {
+        "ID": "9887",
+        "VALUE": "SE atualização"
+      },
+      {
+        "ID": "9889",
+        "VALUE": "SE customização"
+      },
+      {
+        "ID": "9891",
+        "VALUE": "SE implantação"
+      },
+      {
+        "ID": "9893",
+        "VALUE": "SE mapeamento"
+      },
+      {
+        "ID": "9895",
+        "VALUE": "SE migração cloud"
+      },
+      {
+        "ID": "9897",
+        "VALUE": "SE suporte operação"
+      },
+      {
+        "ID": "9899",
+        "VALUE": "SE treinamento"
+      },
+      {
+        "ID": "9901",
+        "VALUE": "SLA"
+      }
+    ],
+    "title": "UF_CRM_1768850280",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768930107": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9903",
+        "VALUE": "Venda Nova"
+      },
+      {
+        "ID": "9905",
+        "VALUE": "Venda de Estabelecimentos/Usuários adicionais"
+      }
+    ],
+    "title": "UF_CRM_1768930107",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779799066": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9907",
+        "VALUE": "Aqui está a lista unificada com os itens das três imagens:"
+      },
+      {
+        "ID": "9909",
+        "VALUE": "LU"
+      },
+      {
+        "ID": "9911",
+        "VALUE": "LU Anual"
+      },
+      {
+        "ID": "9913",
+        "VALUE": "LU Anual + SE Imp"
+      },
+      {
+        "ID": "9915",
+        "VALUE": "LU Cloud"
+      },
+      {
+        "ID": "9917",
+        "VALUE": "LU Cloud + SE imp"
+      },
+      {
+        "ID": "9919",
+        "VALUE": "LUMA"
+      },
+      {
+        "ID": "9921",
+        "VALUE": "LUMA + SE imp"
+      },
+      {
+        "ID": "9923",
+        "VALUE": "Licença + SE atualização"
+      },
+      {
+        "ID": "9925",
+        "VALUE": "MA"
+      },
+      {
+        "ID": "9927",
+        "VALUE": "MA Extendida"
+      },
+      {
+        "ID": "9929",
+        "VALUE": "Regularização de Licenças"
+      },
+      {
+        "ID": "9931",
+        "VALUE": "SE AMS"
+      },
+      {
+        "ID": "9933",
+        "VALUE": "SE Alocação"
+      },
+      {
+        "ID": "9935",
+        "VALUE": "SE Atualização"
+      },
+      {
+        "ID": "9937",
+        "VALUE": "SE Change"
+      },
+      {
+        "ID": "9939",
+        "VALUE": "SE Customização"
+      },
+      {
+        "ID": "9941",
+        "VALUE": "SE Implantação"
+      },
+      {
+        "ID": "9943",
+        "VALUE": "SE Mapeamento"
+      },
+      {
+        "ID": "9945",
+        "VALUE": "SE Migração Cloud"
+      },
+      {
+        "ID": "9947",
+        "VALUE": "SE Operação Cloud"
+      },
+      {
+        "ID": "9949",
+        "VALUE": "SE Suporte Operação"
+      },
+      {
+        "ID": "9951",
+        "VALUE": "SE Treinamento"
+      },
+      {
+        "ID": "9953",
+        "VALUE": "SLA"
+      }
+    ],
+    "title": "UF_CRM_1779799066",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779802471": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9955",
+        "VALUE": "Venda nova"
+      },
+      {
+        "ID": "9957",
+        "VALUE": "Venda de estabelecimentos/usuários adicionais"
+      }
+    ],
+    "title": "UF_CRM_1779802471",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1771942187790": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1771942187790",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1779216168314": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779216168314",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1768850911": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768850911",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1768850632": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768850632",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779801021403": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779801021403",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768932417": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "10331",
+        "VALUE": "Infor"
+      },
+      {
+        "ID": "10333",
+        "VALUE": "Oracle R12"
+      },
+      {
+        "ID": "10335",
+        "VALUE": "SAP ECC"
+      },
+      {
+        "ID": "10337",
+        "VALUE": "Synchro4TDF"
+      },
+      {
+        "ID": "10339",
+        "VALUE": "Synchro4DRC"
+      },
+      {
+        "ID": "9961",
+        "VALUE": "Open Legado"
+      },
+      {
+        "ID": "9963",
+        "VALUE": "Oracle Cloud"
+      },
+      {
+        "ID": "9967",
+        "VALUE": "S/4 HANA"
+      },
+      {
+        "ID": "10341",
+        "VALUE": "Microsoft Dynamics"
+      },
+      {
+        "ID": "10343",
+        "VALUE": "TOTVS"
+      }
+    ],
+    "title": "UF_CRM_1768932417",
+    "listLabel": "Vertical de projetos",
+    "formLabel": "Vertical de projetos",
+    "filterLabel": "Vertical de projetos",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779813199": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9975",
+        "VALUE": "Infor"
+      },
+      {
+        "ID": "9977",
+        "VALUE": "Oracle R12"
+      },
+      {
+        "ID": "9979",
+        "VALUE": "SAP ECC"
+      },
+      {
+        "ID": "9981",
+        "VALUE": "Synchro4TDF"
+      },
+      {
+        "ID": "9983",
+        "VALUE": "Synchro4DRC"
+      },
+      {
+        "ID": "9985",
+        "VALUE": "Open Legado"
+      },
+      {
+        "ID": "9987",
+        "VALUE": "Oracle Cloud"
+      },
+      {
+        "ID": "9989",
+        "VALUE": "S/4 HANA"
+      }
+    ],
+    "title": "UF_CRM_1779813199",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1780421197059": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1780421197059",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1780337336716": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1780337336716",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1771955872996": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1771955872996",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768850741": {
+    "type": "employee",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768850741",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": []
+    }
+  },
+  "UF_CRM_1768852422811": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768852422811",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768850996014": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "9991",
+        "VALUE": "Blog"
+      },
+      {
+        "ID": "9993",
+        "VALUE": "Email"
+      },
+      {
+        "ID": "9995",
+        "VALUE": "Eventos"
+      },
+      {
+        "ID": "9997",
+        "VALUE": "Google"
+      },
+      {
+        "ID": "9999",
+        "VALUE": "Indicação cliente"
+      },
+      {
+        "ID": "10001",
+        "VALUE": "Indicação colaborador"
+      },
+      {
+        "ID": "10003",
+        "VALUE": "Ja conhecia a Synchro"
+      },
+      {
+        "ID": "10005",
+        "VALUE": "Marketing"
+      },
+      {
+        "ID": "10007",
+        "VALUE": "Portal Synchro"
+      },
+      {
+        "ID": "10009",
+        "VALUE": "Redes sociais"
+      },
+      {
+        "ID": "10011",
+        "VALUE": "Synchro na midia"
+      }
+    ],
+    "title": "UF_CRM_1768850996014",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768852361616": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768852361616",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_1768852160662": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768852160662",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    }
+  },
+  "UF_CRM_1768927827767": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768927827767",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768927841693": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1768927841693",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1768927786371": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "10013",
+        "VALUE": "Fis+DFe"
+      },
+      {
+        "ID": "10015",
+        "VALUE": "Fis+Gov"
+      },
+      {
+        "ID": "10017",
+        "VALUE": "AMS"
+      },
+      {
+        "ID": "10019",
+        "VALUE": "CIAP"
+      },
+      {
+        "ID": "10021",
+        "VALUE": "CNPJs Adicionais"
+      },
+      {
+        "ID": "10023",
+        "VALUE": "CONTAB"
+      },
+      {
+        "ID": "10025",
+        "VALUE": "CredPIS"
+      },
+      {
+        "ID": "10027",
+        "VALUE": "DFe Manager"
+      },
+      {
+        "ID": "10029",
+        "VALUE": "ECD"
+      },
+      {
+        "ID": "10031",
+        "VALUE": "ECD+ECF"
+      },
+      {
+        "ID": "10033",
+        "VALUE": "ECF"
+      },
+      {
+        "ID": "10035",
+        "VALUE": "EFD PIS/COFINS Synchro4Me"
+      },
+      {
+        "ID": "10037",
+        "VALUE": "Emissor Fiscal"
+      },
+      {
+        "ID": "10039",
+        "VALUE": "FIS+CON+DFE+EXP"
+      },
+      {
+        "ID": "10041",
+        "VALUE": "Fis"
+      },
+      {
+        "ID": "10043",
+        "VALUE": "Fis+Con"
+      },
+      {
+        "ID": "10045",
+        "VALUE": "Governança"
+      },
+      {
+        "ID": "10047",
+        "VALUE": "Int ORA"
+      },
+      {
+        "ID": "10049",
+        "VALUE": "Int SAP"
+      },
+      {
+        "ID": "10051",
+        "VALUE": "MDest"
+      },
+      {
+        "ID": "10053",
+        "VALUE": "Monitoramento"
+      },
+      {
+        "ID": "10055",
+        "VALUE": "OBRIGACOES"
+      },
+      {
+        "ID": "10057",
+        "VALUE": "Opecon"
+      },
+      {
+        "ID": "10059",
+        "VALUE": "REINF"
+      },
+      {
+        "ID": "10061",
+        "VALUE": "Recup ST"
+      },
+      {
+        "ID": "10063",
+        "VALUE": "Synchro4DFe"
+      },
+      {
+        "ID": "10065",
+        "VALUE": "Synchro4DRC"
+      },
+      {
+        "ID": "10067",
+        "VALUE": "Synchro4Me"
+      },
+      {
+        "ID": "10069",
+        "VALUE": "Synchro4TDF"
+      },
+      {
+        "ID": "10071",
+        "VALUE": "Tax Engine"
+      }
+    ],
+    "title": "UF_CRM_1768927786371",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768852750636": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "10073",
+        "VALUE": "Auditoria"
+      },
+      {
+        "ID": "10075",
+        "VALUE": "Automação de entregas"
+      },
+      {
+        "ID": "10077",
+        "VALUE": "Documentos eletrônicos"
+      },
+      {
+        "ID": "10079",
+        "VALUE": "ECF"
+      },
+      {
+        "ID": "10081",
+        "VALUE": "E-Social"
+      },
+      {
+        "ID": "10083",
+        "VALUE": "Governança"
+      },
+      {
+        "ID": "10085",
+        "VALUE": "MDEST"
+      },
+      {
+        "ID": "10087",
+        "VALUE": "Reinf"
+      },
+      {
+        "ID": "10089",
+        "VALUE": "Synchro4TDF"
+      },
+      {
+        "ID": "10091",
+        "VALUE": "Serviços"
+      },
+      {
+        "ID": "10093",
+        "VALUE": "Soluções fiscais"
+      },
+      {
+        "ID": "10095",
+        "VALUE": "Soluções fiscais - Módulos cloud"
+      },
+      {
+        "ID": "10097",
+        "VALUE": "Soluções fiscais Cloud"
+      },
+      {
+        "ID": "10099",
+        "VALUE": "Soluções fiscais Módulos"
+      },
+      {
+        "ID": "10101",
+        "VALUE": "Taxhub"
+      },
+      {
+        "ID": "10103",
+        "VALUE": "eTaxEngine"
+      }
+    ],
+    "title": "UF_CRM_1768852750636",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768926244902": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "10105",
+        "VALUE": "Conhecer a solução"
+      },
+      {
+        "ID": "10107",
+        "VALUE": "Cotação de mercado"
+      },
+      {
+        "ID": "10109",
+        "VALUE": "Insatisfação com fornecedor atual"
+      },
+      {
+        "ID": "10111",
+        "VALUE": "Nova empresa no Brasil"
+      },
+      {
+        "ID": "10113",
+        "VALUE": "Novas obrigatoriedades"
+      },
+      {
+        "ID": "10115",
+        "VALUE": "Rolout"
+      }
+    ],
+    "title": "UF_CRM_1768926244902",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768850483380": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "10117",
+        "VALUE": "Area de parcerias"
+      },
+      {
+        "ID": "10119",
+        "VALUE": "Evento"
+      },
+      {
+        "ID": "10121",
+        "VALUE": "Evento GC"
+      },
+      {
+        "ID": "10123",
+        "VALUE": "Gerente de negócio"
+      },
+      {
+        "ID": "10125",
+        "VALUE": "Gerente de projeto"
+      },
+      {
+        "ID": "10127",
+        "VALUE": "Indicação Infor"
+      },
+      {
+        "ID": "10129",
+        "VALUE": "Indicação Oracle"
+      },
+      {
+        "ID": "10131",
+        "VALUE": "Indicação SAP"
+      },
+      {
+        "ID": "10133",
+        "VALUE": "Indicação de cliente"
+      },
+      {
+        "ID": "10135",
+        "VALUE": "Indicação de funcionário"
+      },
+      {
+        "ID": "10137",
+        "VALUE": "Indicação de parceiro"
+      },
+      {
+        "ID": "10139",
+        "VALUE": "Prospecção Web Site"
+      },
+      {
+        "ID": "10141",
+        "VALUE": "Prospecção Web Telefone"
+      },
+      {
+        "ID": "10143",
+        "VALUE": "Suporte"
+      }
+    ],
+    "title": "UF_CRM_1768850483380",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1774896667973": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1774896667973",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    }
+  },
+  "UF_CRM_1768850830052": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "10145",
+        "VALUE": "Cold"
+      },
+      {
+        "ID": "10147",
+        "VALUE": "Hot"
+      },
+      {
+        "ID": "10149",
+        "VALUE": "Warm"
+      }
+    ],
+    "title": "UF_CRM_1768850830052",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768926990": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "10151",
+        "VALUE": "LU"
+      },
+      {
+        "ID": "10153",
+        "VALUE": "LU Anual"
+      },
+      {
+        "ID": "10155",
+        "VALUE": "LU Anual + SE Imp"
+      },
+      {
+        "ID": "10157",
+        "VALUE": "LU Cloud"
+      },
+      {
+        "ID": "10159",
+        "VALUE": "LU MA + SE imp"
+      },
+      {
+        "ID": "10161",
+        "VALUE": "LU cloud + SE imp"
+      },
+      {
+        "ID": "10163",
+        "VALUE": "LUMA"
+      },
+      {
+        "ID": "10165",
+        "VALUE": "Licença + SE atualização"
+      },
+      {
+        "ID": "10167",
+        "VALUE": "MA"
+      },
+      {
+        "ID": "10169",
+        "VALUE": "MA extendida"
+      },
+      {
+        "ID": "10171",
+        "VALUE": "Regularização de Licenças"
+      },
+      {
+        "ID": "10173",
+        "VALUE": "SE AMS"
+      },
+      {
+        "ID": "10175",
+        "VALUE": "SE Change"
+      },
+      {
+        "ID": "10177",
+        "VALUE": "SE Operação Cloud"
+      },
+      {
+        "ID": "10179",
+        "VALUE": "SE alocação"
+      },
+      {
+        "ID": "10181",
+        "VALUE": "SE atualização"
+      },
+      {
+        "ID": "10183",
+        "VALUE": "SE customização"
+      },
+      {
+        "ID": "10185",
+        "VALUE": "SE implantação"
+      },
+      {
+        "ID": "10187",
+        "VALUE": "SE mapeamento"
+      },
+      {
+        "ID": "10189",
+        "VALUE": "SE migração cloud"
+      },
+      {
+        "ID": "10191",
+        "VALUE": "SE suporte operação"
+      },
+      {
+        "ID": "10193",
+        "VALUE": "SE treinamento"
+      },
+      {
+        "ID": "10195",
+        "VALUE": "SLA"
+      }
+    ],
+    "title": "UF_CRM_1768926990",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1768927473834": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "10197",
+        "VALUE": "LU"
+      },
+      {
+        "ID": "10199",
+        "VALUE": "LU Anual"
+      },
+      {
+        "ID": "10201",
+        "VALUE": "LU Anual + SE Imp"
+      },
+      {
+        "ID": "10203",
+        "VALUE": "LU Cloud"
+      },
+      {
+        "ID": "10205",
+        "VALUE": "LU Cloud + SE Imp"
+      },
+      {
+        "ID": "10207",
+        "VALUE": "LU MA"
+      },
+      {
+        "ID": "10209",
+        "VALUE": "LU MA + SE Imp"
+      },
+      {
+        "ID": "10211",
+        "VALUE": "LU + SE Atualização"
+      },
+      {
+        "ID": "10213",
+        "VALUE": "MA"
+      },
+      {
+        "ID": "10215",
+        "VALUE": "MA Estendida"
+      },
+      {
+        "ID": "10217",
+        "VALUE": "Regularização de licenças"
+      },
+      {
+        "ID": "10219",
+        "VALUE": "SE Alocação"
+      },
+      {
+        "ID": "10221",
+        "VALUE": "SE Atualização"
+      },
+      {
+        "ID": "10223",
+        "VALUE": "SE AMS"
+      },
+      {
+        "ID": "10225",
+        "VALUE": "SE Change"
+      },
+      {
+        "ID": "10227",
+        "VALUE": "SE Customização"
+      },
+      {
+        "ID": "10229",
+        "VALUE": "SE Implantação"
+      },
+      {
+        "ID": "10231",
+        "VALUE": "SE Mapeamento"
+      },
+      {
+        "ID": "10233",
+        "VALUE": "SE Migração cloud"
+      },
+      {
+        "ID": "10235",
+        "VALUE": "SE Operação cloud"
+      },
+      {
+        "ID": "10237",
+        "VALUE": "SE Suporte operação"
+      },
+      {
+        "ID": "10239",
+        "VALUE": "SE Treinamento"
+      },
+      {
+        "ID": "10241",
+        "VALUE": "SLA"
+      }
+    ],
+    "title": "UF_CRM_1768927473834",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  }
+}

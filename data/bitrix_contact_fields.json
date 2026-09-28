@@ -1,0 +1,1263 @@
+{
+  "ID": {
+    "type": "integer",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "ID"
+  },
+  "HONORIFIC": {
+    "type": "crm_status",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "statusType": "HONORIFIC",
+    "title": "Salutation"
+  },
+  "NAME": {
+    "type": "string",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "First name"
+  },
+  "SECOND_NAME": {
+    "type": "string",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Second name"
+  },
+  "LAST_NAME": {
+    "type": "string",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last name"
+  },
+  "PHOTO": {
+    "type": "file",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Photo"
+  },
+  "BIRTHDATE": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Date of birth"
+  },
+  "TYPE_ID": {
+    "type": "crm_status",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "statusType": "CONTACT_TYPE",
+    "title": "Contact type"
+  },
+  "SOURCE_ID": {
+    "type": "crm_status",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "statusType": "SOURCE",
+    "title": "Source"
+  },
+  "SOURCE_DESCRIPTION": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Source information"
+  },
+  "POST": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Position"
+  },
+  "ADDRESS": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Address"
+  },
+  "ADDRESS_2": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Address (line 2)"
+  },
+  "ADDRESS_CITY": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "City"
+  },
+  "ADDRESS_POSTAL_CODE": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Zip"
+  },
+  "ADDRESS_REGION": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Region"
+  },
+  "ADDRESS_PROVINCE": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "State / Province"
+  },
+  "ADDRESS_COUNTRY": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Country"
+  },
+  "ADDRESS_COUNTRY_CODE": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Country Code"
+  },
+  "ADDRESS_LOC_ADDR_ID": {
+    "type": "integer",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Location address ID"
+  },
+  "COMMENTS": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Comment"
+  },
+  "OPENED": {
+    "type": "char",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Available to everyone"
+  },
+  "EXPORT": {
+    "type": "char",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Included in export"
+  },
+  "HAS_PHONE": {
+    "type": "char",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Has phone"
+  },
+  "HAS_EMAIL": {
+    "type": "char",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Has email"
+  },
+  "HAS_IMOL": {
+    "type": "char",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Has Open Channel"
+  },
+  "ASSIGNED_BY_ID": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Responsible person"
+  },
+  "CREATED_BY_ID": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Created by"
+  },
+  "MODIFY_BY_ID": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Modified by"
+  },
+  "DATE_CREATE": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Created on"
+  },
+  "DATE_MODIFY": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Modified on"
+  },
+  "COMPANY_ID": {
+    "type": "crm_company",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "isDeprecated": true,
+    "title": "Company"
+  },
+  "COMPANY_IDS": {
+    "type": "crm_company",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": false,
+    "title": "COMPANY_IDS"
+  },
+  "LEAD_ID": {
+    "type": "crm_lead",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Lead",
+    "settings": {
+      "parentEntityTypeId": 1
+    }
+  },
+  "ORIGINATOR_ID": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "External source"
+  },
+  "ORIGIN_ID": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Item ID in data source"
+  },
+  "ORIGIN_VERSION": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Original version"
+  },
+  "UTM_SOURCE": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Ad system"
+  },
+  "UTM_MEDIUM": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Medium"
+  },
+  "UTM_CAMPAIGN": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Ad campaign UTM"
+  },
+  "UTM_CONTENT": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Campaign contents"
+  },
+  "UTM_TERM": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Campaign search term"
+  },
+  "PARENT_ID_1216": {
+    "type": "crm_entity",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "SPV",
+    "settings": {
+      "parentEntityTypeId": 1216
+    }
+  },
+  "PARENT_ID_1220": {
+    "type": "crm_entity",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Atividades",
+    "settings": {
+      "parentEntityTypeId": 1220
+    }
+  },
+  "LAST_ACTIVITY_TIME": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last updated on"
+  },
+  "LAST_ACTIVITY_BY": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last timeline activity added by"
+  },
+  "LAST_COMMUNICATION_TIME": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last contact"
+  },
+  "PHONE": {
+    "type": "crm_multifield",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": false,
+    "title": "Phone"
+  },
+  "EMAIL": {
+    "type": "crm_multifield",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": false,
+    "title": "E-mail"
+  },
+  "WEB": {
+    "type": "crm_multifield",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": false,
+    "title": "Website"
+  },
+  "IM": {
+    "type": "crm_multifield",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": false,
+    "title": "Messenger"
+  },
+  "LINK": {
+    "type": "crm_multifield",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": false,
+    "title": "LINK"
+  },
+  "UF_CRM_1779907578": {
+    "type": "enumeration",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7159",
+        "VALUE": "Administrador"
+      },
+      {
+        "ID": "7161",
+        "VALUE": "Advogado"
+      },
+      {
+        "ID": "7163",
+        "VALUE": "Analista"
+      },
+      {
+        "ID": "7165",
+        "VALUE": "Arquiteto"
+      },
+      {
+        "ID": "7167",
+        "VALUE": "Assessor"
+      },
+      {
+        "ID": "7169",
+        "VALUE": "Assistente"
+      },
+      {
+        "ID": "7171",
+        "VALUE": "Auxiliar"
+      },
+      {
+        "ID": "7173",
+        "VALUE": "CFO"
+      },
+      {
+        "ID": "7175",
+        "VALUE": "CIO"
+      },
+      {
+        "ID": "7177",
+        "VALUE": "Chefe"
+      },
+      {
+        "ID": "7179",
+        "VALUE": "Consultor"
+      },
+      {
+        "ID": "7181",
+        "VALUE": "Contador"
+      },
+      {
+        "ID": "7183",
+        "VALUE": "Controller"
+      },
+      {
+        "ID": "7185",
+        "VALUE": "Coordenador"
+      },
+      {
+        "ID": "7187",
+        "VALUE": "Decisor"
+      },
+      {
+        "ID": "7189",
+        "VALUE": "Desenvolvedor"
+      },
+      {
+        "ID": "7191",
+        "VALUE": "Diretor"
+      },
+      {
+        "ID": "7193",
+        "VALUE": "Distribuidor"
+      },
+      {
+        "ID": "7195",
+        "VALUE": "Engenheiro"
+      },
+      {
+        "ID": "7197",
+        "VALUE": "Especialista"
+      },
+      {
+        "ID": "7199",
+        "VALUE": "Executivo"
+      },
+      {
+        "ID": "7201",
+        "VALUE": "Fiscal"
+      },
+      {
+        "ID": "7203",
+        "VALUE": "Gerente"
+      },
+      {
+        "ID": "7205",
+        "VALUE": "Gestor"
+      },
+      {
+        "ID": "7207",
+        "VALUE": "Líder"
+      },
+      {
+        "ID": "7209",
+        "VALUE": "Presidente"
+      },
+      {
+        "ID": "7211",
+        "VALUE": "Responsável"
+      },
+      {
+        "ID": "7213",
+        "VALUE": "Secretário"
+      },
+      {
+        "ID": "7215",
+        "VALUE": "Superintendente"
+      },
+      {
+        "ID": "7217",
+        "VALUE": "Supervisor"
+      },
+      {
+        "ID": "7219",
+        "VALUE": "Técnico"
+      },
+      {
+        "ID": "7221",
+        "VALUE": "Vice-Presidente."
+      }
+    ],
+    "title": "UF_CRM_1779907578",
+    "listLabel": "Cargo",
+    "formLabel": "Cargo",
+    "filterLabel": "Cargo",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779907660": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7223",
+        "VALUE": "Prezado"
+      },
+      {
+        "ID": "7225",
+        "VALUE": "Prezada"
+      }
+    ],
+    "title": "UF_CRM_1779907660",
+    "listLabel": "Adjetivo",
+    "formLabel": "Adjetivo",
+    "filterLabel": "Adjetivo",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779907829": {
+    "type": "enumeration",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7227",
+        "VALUE": "Contábil"
+      },
+      {
+        "ID": "7229",
+        "VALUE": "Contratos"
+      },
+      {
+        "ID": "7231",
+        "VALUE": "Controladoria"
+      },
+      {
+        "ID": "7233",
+        "VALUE": "Controle"
+      },
+      {
+        "ID": "7235",
+        "VALUE": "Financeiro"
+      },
+      {
+        "ID": "7237",
+        "VALUE": "Fiscal"
+      },
+      {
+        "ID": "7239",
+        "VALUE": "Industrial"
+      },
+      {
+        "ID": "7241",
+        "VALUE": "Infraestrutura"
+      },
+      {
+        "ID": "7243",
+        "VALUE": "Jurídico"
+      },
+      {
+        "ID": "7245",
+        "VALUE": "Logística"
+      },
+      {
+        "ID": "7247",
+        "VALUE": "Marketing"
+      },
+      {
+        "ID": "7249",
+        "VALUE": "Negócios"
+      },
+      {
+        "ID": "7251",
+        "VALUE": "Operações"
+      },
+      {
+        "ID": "7253",
+        "VALUE": "PMO"
+      },
+      {
+        "ID": "7255",
+        "VALUE": "Presidência"
+      },
+      {
+        "ID": "7257",
+        "VALUE": "Produto"
+      },
+      {
+        "ID": "7259",
+        "VALUE": "Projeto"
+      },
+      {
+        "ID": "7261",
+        "VALUE": "RH"
+      },
+      {
+        "ID": "7263",
+        "VALUE": "Sistemas"
+      },
+      {
+        "ID": "7265",
+        "VALUE": "Solução"
+      },
+      {
+        "ID": "7267",
+        "VALUE": "Sourcing"
+      },
+      {
+        "ID": "7269",
+        "VALUE": "Suporte"
+      },
+      {
+        "ID": "7271",
+        "VALUE": "Suprimento"
+      },
+      {
+        "ID": "7273",
+        "VALUE": "Tesouraria"
+      },
+      {
+        "ID": "7275",
+        "VALUE": "Tecnologia da Informação"
+      },
+      {
+        "ID": "7277",
+        "VALUE": "Treinamento"
+      },
+      {
+        "ID": "7279",
+        "VALUE": "Tributária"
+      }
+    ],
+    "title": "UF_CRM_1779907829",
+    "listLabel": "Área",
+    "formLabel": "Área",
+    "filterLabel": "Área",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779907933": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7281",
+        "VALUE": "Comprador"
+      },
+      {
+        "ID": "7283",
+        "VALUE": "Decisor"
+      },
+      {
+        "ID": "7285",
+        "VALUE": "Influenciador"
+      },
+      {
+        "ID": "7287",
+        "VALUE": "Não envolvido"
+      },
+      {
+        "ID": "7289",
+        "VALUE": "Usuário"
+      }
+    ],
+    "title": "UF_CRM_1779907933",
+    "listLabel": "Papel do contato",
+    "formLabel": "Papel do contato",
+    "filterLabel": "Papel do contato",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779908079": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7291",
+        "VALUE": "Cold"
+      },
+      {
+        "ID": "7293",
+        "VALUE": "Hot"
+      },
+      {
+        "ID": "7295",
+        "VALUE": "Warm"
+      }
+    ],
+    "title": "UF_CRM_1779908079",
+    "listLabel": "Temperatura do Lead",
+    "formLabel": "Temperatura do Lead",
+    "filterLabel": "Temperatura do Lead",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779908122": {
+    "type": "boolean",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779908122",
+    "listLabel": "Bounced",
+    "formLabel": "Bounced",
+    "filterLabel": "Bounced",
+    "settings": {
+      "DEFAULT_VALUE": 0,
+      "DISPLAY": "CHECKBOX",
+      "LABEL": [
+        "",
+        ""
+      ],
+      "LABEL_CHECKBOX": "Bounced"
+    }
+  },
+  "UF_CRM_1779908157": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7297",
+        "VALUE": "Ativo"
+      },
+      {
+        "ID": "7299",
+        "VALUE": "Inativo"
+      }
+    ],
+    "title": "UF_CRM_1779908157",
+    "listLabel": "Status do contato",
+    "formLabel": "Status do contato",
+    "filterLabel": "Status do contato",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779908089109": {
+    "type": "boolean",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779908089109",
+    "listLabel": "Participante do GUS",
+    "formLabel": "Participante do GUS",
+    "filterLabel": "Participante do GUS",
+    "settings": {
+      "DEFAULT_VALUE": 0,
+      "DISPLAY": "CHECKBOX",
+      "LABEL": [
+        "",
+        ""
+      ],
+      "LABEL_CHECKBOX": {
+        "en": "Participante do GUS",
+        "tc": "Participante do GUS",
+        "sc": "Participante do GUS",
+        "br": "Participante do GUS",
+        "de": "Participante do GUS",
+        "fr": "Participante do GUS",
+        "ua": "Participante do GUS",
+        "in": "Participante do GUS",
+        "la": "Participante do GUS",
+        "ru": "Participante do GUS",
+        "pl": "Participante do GUS",
+        "tr": "Participante do GUS",
+        "ja": "Participante do GUS",
+        "vn": "Participante do GUS",
+        "th": "Participante do GUS",
+        "ms": "Participante do GUS",
+        "it": "Participante do GUS",
+        "id": "Participante do GUS",
+        "hi": "Participante do GUS",
+        "kz": "Participante do GUS",
+        "ar": "Participante do GUS"
+      }
+    }
+  },
+  "UF_CRM_1779909582": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7301",
+        "VALUE": "Evento GC"
+      },
+      {
+        "ID": "7303",
+        "VALUE": "Evento Prospecção"
+      },
+      {
+        "ID": "7305",
+        "VALUE": "Gerente de Projeto"
+      },
+      {
+        "ID": "7307",
+        "VALUE": "Gerente de contas"
+      },
+      {
+        "ID": "7309",
+        "VALUE": "Indicação Oracle"
+      },
+      {
+        "ID": "7311",
+        "VALUE": "Indicação SAP"
+      },
+      {
+        "ID": "7313",
+        "VALUE": "Indicação de Cliente"
+      },
+      {
+        "ID": "7315",
+        "VALUE": "Indicação de Funcionário"
+      },
+      {
+        "ID": "7317",
+        "VALUE": "Indicação de Parceiro"
+      },
+      {
+        "ID": "7319",
+        "VALUE": "Prospecção - Interna"
+      },
+      {
+        "ID": "7321",
+        "VALUE": "Prospecção WEB to Lead Site"
+      },
+      {
+        "ID": "7323",
+        "VALUE": "Prospecção WEB to Lead Telefone"
+      }
+    ],
+    "title": "UF_CRM_1779909582",
+    "listLabel": "Origem do lead",
+    "formLabel": "Origem do lead",
+    "filterLabel": "Origem do lead",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779911090": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7325",
+        "VALUE": "AUDITORIA"
+      },
+      {
+        "ID": "7327",
+        "VALUE": "AUTOMACAO ENTREGAS"
+      },
+      {
+        "ID": "7329",
+        "VALUE": "Documentos Eletrônicos"
+      },
+      {
+        "ID": "7331",
+        "VALUE": "ECF"
+      },
+      {
+        "ID": "7333",
+        "VALUE": "ESOCIAL"
+      },
+      {
+        "ID": "7335",
+        "VALUE": "Governança"
+      },
+      {
+        "ID": "7337",
+        "VALUE": "MDEST E"
+      },
+      {
+        "ID": "7339",
+        "VALUE": "Reinf"
+      },
+      {
+        "ID": "7341",
+        "VALUE": "SYNCHRO4TDF"
+      },
+      {
+        "ID": "7343",
+        "VALUE": "Serviços"
+      },
+      {
+        "ID": "7345",
+        "VALUE": "Soluções Fiscais"
+      },
+      {
+        "ID": "7347",
+        "VALUE": "Soluções Fiscais - Módulos Cloud"
+      },
+      {
+        "ID": "7349",
+        "VALUE": "Soluções Fiscais Cloud"
+      },
+      {
+        "ID": "7351",
+        "VALUE": "Soluções Fiscais Modulos"
+      },
+      {
+        "ID": "7353",
+        "VALUE": "Taxhub"
+      },
+      {
+        "ID": "7355",
+        "VALUE": "eTaxEngine"
+      }
+    ],
+    "title": "UF_CRM_1779911090",
+    "listLabel": "Interesse inicial",
+    "formLabel": "Interesse inicial",
+    "filterLabel": "Interesse inicial",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779911255": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7357",
+        "VALUE": "Conhecer a solução"
+      },
+      {
+        "ID": "7359",
+        "VALUE": "Cotação de mercado"
+      },
+      {
+        "ID": "7361",
+        "VALUE": "Insatisfação com fornecedor atual"
+      },
+      {
+        "ID": "7363",
+        "VALUE": "Nova empresa no Brasil"
+      },
+      {
+        "ID": "7365",
+        "VALUE": "Novas obrigatoriedades"
+      },
+      {
+        "ID": "7367",
+        "VALUE": "Rolout"
+      }
+    ],
+    "title": "UF_CRM_1779911255",
+    "listLabel": "Motivo do interesse",
+    "formLabel": "Motivo do interesse",
+    "filterLabel": "Motivo do interesse",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779911316": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7369",
+        "VALUE": "Blog"
+      },
+      {
+        "ID": "7371",
+        "VALUE": "E-mail MKT"
+      },
+      {
+        "ID": "7373",
+        "VALUE": "Eventos"
+      },
+      {
+        "ID": "7375",
+        "VALUE": "Google"
+      },
+      {
+        "ID": "7377",
+        "VALUE": "Indicação de Cliente"
+      },
+      {
+        "ID": "7379",
+        "VALUE": "Indicação de colaborador"
+      },
+      {
+        "ID": "7381",
+        "VALUE": "Portal Synchro"
+      },
+      {
+        "ID": "7383",
+        "VALUE": "Redes Sociais"
+      },
+      {
+        "ID": "7385",
+        "VALUE": "Synchro na mídia"
+      }
+    ],
+    "title": "UF_CRM_1779911316",
+    "listLabel": "Como chegou até a Synchro",
+    "formLabel": "Como chegou até a Synchro",
+    "filterLabel": "Como chegou até a Synchro",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 5,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    }
+  },
+  "UF_CRM_1779911104902": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779911104902",
+    "listLabel": "Descrição",
+    "formLabel": "Descrição",
+    "filterLabel": "Descrição",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1779911117661": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1779911117661",
+    "listLabel": "Campanha de origem",
+    "formLabel": "Campanha de origem",
+    "filterLabel": "Campanha de origem",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  },
+  "UF_CRM_1789041484569": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_1789041484569",
+    "listLabel": "Id do contato ORACLE",
+    "formLabel": "Id do contato ORACLE",
+    "filterLabel": "Id do contato ORACLE",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    }
+  }
+}

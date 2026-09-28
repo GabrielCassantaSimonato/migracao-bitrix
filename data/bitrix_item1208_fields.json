@@ -1,0 +1,1202 @@
+{
+  "id": {
+    "type": "integer",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "ID",
+    "upperName": "ID"
+  },
+  "title": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Name",
+    "upperName": "TITLE"
+  },
+  "xmlId": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "External ID",
+    "upperName": "XML_ID"
+  },
+  "createdTime": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Created on",
+    "upperName": "CREATED_TIME"
+  },
+  "updatedTime": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Updated on",
+    "upperName": "UPDATED_TIME"
+  },
+  "createdBy": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Created by",
+    "upperName": "CREATED_BY"
+  },
+  "updatedBy": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Updated by",
+    "upperName": "UPDATED_BY"
+  },
+  "assignedById": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Responsible person",
+    "upperName": "ASSIGNED_BY_ID"
+  },
+  "opened": {
+    "type": "boolean",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Available to everyone",
+    "upperName": "OPENED"
+  },
+  "webformId": {
+    "type": "crm_webform",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Created by CRM form",
+    "upperName": "WEBFORM_ID"
+  },
+  "lastCommunicationTime": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last contact",
+    "upperName": "LAST_COMMUNICATION_TIME"
+  },
+  "companyId": {
+    "type": "crm_company",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Company",
+    "settings": {
+      "parentEntityTypeId": 4
+    },
+    "upperName": "COMPANY_ID"
+  },
+  "contactId": {
+    "type": "crm_contact",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "isDeprecated": true,
+    "title": "Contact",
+    "upperName": "CONTACT_ID"
+  },
+  "contactIds": {
+    "type": "crm_contact",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": false,
+    "title": "Contacts",
+    "upperName": "CONTACT_IDS"
+  },
+  "contacts": {
+    "type": "crm_contact",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": true,
+    "isDynamic": false,
+    "title": "Contacts",
+    "upperName": "CONTACTS"
+  },
+  "categoryId": {
+    "type": "crm_category",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Pipeline",
+    "upperName": "CATEGORY_ID"
+  },
+  "movedTime": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Stage change date",
+    "upperName": "MOVED_TIME"
+  },
+  "movedBy": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Stage changed by",
+    "upperName": "MOVED_BY"
+  },
+  "stageId": {
+    "type": "crm_status",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "statusType": "DYNAMIC_1208_STAGE_105",
+    "title": "Stage",
+    "upperName": "STAGE_ID"
+  },
+  "previousStageId": {
+    "type": "crm_status",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "statusType": "DYNAMIC_1208_STAGE_105",
+    "title": "Previous stage",
+    "upperName": "PREVIOUS_STAGE_ID"
+  },
+  "currencyId": {
+    "type": "crm_currency",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Currency",
+    "upperName": "CURRENCY_ID"
+  },
+  "isManualOpportunity": {
+    "type": "boolean",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Amount calculation mode",
+    "upperName": "IS_MANUAL_OPPORTUNITY"
+  },
+  "opportunity": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Amount",
+    "settings": {
+      "currencyFieldName": "CURRENCY_ID"
+    },
+    "upperName": "OPPORTUNITY"
+  },
+  "taxValue": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Tax total",
+    "settings": {
+      "currencyFieldName": "CURRENCY_ID"
+    },
+    "upperName": "TAX_VALUE"
+  },
+  "lastActivityBy": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last timeline activity added by",
+    "upperName": "LAST_ACTIVITY_BY"
+  },
+  "lastActivityTime": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last updated on",
+    "upperName": "LAST_ACTIVITY_TIME"
+  },
+  "parentId2": {
+    "type": "crm_entity",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Deal",
+    "settings": {
+      "parentEntityTypeId": 2
+    },
+    "upperName": "PARENT_ID_2"
+  },
+  "parentId1196": {
+    "type": "crm_entity",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Parceiros",
+    "settings": {
+      "parentEntityTypeId": 1196
+    },
+    "upperName": "PARENT_ID_1196"
+  },
+  "parentId1204": {
+    "type": "crm_entity",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Criar campanha",
+    "settings": {
+      "parentEntityTypeId": 1204
+    },
+    "upperName": "PARENT_ID_1204"
+  },
+  "lastCommunicationCallTime": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last call",
+    "upperName": "LAST_COMMUNICATION_CALL_TIME"
+  },
+  "lastCommunicationEmailTime": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last email",
+    "upperName": "LAST_COMMUNICATION_EMAIL_TIME"
+  },
+  "lastCommunicationImolTime": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last Open Channel conversation",
+    "upperName": "LAST_COMMUNICATION_IMOL_TIME"
+  },
+  "lastCommunicationWebformTime": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last CRM form submitted",
+    "upperName": "LAST_COMMUNICATION_WEBFORM_TIME"
+  },
+  "ufCrm75_1779970913049": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Tipo de conta",
+    "listLabel": "Tipo de conta",
+    "formLabel": "Tipo de conta",
+    "filterLabel": "Tipo de conta",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    },
+    "upperName": "UF_CRM_75_1779970913049"
+  },
+  "ufCrm75_1779970926200": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "ERP",
+    "listLabel": "ERP",
+    "formLabel": "ERP",
+    "filterLabel": "ERP",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    },
+    "upperName": "UF_CRM_75_1779970926200"
+  },
+  "ufCrm75_1779970938407": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Range de faturamento",
+    "listLabel": "Range de faturamento",
+    "formLabel": "Range de faturamento",
+    "filterLabel": "Range de faturamento",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    },
+    "upperName": "UF_CRM_75_1779970938407"
+  },
+  "ufCrm75_1779970950451": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Versão atual Solfis",
+    "listLabel": "Versão atual Solfis",
+    "formLabel": "Versão atual Solfis",
+    "filterLabel": "Versão atual Solfis",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    },
+    "upperName": "UF_CRM_75_1779970950451"
+  },
+  "ufCrm75_1779970959212": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Carteira",
+    "listLabel": "Carteira",
+    "formLabel": "Carteira",
+    "filterLabel": "Carteira",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    },
+    "upperName": "UF_CRM_75_1779970959212"
+  },
+  "ufCrm75_1779971005403": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Probabilidade",
+    "listLabel": "Probabilidade",
+    "formLabel": "Probabilidade",
+    "filterLabel": "Probabilidade",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    },
+    "upperName": "UF_CRM_75_1779971005403"
+  },
+  "ufCrm75_1779971020841": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Data de fechamento",
+    "listLabel": "Data de fechamento",
+    "formLabel": "Data de fechamento",
+    "filterLabel": "Data de fechamento",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    },
+    "upperName": "UF_CRM_75_1779971020841"
+  },
+  "ufCrm75_1779971035973": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Data fechamento parceiro",
+    "listLabel": "Data fechamento parceiro",
+    "formLabel": "Data fechamento parceiro",
+    "filterLabel": "Data fechamento parceiro",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    },
+    "upperName": "UF_CRM_75_1779971035973"
+  },
+  "ufCrm75_1779971058111": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7387",
+        "VALUE": "Sim"
+      },
+      {
+        "ID": "7389",
+        "VALUE": "Não"
+      }
+    ],
+    "title": "Valor igual a opp?",
+    "listLabel": "Valor igual a opp?",
+    "formLabel": "Valor igual a opp?",
+    "filterLabel": "Valor igual a opp?",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    },
+    "upperName": "UF_CRM_75_1779971058111"
+  },
+  "ufCrm75_1779971191880": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7391",
+        "VALUE": "Cliente"
+      },
+      {
+        "ID": "7393",
+        "VALUE": "N/A, Ex-cliente ou base histórica"
+      },
+      {
+        "ID": "7395",
+        "VALUE": "Parceiro"
+      },
+      {
+        "ID": "7397",
+        "VALUE": "Synchro/AMS"
+      },
+      {
+        "ID": "7399",
+        "VALUE": "Synchro/Parceiro"
+      },
+      {
+        "ID": "7401",
+        "VALUE": "Synchro/VPI"
+      }
+    ],
+    "title": "Quem implanta",
+    "listLabel": "Quem implanta",
+    "formLabel": "Quem implanta",
+    "filterLabel": "Quem implanta",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    },
+    "upperName": "UF_CRM_75_1779971191880"
+  },
+  "ufCrm75_1779971274882": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7403",
+        "VALUE": "DFe Manager"
+      },
+      {
+        "ID": "7405",
+        "VALUE": "EMIF"
+      },
+      {
+        "ID": "7407",
+        "VALUE": "GOA"
+      },
+      {
+        "ID": "7409",
+        "VALUE": "Inbound"
+      },
+      {
+        "ID": "7411",
+        "VALUE": "Synchro4DFe"
+      },
+      {
+        "ID": "7413",
+        "VALUE": "Synchro4Me"
+      },
+      {
+        "ID": "7415",
+        "VALUE": "Synchro4TDF"
+      }
+    ],
+    "title": "Solução",
+    "listLabel": "Solução",
+    "formLabel": "Solução",
+    "filterLabel": "Solução",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    },
+    "upperName": "UF_CRM_75_1779971274882"
+  },
+  "ufCrm75_1779971299918": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7417",
+        "VALUE": "Cloud"
+      },
+      {
+        "ID": "7419",
+        "VALUE": "On Premises"
+      }
+    ],
+    "title": "Modalidade",
+    "listLabel": "Modalidade",
+    "formLabel": "Modalidade",
+    "filterLabel": "Modalidade",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    },
+    "upperName": "UF_CRM_75_1779971299918"
+  },
+  "ufCrm75_1779971345335": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7421",
+        "VALUE": "Alta"
+      },
+      {
+        "ID": "7423",
+        "VALUE": "Baixa"
+      },
+      {
+        "ID": "7425",
+        "VALUE": "Muito baixa"
+      },
+      {
+        "ID": "7427",
+        "VALUE": "Média"
+      }
+    ],
+    "title": "Complexidade",
+    "listLabel": "Complexidade",
+    "formLabel": "Complexidade",
+    "filterLabel": "Complexidade",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    },
+    "upperName": "UF_CRM_75_1779971345335"
+  },
+  "ufCrm75_1779971360229": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Observação",
+    "listLabel": "Observação",
+    "formLabel": "Observação",
+    "filterLabel": "Observação",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    },
+    "upperName": "UF_CRM_75_1779971360229"
+  },
+  "ufCrm75_1779972229": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7429",
+        "VALUE": "4Tax (Seidor)"
+      },
+      {
+        "ID": "7431",
+        "VALUE": "Addtax"
+      },
+      {
+        "ID": "7433",
+        "VALUE": "Addvisor"
+      },
+      {
+        "ID": "7435",
+        "VALUE": "Avalara"
+      },
+      {
+        "ID": "7437",
+        "VALUE": "BPO"
+      },
+      {
+        "ID": "7439",
+        "VALUE": "BSP"
+      },
+      {
+        "ID": "7441",
+        "VALUE": "CBS"
+      },
+      {
+        "ID": "7443",
+        "VALUE": "Compliance"
+      },
+      {
+        "ID": "7445",
+        "VALUE": "Config (Triangulus)"
+      },
+      {
+        "ID": "7447",
+        "VALUE": "DRC"
+      },
+      {
+        "ID": "7449",
+        "VALUE": "Desenvolvimento interno"
+      },
+      {
+        "ID": "7451",
+        "VALUE": "Dinamica"
+      },
+      {
+        "ID": "7453",
+        "VALUE": "E-IT"
+      },
+      {
+        "ID": "7455",
+        "VALUE": "Engineering"
+      },
+      {
+        "ID": "7457",
+        "VALUE": "FH"
+      },
+      {
+        "ID": "7459",
+        "VALUE": "FISCUS"
+      },
+      {
+        "ID": "7461",
+        "VALUE": "FOX IT"
+      },
+      {
+        "ID": "7463",
+        "VALUE": "GSW"
+      },
+      {
+        "ID": "7465",
+        "VALUE": "Gamasoft"
+      },
+      {
+        "ID": "7467",
+        "VALUE": "Glorian"
+      },
+      {
+        "ID": "7469",
+        "VALUE": "Infor"
+      },
+      {
+        "ID": "7471",
+        "VALUE": "Integranet"
+      },
+      {
+        "ID": "7473",
+        "VALUE": "Inventti"
+      },
+      {
+        "ID": "7475",
+        "VALUE": "Invoice Manager"
+      },
+      {
+        "ID": "7477",
+        "VALUE": "JP Consulting"
+      },
+      {
+        "ID": "7479",
+        "VALUE": "KTGROUP"
+      },
+      {
+        "ID": "7481",
+        "VALUE": "Keep Tru"
+      },
+      {
+        "ID": "7483",
+        "VALUE": "LKM"
+      },
+      {
+        "ID": "7485",
+        "VALUE": "MDest"
+      },
+      {
+        "ID": "7487",
+        "VALUE": "Manual"
+      },
+      {
+        "ID": "7489",
+        "VALUE": "Mastersaf"
+      },
+      {
+        "ID": "7491",
+        "VALUE": "Midas"
+      },
+      {
+        "ID": "7493",
+        "VALUE": "NDD"
+      },
+      {
+        "ID": "7495",
+        "VALUE": "NF-e Power Método"
+      },
+      {
+        "ID": "7497",
+        "VALUE": "NFe Master"
+      },
+      {
+        "ID": "7499",
+        "VALUE": "NTT"
+      },
+      {
+        "ID": "7501",
+        "VALUE": "Nanodata"
+      },
+      {
+        "ID": "7503",
+        "VALUE": "Neogrid"
+      },
+      {
+        "ID": "7505",
+        "VALUE": "Notamax"
+      },
+      {
+        "ID": "7507",
+        "VALUE": "OOBJ"
+      },
+      {
+        "ID": "7509",
+        "VALUE": "Onergy"
+      },
+      {
+        "ID": "7511",
+        "VALUE": "OpenText"
+      },
+      {
+        "ID": "7513",
+        "VALUE": "Oracle"
+      },
+      {
+        "ID": "7515",
+        "VALUE": "Origen Tech"
+      },
+      {
+        "ID": "7517",
+        "VALUE": "QIVE (Archivei)"
+      },
+      {
+        "ID": "7519",
+        "VALUE": "Quirius (Becomex)"
+      },
+      {
+        "ID": "7521",
+        "VALUE": "Recebe +"
+      },
+      {
+        "ID": "7523",
+        "VALUE": "Receiver(SW)"
+      },
+      {
+        "ID": "7525",
+        "VALUE": "S2M"
+      },
+      {
+        "ID": "7527",
+        "VALUE": "SAP"
+      },
+      {
+        "ID": "7529",
+        "VALUE": "SOVOS"
+      },
+      {
+        "ID": "7531",
+        "VALUE": "Senior Sistemas"
+      },
+      {
+        "ID": "7533",
+        "VALUE": "Smartdocx"
+      },
+      {
+        "ID": "7535",
+        "VALUE": "Solutio IT"
+      },
+      {
+        "ID": "7537",
+        "VALUE": "T-System"
+      },
+      {
+        "ID": "7539",
+        "VALUE": "TNV"
+      },
+      {
+        "ID": "7541",
+        "VALUE": "TOTVS"
+      },
+      {
+        "ID": "7543",
+        "VALUE": "TTax"
+      },
+      {
+        "ID": "7545",
+        "VALUE": "Thomson Reuters"
+      },
+      {
+        "ID": "7547",
+        "VALUE": "V360"
+      },
+      {
+        "ID": "7549",
+        "VALUE": "VIN (Virtual Invoice Network)"
+      },
+      {
+        "ID": "7551",
+        "VALUE": "Vero"
+      },
+      {
+        "ID": "7553",
+        "VALUE": "YKP"
+      }
+    ],
+    "title": "UF_CRM_75_1779972229",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DISPLAY": "LIST",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    },
+    "upperName": "UF_CRM_75_1779972229"
+  },
+  "ufCrm75_1779972442005": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Horas GP",
+    "listLabel": "Horas GP",
+    "formLabel": "Horas GP",
+    "filterLabel": "Horas GP",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    },
+    "upperName": "UF_CRM_75_1779972442005"
+  },
+  "ufCrm75_1779972460375": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Horas CT",
+    "listLabel": "Horas CT",
+    "formLabel": "Horas CT",
+    "filterLabel": "Horas CT",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    },
+    "upperName": "UF_CRM_75_1779972460375"
+  },
+  "ufCrm75_1779972473116": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Horas CF",
+    "listLabel": "Horas CF",
+    "formLabel": "Horas CF",
+    "filterLabel": "Horas CF",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    },
+    "upperName": "UF_CRM_75_1779972473116"
+  },
+  "ufCrm75_1779972484971": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Horas AF",
+    "listLabel": "Horas AF",
+    "formLabel": "Horas AF",
+    "filterLabel": "Horas AF",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    },
+    "upperName": "UF_CRM_75_1779972484971"
+  },
+  "ufCrm75_1779972499383": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Horas totais",
+    "listLabel": "Horas totais",
+    "formLabel": "Horas totais",
+    "filterLabel": "Horas totais",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    },
+    "upperName": "UF_CRM_75_1779972499383"
+  },
+  "ufCrm75_1779972551406": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Duração do projeto (em meses)",
+    "listLabel": "Duração do projeto (em meses)",
+    "formLabel": "Duração do projeto (em meses)",
+    "filterLabel": "Duração do projeto (em meses)",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    },
+    "upperName": "UF_CRM_75_1779972551406"
+  },
+  "ufCrm75_1779995255448": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Equipe",
+    "listLabel": "Equipe",
+    "formLabel": "Equipe",
+    "filterLabel": "Equipe",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    },
+    "upperName": "UF_CRM_75_1779995255448"
+  },
+  "ufCrm75_1786458496": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "UF_CRM_75_1786458496",
+    "listLabel": "",
+    "formLabel": "",
+    "filterLabel": "",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    },
+    "upperName": "UF_CRM_75_1786458496"
+  },
+  "ufCrm75_1786556380117": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Quem implanta anterior",
+    "listLabel": "Quem implanta anterior",
+    "formLabel": "Quem implanta anterior",
+    "filterLabel": "Quem implanta anterior",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    },
+    "upperName": "UF_CRM_75_1786556380117"
+  },
+  "ufCrm75_1789386179872": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "id campanhas synchro oracle",
+    "listLabel": "id campanhas synchro oracle",
+    "formLabel": "id campanhas synchro oracle",
+    "filterLabel": "id campanhas synchro oracle",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    },
+    "upperName": "UF_CRM_75_1789386179872"
+  }
+}

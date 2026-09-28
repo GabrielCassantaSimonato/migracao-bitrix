@@ -1,0 +1,582 @@
+{
+  "id": {
+    "type": "integer",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "ID",
+    "upperName": "ID"
+  },
+  "title": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Name",
+    "upperName": "TITLE"
+  },
+  "xmlId": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "External ID",
+    "upperName": "XML_ID"
+  },
+  "createdTime": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Created on",
+    "upperName": "CREATED_TIME"
+  },
+  "updatedTime": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Updated on",
+    "upperName": "UPDATED_TIME"
+  },
+  "createdBy": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Created by",
+    "upperName": "CREATED_BY"
+  },
+  "updatedBy": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Updated by",
+    "upperName": "UPDATED_BY"
+  },
+  "assignedById": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Responsible person",
+    "upperName": "ASSIGNED_BY_ID"
+  },
+  "opened": {
+    "type": "boolean",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Available to everyone",
+    "upperName": "OPENED"
+  },
+  "webformId": {
+    "type": "crm_webform",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Created by CRM form",
+    "upperName": "WEBFORM_ID"
+  },
+  "lastCommunicationTime": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last contact",
+    "upperName": "LAST_COMMUNICATION_TIME"
+  },
+  "categoryId": {
+    "type": "crm_category",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Pipeline",
+    "upperName": "CATEGORY_ID"
+  },
+  "movedTime": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Stage change date",
+    "upperName": "MOVED_TIME"
+  },
+  "movedBy": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Stage changed by",
+    "upperName": "MOVED_BY"
+  },
+  "stageId": {
+    "type": "crm_status",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "statusType": "DYNAMIC_1212_STAGE_107",
+    "title": "Stage",
+    "upperName": "STAGE_ID"
+  },
+  "previousStageId": {
+    "type": "crm_status",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "statusType": "DYNAMIC_1212_STAGE_107",
+    "title": "Previous stage",
+    "upperName": "PREVIOUS_STAGE_ID"
+  },
+  "currencyId": {
+    "type": "crm_currency",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Currency",
+    "upperName": "CURRENCY_ID"
+  },
+  "isManualOpportunity": {
+    "type": "boolean",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Amount calculation mode",
+    "upperName": "IS_MANUAL_OPPORTUNITY"
+  },
+  "opportunity": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Amount",
+    "settings": {
+      "currencyFieldName": "CURRENCY_ID"
+    },
+    "upperName": "OPPORTUNITY"
+  },
+  "taxValue": {
+    "type": "double",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Tax total",
+    "settings": {
+      "currencyFieldName": "CURRENCY_ID"
+    },
+    "upperName": "TAX_VALUE"
+  },
+  "lastActivityBy": {
+    "type": "user",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last timeline activity added by",
+    "upperName": "LAST_ACTIVITY_BY"
+  },
+  "lastActivityTime": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last updated on",
+    "upperName": "LAST_ACTIVITY_TIME"
+  },
+  "parentId2": {
+    "type": "crm_entity",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Deal",
+    "settings": {
+      "parentEntityTypeId": 2
+    },
+    "upperName": "PARENT_ID_2"
+  },
+  "lastCommunicationCallTime": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last call",
+    "upperName": "LAST_COMMUNICATION_CALL_TIME"
+  },
+  "lastCommunicationEmailTime": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last email",
+    "upperName": "LAST_COMMUNICATION_EMAIL_TIME"
+  },
+  "lastCommunicationImolTime": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last Open Channel conversation",
+    "upperName": "LAST_COMMUNICATION_IMOL_TIME"
+  },
+  "lastCommunicationWebformTime": {
+    "type": "datetime",
+    "isRequired": false,
+    "isReadOnly": true,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": false,
+    "title": "Last CRM form submitted",
+    "upperName": "LAST_COMMUNICATION_WEBFORM_TIME"
+  },
+  "ufCrm77_1779974666870": {
+    "type": "double",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Número da parcela",
+    "listLabel": "Número da parcela",
+    "formLabel": "Número da parcela",
+    "filterLabel": "Número da parcela",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    },
+    "upperName": "UF_CRM_77_1779974666870"
+  },
+  "ufCrm77_1779974764693": {
+    "type": "enumeration",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7555",
+        "VALUE": "AMS"
+      },
+      {
+        "ID": "7557",
+        "VALUE": "CLOUD"
+      },
+      {
+        "ID": "7559",
+        "VALUE": "LU"
+      },
+      {
+        "ID": "7561",
+        "VALUE": "MA"
+      },
+      {
+        "ID": "7563",
+        "VALUE": "SE"
+      },
+      {
+        "ID": "7565",
+        "VALUE": "SLA"
+      },
+      {
+        "ID": "11227",
+        "VALUE": "MONITORAMENTO"
+      }
+    ],
+    "title": "Tipo de oportunidade",
+    "listLabel": "Tipo de oportunidade",
+    "formLabel": "Tipo de oportunidade",
+    "filterLabel": "Tipo de oportunidade",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    },
+    "upperName": "UF_CRM_77_1779974764693"
+  },
+  "ufCrm77_1779974787847": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Porcentagem da parcela",
+    "listLabel": "Porcentagem da parcela",
+    "formLabel": "Porcentagem da parcela",
+    "filterLabel": "Porcentagem da parcela",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    },
+    "upperName": "UF_CRM_77_1779974787847"
+  },
+  "ufCrm77_1779974811337": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Data de fechamento",
+    "listLabel": "Data de fechamento",
+    "formLabel": "Data de fechamento",
+    "filterLabel": "Data de fechamento",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    },
+    "upperName": "UF_CRM_77_1779974811337"
+  },
+  "ufCrm77_1779974822842": {
+    "type": "date",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Data de faturamento",
+    "listLabel": "Data de faturamento",
+    "formLabel": "Data de faturamento",
+    "filterLabel": "Data de faturamento",
+    "settings": {
+      "DEFAULT_VALUE": {
+        "TYPE": "NONE",
+        "VALUE": ""
+      }
+    },
+    "upperName": "UF_CRM_77_1779974822842"
+  },
+  "ufCrm77_1779974836736": {
+    "type": "double",
+    "isRequired": true,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Meses de faturamento",
+    "listLabel": "Meses de faturamento",
+    "formLabel": "Meses de faturamento",
+    "filterLabel": "Meses de faturamento",
+    "settings": {
+      "PRECISION": 2,
+      "SIZE": 20,
+      "MIN_VALUE": 0,
+      "MAX_VALUE": 0,
+      "DEFAULT_VALUE": null
+    },
+    "upperName": "UF_CRM_77_1779974836736"
+  },
+  "ufCrm77_1779974849348": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Descrição da parcela",
+    "listLabel": "Descrição da parcela",
+    "formLabel": "Descrição da parcela",
+    "filterLabel": "Descrição da parcela",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    },
+    "upperName": "UF_CRM_77_1779974849348"
+  },
+  "ufCrm77_1779974860433": {
+    "type": "boolean",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "Pró-rata",
+    "listLabel": "Pró-rata",
+    "formLabel": "Pró-rata",
+    "filterLabel": "Pró-rata",
+    "settings": {
+      "DEFAULT_VALUE": 0,
+      "DISPLAY": "CHECKBOX",
+      "LABEL": [
+        "",
+        ""
+      ],
+      "LABEL_CHECKBOX": {
+        "en": "Pró-rata",
+        "tc": "Pró-rata",
+        "sc": "Pró-rata",
+        "br": "Pró-rata",
+        "de": "Pró-rata",
+        "fr": "Pró-rata",
+        "ua": "Pró-rata",
+        "in": "Pró-rata",
+        "la": "Pró-rata",
+        "ru": "Pró-rata",
+        "pl": "Pró-rata",
+        "tr": "Pró-rata",
+        "ja": "Pró-rata",
+        "vn": "Pró-rata",
+        "th": "Pró-rata",
+        "ms": "Pró-rata",
+        "it": "Pró-rata",
+        "id": "Pró-rata",
+        "hi": "Pró-rata",
+        "kz": "Pró-rata",
+        "ar": "Pró-rata"
+      }
+    },
+    "upperName": "UF_CRM_77_1779974860433"
+  },
+  "ufCrm77_1780083021479": {
+    "type": "enumeration",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "items": [
+      {
+        "ID": "7631",
+        "VALUE": "2"
+      },
+      {
+        "ID": "7633",
+        "VALUE": "3"
+      },
+      {
+        "ID": "7635",
+        "VALUE": "4"
+      },
+      {
+        "ID": "7637",
+        "VALUE": "5"
+      },
+      {
+        "ID": "7639",
+        "VALUE": "6"
+      },
+      {
+        "ID": "7641",
+        "VALUE": "7"
+      },
+      {
+        "ID": "7643",
+        "VALUE": "8"
+      },
+      {
+        "ID": "7645",
+        "VALUE": "9"
+      },
+      {
+        "ID": "7647",
+        "VALUE": "10"
+      },
+      {
+        "ID": "7649",
+        "VALUE": "11"
+      },
+      {
+        "ID": "7651",
+        "VALUE": "12"
+      }
+    ],
+    "title": "Divisão de parcelas (em vezes)",
+    "listLabel": "Divisão de parcelas (em vezes)",
+    "formLabel": "Divisão de parcelas (em vezes)",
+    "filterLabel": "Divisão de parcelas (em vezes)",
+    "settings": {
+      "DISPLAY": "UI",
+      "LIST_HEIGHT": 1,
+      "CAPTION_NO_VALUE": "",
+      "SHOW_NO_VALUE": "Y"
+    },
+    "upperName": "UF_CRM_77_1780083021479"
+  },
+  "ufCrm77_1789386203592": {
+    "type": "string",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "title": "id parcelas oracle",
+    "listLabel": "id parcelas oracle",
+    "formLabel": "id parcelas oracle",
+    "filterLabel": "id parcelas oracle",
+    "settings": {
+      "SIZE": 20,
+      "ROWS": 1,
+      "REGEXP": "",
+      "MIN_LENGTH": 0,
+      "MAX_LENGTH": 0,
+      "DEFAULT_VALUE": ""
+    },
+    "upperName": "UF_CRM_77_1789386203592"
+  }
+}

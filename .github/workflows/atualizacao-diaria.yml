@@ -1,0 +1,38 @@
+name: Atualizacao diaria Bitrix
+
+on:
+  schedule:
+    # 21:00 UTC = 18:00 horario de Brasilia
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+    inputs:
+      dias:
+        description: "Janela em dias (ex.: 14 na primeira carga)"
+        required: false
+        default: "1"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Rodar sincronizacao incremental
+        env:
+          ORACLE_USER: ${{ secrets.ORACLE_USER }}
+          ORACLE_PASS: ${{ secrets.ORACLE_PASS }}
+          BITRIX_WEBHOOK: ${{ secrets.BITRIX_WEBHOOK }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: python atualizacao_diaria.py --dias ${{ github.event.inputs.dias || '1' }}

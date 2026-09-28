@@ -1,0 +1,504 @@
+==============================================================================
+OPPORTUNITIES  ->  deal  (campo ID: )
+==============================================================================
+
+[CAMPOS CUSTOM DO BITRIX (com rótulo)]
+  - Agente de prospecção                             [employee    ]  <- AgenteDeProspeccaoLst_Id_c, AgenteDeProspeccaoLst_c, AgenteProspeccaoRelatorio_c
+  - Anexos                                           [file        ]  <- (sem correspondência)
+  - Atividades da oportunidade                       [crm         ]  <- (sem correspondência)
+  - Campanha                                         [string      ]  <- Campanha_comercial_texto_c, NomeDaCampanha_Id_c, NomeDaCampanha_c
+  - Campanhas Synchro                                [crm         ]  <- (sem correspondência)
+  - CNPJ                                             [string      ]  <- (sem correspondência)
+  - CNPJ (Faturamento)                               [string      ]  <- CNPJFaturamento_c
+  - CNPJ (faturamento) - antigo                      [string      ]  <- (sem correspondência)
+  - CNPJ (Licenciamento)                             [string      ]  <- CNPJ_LICENCIAMENTO_c
+  - CNPJ (licenciamento) - antigo                    [string      ]  <- (sem correspondência)
+  - Concorrentes                                     [enumeration ]  <- (sem correspondência)
+  - Conta informada para referência                  [crm         ]  <- ContaReferencia_Id_c, ContaReferencia_c
+  - Contato ativação do sistema                      [crm         ]  <- ContatoAtivacaoSistema_Id_c, ContatoAtivacaoSistema_c
+  - Contato envio de nota                            [crm         ]  <- ContatoEnvioNota_Id_c, ContatoEnvioNota_c
+  - Contato principal                                [crm         ]  <- (sem correspondência)
+  - Data da aprovação do encerrado ganho             [date        ]  <- DataAprovacaoEncerradoGanho_c
+  - Data da validação da solução                     [date        ]  <- DataDaValidacaoDaSolucao_c
+  - Data de apresentação da proposta                 [date        ]  <- DataDaApresentacaoDaProposta_c
+  - Data de fechamento                               [date        ]  <- (sem correspondência)
+  - Data de início do projeto negociada              [date        ]  <- DataInicioProjetoNegociado_c
+  - Data de transferência do lead                    [date        ]  <- DataDeTransferenciaDoLead_c
+  - Data encerrado ganho                             [date        ]  <- DataEncerradoGanho_c
+  - Desconto software único                          [string      ]  <- DescontoSoftwareUnico_c
+  - Descrição                                        [string      ]  <- DescriptionTextLong_c
+  - Descrição campanha comercial                     [string      ]  <- CampanhaComercial_Id_c, CampanhaComercial_c, DescricaoCampanha_c, TituloCampanhaComercial_c
+  - Descrição da oportunidade                        [string      ]  <- VerificaOportunidade_c
+  - Descrição do lead                                [string      ]  <- DescricaoProspeccaoLong_c
+  - Detalhes do motivo de desconto                   [string      ]  <- DetalhesMotivoDesconto_c
+  - E-mail ativação do sistema                       [string      ]  <- EmailAtivacaoDoSistema_c, EmailTaxaSE_c, EmailTaxaMA_c
+  - E-mail envio de nota                             [string      ]  <- EmailEnvioDeNota_c
+  - Família de produto                               [enumeration ]  <- (sem correspondência)
+  - Família de produtos                              [enumeration ]  <- FamiliaDeProdutos_c
+  - Gerente de projeto                               [enumeration ]  <- GerenteProjeto_Id_c, GerenteProjeto_c, GerenteDeProjeto_c
+  - Id oportunidade oracle                           [string      ]  <- OptyId
+  - Implantador                                      [enumeration ]  <- Implantador_c
+  - Informações para gerente de projeto              [string      ]  <- InfoParaGerenteDeProjeto_c
+  - Instruções para faturamento                      [string      ]  <- InfoAdicionalFaturamento_c
+  - Interesse inicial                                [enumeration ]  <- (sem correspondência)
+  - Justificativa da lucratividade                   [string      ]  <- JustificativaDaLucratividade_c
+  - Justificativa rejeitado                          [string      ]  <- JustificativaRejeitado_c
+  - Lucratividade                                    [string      ]  <- Lucratividade_c
+  - Modalidade projeto                               [enumeration ]  <- ModalidadeProjeto_c
+  - Motivo do encerramento detalhado                 [string      ]  <- MotivoDoEncerramentoDetalhadoLong_c, MotivoDoEncerradoRejeitado_c
+  - Motivo secundário                                [enumeration ]  <- MotivoSecundario_c
+  - Nº PO ou OC                                      [string      ]  <- NumPOOuOC_c
+  - Número da proposta                               [double      ]  <- NumeroProposta_c
+  - Opp aberta ou fechada?                           [enumeration ]  <- (sem correspondência)
+  - opp aberta ou fechada? antigo                    [string      ]  <- (sem correspondência)
+  - Origem da campanha principal                     [string      ]  <- Campanha_c
+  - Origem do lead                                   [enumeration ]  <- OrigemDoLead_c
+  - Papel do contato                                 [enumeration ]  <- PapelDeContato_c
+  - Parceiro participou fechamento                   [enumeration ]  <- ParceiroParticipouFechamento_c
+  - Parceiro Principal                               [crm         ]  <- (sem correspondência)
+  - parcelas da oportunidade                         [crm         ]  <- (sem correspondência)
+  - Pendência fechamento                             [enumeration ]  <- PendenciaFechamento_c
+  - Possui RFP                                       [enumeration ]  <- PossuiRFP_c
+  - Principal motivo de encerramento                 [enumeration ]  <- PrincipalMotivoDeEncerramento_c
+  - Probabilidade                                    [enumeration ]  <- Probability_c
+  - Pré-Venda                                        [employee    ]  <- PreVenda_c, RevenueCloud_c, RevenueAMS_c, RevenueMA_c, RevenueSLA_c
+  - Qtd parcelas de faturamento projeto              [double      ]  <- DuracaoProjeto_c
+  - quantidade parcelas pró-rata                     [double      ]  <- QuantidadeDeParcelasCadastradas_c, PossuiParcelasDeProRata_c
+  - RA (ID)                                          [string      ]  <- RAID_c
+  - Razão social (Faturamento)                       [string      ]  <- RazaoSocialFaturamento_c
+  - Reforma tributária                               [boolean     ]  <- ReformaTributaria_c
+  - Tarefas RA                                       [string      ]  <- TarefasRA_c
+  - Telefone ativação do sistema                     [string      ]  <- TelefoneAtivacaoDoSistema_c
+  - Telefone envio de nota                           [string      ]  <- TelefoneEnvioDeNota_c
+  - Tem PO ou OC                                     [enumeration ]  <- TemPOOuOC_c
+  - Temperatura do lead                              [enumeration ]  <- (sem correspondência)
+  - Terceiro comissionado                            [enumeration ]  <- TerceiroComissionado_Id_c, TerceiroComissionado_c, TerceiroComissionadoLov_c
+  - Tipo de oportunidade                             [enumeration ]  <- TipoDeOportunidade_c, Idsalesforce_Oportunidade_c, TipoRegistroOportunidade_c
+  - Tipo de venda                                    [enumeration ]  <- TipoDeVenda_c
+  - VALOR ALL                                        [double      ]  <- EmailTotalLU_c
+  - VALOR AMS                                        [double      ]  <- (sem correspondência)
+  - VALOR CLOUD                                      [double      ]  <- EmailValorTotalCloud_c, EmailGanhoCloud_c
+  - VALOR LU                                         [double      ]  <- Valor_c
+  - VALOR MA                                         [double      ]  <- ValorM_c
+  - VALOR MONITORAMENTO                              [double      ]  <- EmailTotalMONITORAMENTO_c, EmailTaxaMONITORAMENTO_c, EmailComissaoMONITORAMENTO_c, RevenueMonitoramento_c
+  - VALOR SE                                         [double      ]  <- (sem correspondência)
+  - VALOR SLA                                        [double      ]  <- (sem correspondência)
+  - VALOR TOTAL AMS CADASTRADO PARCELA               [double      ]  <- (sem correspondência)
+  - VALOR TOTAL CLOUD CADASTRADO PARCELA             [double      ]  <- (sem correspondência)
+  - Valor total Comissão parceiro                    [double      ]  <- EmailTotalComissao_c
+  - VALOR TOTAL LU CADASTRADO PARCELA                [double      ]  <- (sem correspondência)
+  - VALOR TOTAL MA CADASTRADO PARCELA                [double      ]  <- (sem correspondência)
+  - VALOR TOTAL MONITORAMENTO CADASTRADO PARCELA     [double      ]  <- (sem correspondência)
+  - VALOR TOTAL OPP                                  [double      ]  <- EmailValorTotal_c, EmailValorTotalSE_c, EmailValorTotalAMS_c, EmailValorTotalMon_c, EmailValorTotalMA_c, EmailValorTotalLU_c, EmailValorTotalSLA_c
+  - VALOR TOTAL SE CADASTRADO PARCELA                [double      ]  <- (sem correspondência)
+  - VALOR TOTAL SLA CADASTRADO PARCELA               [double      ]  <- (sem correspondência)
+  - Versão atualização                               [string      ]  <- VersaoAtualizacao_c
+  - Vertical de projetos                             [enumeration ]  <- VerticalProjetos_c, RiscosDeProjeto_c, DuracaoDoProjetoEmMeses_c
+
+[ORACLE CUSTOM (_c) SEM CORRESPONDÊNCIA NO BITRIX]
+  - HorasGP_c                                        (título: Horas GP)
+  - HorasCT_c                                        (título: Horas CT)
+  - HorasCF_c                                        (título: Horas CF)
+  - HorasAF_c                                        (título: Horas AF)
+  - PercentualDeComissaoSobreLUMA_c                  (título: Percentual de Comissão sobre LU/MA)
+  - PercentualDeComissaoSobreServicos_c              (título: Percentual de Comissão sobre Serviços)
+  - StatusCliente_c                                  (título: Status do Cliente)
+  - Idsalesforce_Conta_c                             (título: ID Salesforce de Conta)
+  - Idsalesforce_contato_c                           (título: ID Salesforce de Contato)
+  - Idsalesforce_Produto_c                           (título: ID Salesforce de Produto)
+  - ConvertidoDeLead_c                               (título: ConvertidoDeLead)
+  - EstagioAux_c                                     (título: EstagioAux)
+  - EmailTotalSE_c                                   (título: EmailTotalSE)
+  - EmailComissaoSE_c                                (título: EmailComissaoSE)
+  - EmailTaxaLU_c                                    (título: EmailTaxaLU)
+  - EmailComissaoLU_c                                (título: EmailComissaoLU)
+  - EmailTotalMA_c                                   (título: EmailTotalMA)
+  - EmailComissaoMA_c                                (título: EmailComissaoMA)
+  - EmailTotalCLOUD_c                                (título: EmailTotalCLOUD)
+  - EmailTaxaCLOUD_c                                 (título: EmailTaxaCLOUD)
+  - EmailComissaoCLOUD_c                             (título: EmailComissaoCLOUD)
+  - CnpjParceiro_c                                   (título: CNPJ Parceiro)
+  - RevenueSE_c                                      (título: RevenueSE)
+  - RevenueLU_c                                      (título: RevenueLU)
+  - NomeDaCampanhaTexto_c                            (título: Nome da Campanha Texto)
+
+==============================================================================
+ACCOUNTS  ->  company  (campo ID: )
+==============================================================================
+
+[CAMPOS CUSTOM DO BITRIX (com rótulo)]
+  - Atividade                                        [enumeration ]  <- OrganizationDEO_Atividade_c
+  - Atividades atreladas                             [crm         ]  <- (sem correspondência)
+  - Base mercado                                     [boolean     ]  <- OrganizationDEO_BaseMercado_c
+  - Campanhas Synchro                                [crm         ]  <- (sem correspondência)
+  - Carteira                                         [enumeration ]  <- OrganizationDEO_Carteira_c
+  - Cliente a partir de                              [date        ]  <- OrganizationDEO_ClienteAPartirDe_c
+  - Cliente infor                                    [boolean     ]  <- OrganizationDEO_ClienteInfor_c
+  - CNPJ                                             [string      ]  <- OrganizationDEO_CNPJ_c
+  - Condições especiais                              [string      ]  <- OrganizationDEO_CondicoesEspeciais_c
+  - Conta conquistada por - GN Synchro               [string      ]  <- OrganizationDEO_ContaConquistaPorGNSynchro_c
+  - Conta pai                                        [crm         ]  <- OrganizationDEO_NomeContaPai_c, OrganizationDEO_ContaPaiInv_c
+  - Dados de acesso a portais                        [string      ]  <- OrganizationDEO_DadosDeAcessoAPortais_c
+  - Descrição da empresa                             [string      ]  <- OrganizationDEO_DescricaDaEmpresa_c
+  - Descrição do motivo da devolução da conta        [string      ]  <- OrganizationDEO_DescricaoMotivo_c
+  - E-mail de cobrança                               [string      ]  <- OrganizationDEO_EmailDeCobranca_c
+  - E-mail de envio da NF                            [string      ]  <- OrganizationDEO_EmailDeEnvioDaNF_c
+  - ERP                                              [enumeration ]  <- OrganizationDEO_ERP1_c
+  - Esforço de implantação                           [enumeration ]  <- OrganizationDEO_EsforcoDeImplantacao_c
+  - Estágio TDF                                      [enumeration ]  <- OrganizationDEO_EstagioTDF_c
+  - Faixa de funcionários                            [enumeration ]  <- OrganizationDEO_FaixaDeFuncionarios_c
+  - Faturado por invoice                             [boolean     ]  <- OrganizationDEO_FaturadoPorInvoice_c
+  - Gerente de Customer Success                      [employee    ]  <- OrganizationDEO_GerenteDeCustomerService_Id_c, OrganizationDEO_GerenteDeCustomerService_c, OrganizationDEO_GerenteDeCustomerSuccess_c, OrganizationDEO_GerenteDeCustommer_c
+  - Histórico de conquista da conta                  [string      ]  <- OrganizationDEO_HistoricoDeConquistaDaConta_c
+  - Id da conta ORACLE                               [string      ]  <- PartyId
+  - Leads atrelados                                  [crm         ]  <- (sem correspondência)
+  - Logotipo não divulgar                            [boolean     ]  <- OrganizationDEO_LogotipoNAODivulgar_c
+  - Motivo da devolução da conta                     [enumeration ]  <- OrganizationDEO_MotivoDeDevolucao_c
+  - Necessário PO                                    [boolean     ]  <- OrganizationDEO_NecessarioPO_c
+  - Nota de débito                                   [string      ]  <- OrganizationDEO_NotaDeDebito_c
+  - Oportunidades atreladas                          [crm         ]  <- (sem correspondência)
+  - Palavras-chave                                   [string      ]  <- OrganizationDEO_Palavraschave_c
+  - Permissão para referência                        [enumeration ]  <- OrganizationDEO_PermissaoParaReferenciaMudaMuito_c, OrganizationDEO_ObservacaoDaReferencia_c
+  - Prazo de pagamento do cliente                    [string      ]  <- OrganizationDEO_PrazoDePagamentoDoCliente_c
+  - Prazo de recebimento de NFs                      [string      ]  <- OrganizationDEO_PrazoDeRecebimentoDeNFs_c
+  - Propriedade                                      [enumeration ]  <- OrganizationDEO_Propriedade_c
+  - Quantidade de CNPJ's raíz                        [double      ]  <- OrganizationDEO_QuantidadeDeCNPJsRaiz_c
+  - Quantidade de estabelecimentos fiscais           [double      ]  <- OrganizationDEO_QuantidadeDeEstabelecimentosFiscais_c
+  - Quantidade de usuários                           [double      ]  <- OrganizationDEO_QuantidadeDeUsuarios_c
+  - Range de faturamento                             [enumeration ]  <- OrganizationDEO_RangeDeFaturamento_c
+  - Ranking                                          [string      ]  <- OrganizationDEO_Ranking_c, OrganizationDEO_RankingNumerico_c
+  - Razão social                                     [string      ]  <- OrganizationDEO_RazaoSocial_c
+  - Regiões de atuação                               [enumeration ]  <- OrganizationDEO_RegioesDeAtuacao_c
+  - Segmento                                         [enumeration ]  <- OrganizationDEO_Segmento_c
+  - Setor                                            [enumeration ]  <- OrganizationDEO_Setor_c
+  - Sigla do cliente                                 [string      ]  <- OrganizationDEO_SiglaDoCliente_c, OrganizationDEO_SatisfacaoDoCliente_c
+  - Solução fiscal                                   [enumeration ]  <- OrganizationDEO_SolucaoFiscal_c
+  - Tipo de conta antigo - validação cliente e suspect [string      ]  <- (sem correspondência)
+  - Tipo de conta Antigo - validação excliente       [string      ]  <- (sem correspondência)
+  - Tipo de conta antigo - validação suspect e prospect [string      ]  <- (sem correspondência)
+  - URL                                              [url         ]  <- (sem correspondência)
+  - Versão atual solfis                              [enumeration ]  <- OrganizationDEO_VersaoAtualSolfis_c
+  - Versão do BD                                     [string      ]  <- OrganizationDEO_VersaoDoBD_c
+  - Versão SFW                                       [string      ]  <- OrganizationDEO_VersaoSFW_c
+
+[ORACLE CUSTOM (_c) SEM CORRESPONDÊNCIA NO BITRIX]
+  - OrganizationDEO_SeloComercial_c                  (título: Selo comercial)
+  - OrganizationDEO_SeloImplementador_c              (título: Selo Implementador)
+  - OrganizationDEO_ValidadeDoContratoComercial_c    (título: Validade do contrato Comercial)
+  - OrganizationDEO_IdSalesforce_c                   (título: Id Salesforce)
+
+==============================================================================
+CONTACTS  ->  contact  (campo ID: )
+==============================================================================
+
+[CAMPOS CUSTOM DO BITRIX (com rótulo)]
+  - Adjetivo                                         [enumeration ]  <- PersonDEO_TRATAMENTO_c, PersonDEO_INATIVO_c
+  - Bounced                                          [boolean     ]  <- PersonDEO_Bounced_c
+  - Campanha de origem                               [string      ]  <- PersonDEO_CAMPANHA_ORIGEM_c
+  - Cargo                                            [enumeration ]  <- PersonDEO_CARGO_c
+  - Como chegou até a Synchro                        [enumeration ]  <- PersonDEO_COMO_CHEGOU_ATE_A_SYNCHRO_c
+  - Descrição                                        [string      ]  <- PersonDEO_DESCRICAO_c, PersonDEO_DataDeCriacao_c
+  - Id do contato ORACLE                             [string      ]  <- PartyId
+  - Interesse inicial                                [enumeration ]  <- PersonDEO_INTERESSE_INICIAL_c, PersonDEO_TELEFONE_RESIDENCIAL_c
+  - Motivo do interesse                              [enumeration ]  <- PersonDEO_MOTIVO_DE_INTERESSE_c
+  - Origem do lead                                   [enumeration ]  <- PersonDEO_ORIGEM_DO_LEAD_c
+  - Papel do contato                                 [enumeration ]  <- PersonDEO_PROPRIETARIO_DO_CONTATO_Id_c, PersonDEO_PROPRIETARIO_DO_CONTATO_c, PersonDEO_PapelDoContato_c
+  - Participante do GUS                              [boolean     ]  <- PersonDEO_PARTICIPANTE_GUS_c
+  - Status do contato                                [enumeration ]  <- (sem correspondência)
+  - Temperatura do Lead                              [enumeration ]  <- PersonDEO_TEMPERATURA_DO_LEAD_c
+  - Área                                             [enumeration ]  <- PersonDEO_AREA_c
+
+[ORACLE CUSTOM (_c) SEM CORRESPONDÊNCIA NO BITRIX]
+  - PersonDEO_CELULAR_c                              (título: Celular)
+  - PersonDEO_DATA_DE_TRANSFERENCIA_DO_LEAD_c        (título: Data de Transferência do Lead)
+  - PersonDEO_DATA_DE_NASCIMENTO_c                   (título: Data de nascimento)
+  - PersonDEO_OUTRO_TELEFONE_c                       (título: Outro telefone)
+  - PersonDEO_NOME_DA_CONTA_Id_c                     (título: Nome da Conta)
+  - PersonDEO_NOME_DA_CONTA_c                        (título: Nome da Conta)
+  - PersonDEO_PRONOME_TRATAMENTO_c                   (título: Pronome de Tratamento)
+  - PersonDEO_AGENTE_PROSPECCAO_c                    (título: Agente de Prospecção)
+  - PersonDEO_NomeDoFuncionario_c                    (título: Nome do Funcionário)
+  - PersonDEO_IDSalesForceContato_c                  (título: ID Sales force Contato)
+  - PersonDEO_IDSalesforceConta_c                    (título: ID Salesforce Conta)
+  - PersonDEO_EmailDoProprietarioDaConta_c           (título: Email do Proprietário da Conta)
+
+==============================================================================
+LEADS  ->  lead  (campo ID: )
+==============================================================================
+
+[CAMPOS CUSTOM DO BITRIX (com rótulo)]
+  - Agente de prospecção                             [employee    ]  <- AgenteProspeccao_Id_c, AgenteProspeccao_c
+  - Atividade lead                                   [string      ]  <- AtividadeLead_c
+  - Base mercado                                     [string      ]  <- BaseMercado_c
+  - campanha                                         [string      ]  <- Campanha_c
+  - Cargo                                            [enumeration ]  <- CargoLead_c
+  - Celular                                          [string      ]  <- Celular_c
+  - CNPJ                                             [string      ]  <- CNPJ_c
+  - Como chegou até a Synchro                        [enumeration ]  <- ComoChegouSynchro_c
+  - Contato principal                                [crm         ]  <- (sem correspondência)
+  - Data da rejeição do lead                         [date        ]  <- DataDaRejeicaoDoLead_c
+  - Data da última transferência                     [date        ]  <- DataUltimaTransferencia_c
+  - Data transferência lead                          [date        ]  <- DiasDesdeTransferenciaLead_c, DataTransferenciaLead_c
+  - Descrição da oportunidade                        [string      ]  <- DescricaoOportunidade_c
+  - Descrição do lead                                [string      ]  <- DescricaoLead_c
+  - Empresa                                          [string      ]  <- Empresa_Nome_Fantasia_c
+  - ERP                                              [string      ]  <- ERP_c
+  - Estágio TDF                                      [string      ]  <- EstagioTDF_c
+  - Faixa de funcionários                            [string      ]  <- NumeroFuncionarios_c, FaixaFuncionarios_c
+  - Família de produtos                              [enumeration ]  <- FamiliaProdutos_c
+  - Gerente de projeto                               [enumeration ]  <- (sem correspondência)
+  - Id lead oracle                                   [string      ]  <- LeadId
+  - Interesse inicial                                [enumeration ]  <- InteresseInicial_c
+  - Motivo da rejeição detalhado                     [string      ]  <- MotivoDeRejeicao_c
+  - Motivo de interesse                              [enumeration ]  <- MotivoInteresse_c
+  - Motivo do encerramento detalhado                 [string      ]  <- (sem correspondência)
+  - Motivo secundário                                [enumeration ]  <- (sem correspondência)
+  - Motivos da rejeição                              [enumeration ]  <- MotivoRejeicao_c
+  - Nome do contato principal                        [crm         ]  <- (sem correspondência)
+  - Origem do lead                                   [enumeration ]  <- OrigemLead_c, IdNovoLead_c
+  - Parceiro Principal                               [crm         ]  <- (sem correspondência)
+  - Propriedade                                      [string      ]  <- Propriedade_c
+  - Proprietário antigo                              [string      ]  <- (sem correspondência)
+  - Qual BD                                          [string      ]  <- QualBD_c
+  - Quantidade de estabelecimentos fiscais           [string      ]  <- QuantidadeEstabelecimentosFiscais_c
+  - Range de faturamento                             [string      ]  <- RangeFaturamento_c
+  - Ranking                                          [string      ]  <- Ranking_c
+  - Razão social                                     [string      ]  <- RazaoSocial_c
+  - Razão social (Faturamento)                       [string      ]  <- (sem correspondência)
+  - Segmento                                         [string      ]  <- Segmento_c
+  - Setor                                            [string      ]  <- Setor_c
+  - Solfis - outro especificar                       [string      ]  <- SOLFISOutrosEspecificar_c
+  - Solução fiscal                                   [string      ]  <- SolucaoFiscal_c
+  - Telefone alternativo                             [string      ]  <- (sem correspondência)
+  - Temperatura do lead                              [enumeration ]  <- StatusLead_c, TratamentoLead_c, TemperaturaDoLead_c
+  - Tipo de oportunidade                             [enumeration ]  <- tipoOportunidade_c
+  - URL                                              [string      ]  <- URL_c
+  - Versão BD                                        [string      ]  <- VersaoERP_c
+  - Vertical de projetos                             [enumeration ]  <- (sem correspondência)
+  - Área                                             [enumeration ]  <- AreaLead_c
+
+[ORACLE CUSTOM (_c) SEM CORRESPONDÊNCIA NO BITRIX]
+  - Assunto_c                                        (título: Assunto)
+  - IdSalesforceLead_c                               (título: Id Salesforce Lead)
+  - RegiaoEstrategica_c                              (título: RegiãoEstrategica)
+  - NomeColaborador_c                                (título: Nome Colaborador)
+  - FirstName_c                                      (título: Nome)
+  - LastName_c                                       (título: Sobrenome)
+  - Email_c                                          (título: Email)
+  - Convertido_c                                     (título: Convertido)
+  - PossuiRFPLead_c                                  (título: Possui RFP)
+  - NomeDoParceiroLead_c                             (título: Nome do parceiro Lead)
+  - ClonarLead_c                                     (título: Clonar Lead)
+
+==============================================================================
+PARTNERS  ->  item1196  (campo ID: )
+==============================================================================
+
+[CAMPOS CUSTOM DO BITRIX (com rótulo)]
+  - Contato principal                                [crm         ]  <- (sem correspondência)
+  - E-mail do contato                                [string      ]  <- (sem correspondência)
+  - Endereço                                         [address     ]  <- (sem correspondência)
+  - Id parceiros oracle                              [string      ]  <- PartyId
+  - Selo Comercial                                   [enumeration ]  <- PartnerProfilePEO_SeloComercial_c
+  - Selo Implantador                                 [enumeration ]  <- PartnerProfilePEO_SeloImplantador_c
+  - Status                                           [enumeration ]  <- Status
+  - Telefone do contato                              [string      ]  <- (sem correspondência)
+  - Tipo                                             [enumeration ]  <- PartnerProfilePEO_Tipo_c
+  - UF_CRM_69_1779816318                             [employee    ]  <- (sem correspondência)
+  - UF_CRM_69_1788270441                             [employee    ]  <- (sem correspondência)
+  - URL                                              [url         ]  <- URL
+
+[ORACLE CUSTOM (_c) SEM CORRESPONDÊNCIA NO BITRIX]
+  - PartnerProfilePEO_CNPJ_c                         (título: CNPJ)
+
+==============================================================================
+SERVICEREQUESTS  ->  item1216  (campo ID: )
+==============================================================================
+
+[CAMPOS CUSTOM DO BITRIX (com rótulo)]
+  - Anexos                                           [file        ]  <- (sem correspondência)
+  - Data da resolução                                [date        ]  <- DataDeConclusao_c, DataDaResolucao_c
+  - Data desejada do cliente                         [date        ]  <- DataDesejadaDaEntrega_c
+  - Data desejada do cliente -antiga                 [date        ]  <- (sem correspondência)
+  - Data disponível do pré-venda                     [date        ]  <- DataPrevistaDeEntrega_c
+  - Data fim                                         [date        ]  <- DataFim_c
+  - Data início                                      [date        ]  <- DataInicio_c
+  - Data prevista início do projeto                  [date        ]  <- DataPrevistaInicioDoProjeto_c
+  - Data prevista para o Go live                     [date        ]  <- DataPrevistaParaOGoLive_c
+  - Data replanejada                                 [date        ]  <- DataDeEntregaReprogramada_c
+  - Descrição                                        [string      ]  <- ProblemDescription, Descricao_c
+  - Detalhamento das despesas                        [string      ]  <- DetalhamentoDasDespesas_c
+  - Duração total da atividade (horas)               [double      ]  <- DuracaoTotalAtividadeHoras_c
+  - Estabelecimentos para homologação                [string      ]  <- EstabelecimentosParaHomologacao_c
+  - Hora fim                                         [datetime    ]  <- HoraFim_c
+  - Hora início                                      [datetime    ]  <- HoraInicio_c
+  - id SPV oracle                                    [string      ]  <- SrId, SPVOrigem_Id_c, SPVOrigem_c
+  - Implantação mista                                [string      ]  <- ImplantacaoMista_c, TipoDeImplantacao_c
+  - Integrações previstas                            [string      ]  <- IntegracoesPrevistas_c
+  - Justificativa do replanejamento                  [string      ]  <- JustificativaEntregaReprogramada_c
+  - Local                                            [enumeration ]  <- Local_c
+  - Motivo do retrabalho                             [string      ]  <- MotivoDaRejeicao_c, MotivoDoRetrabalho_c
+  - Necessário inglês                                [boolean     ]  <- Ingles_c
+  - Pré-venda                                        [enumeration ]  <- PreVenda_Id_c, PreVenda_c, PreVendaL_c
+  - Quantidade de dias na etapa Aguardando Cliente   [double      ]  <- (sem correspondência)
+  - Quantidade de dias na etapa Aguardando Consultoria [double      ]  <- (sem correspondência)
+  - Quantidade de dias na etapa Aguardando Engenharia [double      ]  <- (sem correspondência)
+  - Quantidade de dias na etapa Aguardando GC        [double      ]  <- (sem correspondência)
+  - Quantidade de dias na etapa Em Elaboração        [double      ]  <- (sem correspondência)
+  - Quantidade de dias na etapa Informações Inconsistentes [double      ]  <- (sem correspondência)
+  - Quantidade de dias na etapa Nova SPV             [double      ]  <- (sem correspondência)
+  - Quantidade de dias na etapa Validação GC         [double      ]  <- (sem correspondência)
+  - Retrabalho                                       [boolean     ]  <- Retrabalho_c
+  - Target de valor                                  [string      ]  <- TargetValor_c
+  - Tempo desejado de operação assistida             [string      ]  <- TempoDesejadoOperacaoAssistida_c
+  - Tipo                                             [enumeration ]  <- Tipo_c
+  - UF_CRM_79_1779884865                             [employee    ]  <- (sem correspondência)
+  - UF_CRM_79_1779890459                             [enumeration ]  <- (sem correspondência)
+  - UF_CRM_79_1779890513                             [enumeration ]  <- (sem correspondência)
+  - UF_CRM_79_1779890578                             [enumeration ]  <- (sem correspondência)
+  - UF_CRM_79_1779890614                             [enumeration ]  <- (sem correspondência)
+  - UF_CRM_79_1779890804                             [enumeration ]  <- (sem correspondência)
+  - UF_CRM_79_1779890839                             [enumeration ]  <- (sem correspondência)
+  - UF_CRM_79_1779890878                             [enumeration ]  <- (sem correspondência)
+  - Versão dos sistemas envolvidos                   [string      ]  <- VersaoDosSistemasEnvolvidos_c
+  - Válido pelo GP                                   [string      ]  <- ResumoAtividadeReuniao_c
+
+[ORACLE CUSTOM (_c) SEM CORRESPONDÊNCIA NO BITRIX]
+  - ExisteOportunidade_c                             (título: Existe Oportunidade)
+  - TipoDeProposta_c                                 (título: Tipo de proposta)
+  - TipoAlerta_c                                     (título: Tipo de alerta)
+  - RequerimentoAnalisado_c                          (título: Requerimento analisado)
+  - Oportunidade_Id_c                                (título: Oportunidade)
+  - Oportunidade_c                                   (título: Oportunidade)
+  - PoliticaDespesas_c                               (título: Política de despesas)
+  - ProjetoFiscalSeraImplantadoComERP_c              (título: Projeto Fiscal será implantado com ERP?)
+  - Proprietario_Id_c                                (título: Proprietario)
+  - Proprietario_c                                   (título: Proprietario)
+  - ComQuemEsta_Id_c                                 (título: Com quem está)
+  - ComQuemEsta_c                                    (título: Com quem está)
+  - Alerta_c                                         (título: Alerta)
+  - AtividadesASeremConsideradas_c                   (título: Atividades a serem consideradas)
+  - ComentarioAlerta_c                               (título: Comentário (alerta))
+  - Contato_Id_c                                     (título: Contato)
+  - Contato_c                                        (título: Contato)
+  - BasesEmQueASynchroDeveAtuar_c                    (título: Bases em que a Synchro deve atuar)
+  - HorasDeDeslocamento_c                            (título: Horas de deslocamento)
+  - Suporte_c                                        (título: Suporte)
+  - SuppInv_c                                        (título: SuppInv)
+
+==============================================================================
+CAMPANHASSYNCHRO_C  ->  item1208  (campo ID: )
+==============================================================================
+
+[CAMPOS CUSTOM DO BITRIX (com rótulo)]
+  - Carteira                                         [string      ]  <- Parceiro_Id_c, Parceiro_c, Carteira_c
+  - Complexidade                                     [enumeration ]  <- Complexidade_c
+  - Data de fechamento                               [date        ]  <- DataDeFechamento_c
+  - Data fechamento parceiro                         [date        ]  <- DataFechamentoParceiro_c
+  - Duração do projeto (em meses)                    [double      ]  <- DataDoProjeto_c, DuracaoDoProjetoemMeses_c
+  - Equipe                                           [string      ]  <- Equipe_c
+  - ERP                                              [string      ]  <- ERP_c, ERPLista_c
+  - Horas AF                                         [double      ]  <- HorasAF_c
+  - Horas CF                                         [double      ]  <- HorasCF_c
+  - Horas CT                                         [double      ]  <- HorasCT_c
+  - Horas GP                                         [double      ]  <- HorasGP_c
+  - Horas totais                                     [double      ]  <- HorasTotais_c
+  - id campanhas synchro oracle                      [string      ]  <- Id
+  - Modalidade                                       [enumeration ]  <- Modalidade_c
+  - Observação                                       [string      ]  <- Observacao_c
+  - Probabilidade                                    [string      ]  <- Probabilidade_c
+  - Quem implanta                                    [enumeration ]  <- QuemImplanta_c
+  - Quem implanta anterior                           [string      ]  <- (sem correspondência)
+  - Range de faturamento                             [string      ]  <- RangeDeFaturamento_c, RangeDeFaturamentoLista_c
+  - Solução                                          [enumeration ]  <- Solucao_c, SolucaoAtual_c
+  - Tipo de conta                                    [string      ]  <- Conta_Id_c, Conta_c, TipoDeConta_c, TipoDeContaLista_c
+  - UF_CRM_75_1779972229                             [enumeration ]  <- (sem correspondência)
+  - UF_CRM_75_1786458496                             [date        ]  <- (sem correspondência)
+  - Valor igual a opp?                               [enumeration ]  <- ValorIgualAOpp_c
+  - Versão atual Solfis                              [string      ]  <- VersaoAtualSolfis_c
+
+[ORACLE CUSTOM (_c) SEM CORRESPONDÊNCIA NO BITRIX]
+  - OraZcxOwner_Id_c                                 (título: Owner)
+  - OraZcxOwner_c                                    (título: Owner)
+  - Campanha_Id_c                                    (título: Campanha)
+  - Campanha_c                                       (título: Campanha)
+  - Oportunidade_Id_c                                (título: Oportunidade)
+  - Oportunidade_c                                   (título: Oportunidade)
+  - Proprietario_c                                   (título: Proprietário)
+  - Conta_Texto_c                                    (título: ContaT)
+  - Oportunidade_Texto_c                             (título: OportunidadeT)
+  - Parceiro_Texto_c                                 (título: ParceiroT)
+  - ValorDaCampanha_c                                (título: Valor da campanha)
+  - DataInicio_c                                     (título: Data início)
+  - DataFim_c                                        (título: Data fim)
+  - ContatoPrincipal_c                               (título: Contato principal)
+  - Status_c                                         (título: Status)
+  - FaseOpp_c                                        (título: Fase Opp)
+  - RT_c                                             (título: Eventos)
+
+==============================================================================
+CRIARCAMPANHA_C  ->  item1204  (campo ID: )
+==============================================================================
+
+[CAMPOS CUSTOM DO BITRIX (com rótulo)]
+  - Data fim                                         [date        ]  <- DataFim_c
+  - Data início                                      [date        ]  <- DataInicio_c
+  - id criar campanha oracle                         [string      ]  <- Id
+
+[ORACLE CUSTOM (_c) SEM CORRESPONDÊNCIA NO BITRIX]
+  - OraZcxOwner_Id_c                                 (título: Owner)
+  - OraZcxOwner_c                                    (título: Owner)
+
+==============================================================================
+PARCELAS_C  ->  item1212  (campo ID: )
+==============================================================================
+
+[CAMPOS CUSTOM DO BITRIX (com rótulo)]
+  - Data de faturamento                              [date        ]  <- DataDeVencimento_c
+  - Data de fechamento                               [date        ]  <- DataDeFechamento_c
+  - Descrição da parcela                             [string      ]  <- DescricaoDaParcela_c
+  - Divisão de parcelas (em vezes)                   [enumeration ]  <- DivisaoDasParcelas_c
+  - id parcelas oracle                               [string      ]  <- Id
+  - Meses de faturamento                             [double      ]  <- (sem correspondência)
+  - Número da parcela                                [double      ]  <- NumeroDaParcela_c, NumeroDaProposta_c
+  - Porcentagem da parcela                           [string      ]  <- PorcentagemDaParcela_c, ValorDaParcela_c
+  - Pró-rata                                         [boolean     ]  <- Proprietario_c, ProRata_c
+  - Tipo de oportunidade                             [enumeration ]  <- Oportunidade_Id_c, Oportunidade_c, TipoDaOportunidade_c
+
+[ORACLE CUSTOM (_c) SEM CORRESPONDÊNCIA NO BITRIX]
+  - OraZcxOwner_Id_c                                 (título: Owner)
+  - OraZcxOwner_c                                    (título: Owner)
+  - Mes_c                                            (título: Evento)
+
+==============================================================================
+ACTIVITIES  ->  item1220  (campo ID: )
+==============================================================================
+
+[CAMPOS CUSTOM DO BITRIX (com rótulo)]
+  - Compromisso do cliente                           [boolean     ]  <- CompromissoDoCliente_c
+  - Data de vencimento                               [date        ]  <- DueDate
+  - Descrição                                        [string      ]  <- ActivityPartialDescription
+  - id atividades oracle                             [string      ]  <- ActivityId, IdNovaAtividade_c
+  - Objetivo                                         [string      ]  <- Objetivo_c
+  - Prioridade                                       [enumeration ]  <- (sem correspondência)
+  - Tipo de objetivo                                 [enumeration ]  <- TipoDeObjetivo_c
+  - Tração                                           [string      ]  <- Tracao_c
+
+[ORACLE CUSTOM (_c) SEM CORRESPONDÊNCIA NO BITRIX]
+  - Nome_c                                           (título: Nome)
+  - RelativoA_c                                      (título: Relativo à)
+  - Telefone_c                                       (título: Telefone)
+  - Celular_c                                        (título: Celular)
+  - IDSalesforce_c                                   (título: IDSalesforce)
+  - Resultado_c                                      (título: Resultados)
+  - TracaoAtualizada_c                               (título: TraçãoAtualizada)
+  - ClonarAtividade_c                                (título: Clonar Atividade)
+
+==============================================================================
+PRODUCTS  ->  product  (campo ID: )
+==============================================================================
+
+[CAMPOS CUSTOM DO BITRIX (com rótulo)]
+
+[ORACLE CUSTOM (_c) SEM CORRESPONDÊNCIA NO BITRIX]
+  - CodigoDoProduto_c                                (título: Codigo Do Produto)
