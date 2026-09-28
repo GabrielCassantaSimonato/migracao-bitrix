@@ -2,8 +2,8 @@ name: Atualizacao diaria Bitrix
 
 on:
   schedule:
-    # 21:00 UTC = 18:00 horario de Brasilia
-    - cron: "0 21 * * *"
+    # 23:00 UTC = 20:00 horario de Brasilia (temporario; amanha voltar para 21:00 UTC / 18:00)
+    - cron: "0 23 * * *"
   workflow_dispatch:
     inputs:
       dias:
