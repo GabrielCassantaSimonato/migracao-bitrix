@@ -138,13 +138,64 @@ def montar_contato(rec, ctx):
     return contatos_mod.montar_contato_payload(rec, ctx["val_ct"], company_id=company_id, incluir_descricao=False)
 
 
-def montar_opp(rec, ctx):
-    cid = ctx["lazy_company"].get(rec.get("TargetPartyId"))
-    if not cid:
-        return None
-    payload = migrar_oportunidade.montar_payload_opp(
-        ctx["o"], rec, ctx["val_opp"], ctx["lazy_company"], cid)[0]
-    return payload
+def processar_opps(ctx, log, dias):
+    """Oportunidades: upsert + diff + log, e aplica produtos + anexos (criação E atualização)."""
+    o = ctx["o"]
+    cri, atu = buscar_delta(o, "opportunities", dias, extra_q="OptyId>0")
+    print(f"Oportunidades: {len(cri)} criados, {len(atu)} atualizados", flush=True)
+    registros = cri + atu
+
+    labels = carregar_labels("deal")
+    enum_items = carregar_enum_items("deal")
+    status_labels = status_labels_para("deal")
+    lazy_product = ctx["lazy_product"]
+
+    comandos, metas = [], []
+    for rec in registros:
+        oid = rec.get("OptyId")
+        if oid is None:
+            continue
+        nome = rec.get("Name") or str(oid)
+        cid = ctx["lazy_company"].get(rec.get("TargetPartyId"))
+        if not cid:
+            continue
+        try:
+            payload, opty_id, opty_number, linhas = migrar_oportunidade.montar_payload_opp(
+                o, rec, ctx["val_opp"], ctx["lazy_company"], cid)
+        except Exception as e:
+            log.erro("Oportunidades")
+            print(f"  !! Oportunidades montar {oid}: {e}", flush=True)
+            continue
+        existing = migrador.find_existing("deal", str(oid))
+        if existing is None:
+            _push(comandos, "deal", payload, None, None)
+            metas.append(("Oportunidades", str(oid), nome, "created", None, opty_number, linhas, opty_id, None))
+        else:
+            atual = obter_atual("deal", existing)
+            mud = diferenciar(atual, payload, labels, enum_items, status_labels)
+            if mud:
+                _push(comandos, "deal", payload, None, existing)
+                metas.append(("Oportunidades", str(oid), nome, "updated", mud, opty_number, linhas, opty_id, existing))
+            else:
+                log.sem_alteracao("Oportunidades")
+
+    res, errs = migrador.batch(comandos, batch_size=10)
+
+    for meta, r, e in zip(metas, res, errs):
+        nome_display, oid, nome, action, mud, opty_number, linhas, opty_id, deal_id = meta
+        if e:
+            log.erro(nome_display)
+            print(f"  ERRO {nome_display} {oid} {nome}: {e.get('error_description') or e.get('error')}", flush=True)
+            continue
+        if action == "created":
+            log.criado(nome_display, nome)
+            deal_id = r  # novo ID do deal
+        else:
+            log.atualizado(nome_display, nome, mud)
+        if deal_id:
+            migrar_oportunidade.aplicar_produtos(deal_id, linhas, lazy_product, opty_id)
+            anexos = migrar_oportunidade.anexos_oportunidade(o, opty_number)
+            migrar_oportunidade.aplicar_anexos(deal_id, anexos, opty_id)
 
 
 def montar_lead(rec, ctx):
@@ -236,6 +287,7 @@ def main():
         "lazy_lead": LazyMap("lead"),
         "lazy_1196": LazyMap("item1196"),
         "lazy_1204": LazyMap("item1204"),
+        "lazy_product": LazyMap("product"),
         "label_map": migrar_lead.build_label_map(),
         "solucao_atual_map": migrar_campanha_synchro.build_solucao_atual_map(),
         "prod_grupos": migrar_produto.carregar_grupos_salvos(),
@@ -253,9 +305,7 @@ def main():
     processar("contact", "Contatos", cri + atu, lambda r: montar_contato(r, ctx), "PartyId", _nome_contato, log)
 
     # 3. oportunidades
-    cri, atu = buscar_delta(o, "opportunities", dias, extra_q="OptyId>0")
-    print(f"Oportunidades: {len(cri)} criados, {len(atu)} atualizados", flush=True)
-    processar("deal", "Oportunidades", cri + atu, lambda r: montar_opp(r, ctx), "OptyId", "Name", log)
+    processar_opps(ctx, log, dias)
 
     # 4. leads
     cri, atu = buscar_delta(o, "leads", dias)
