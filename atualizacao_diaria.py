@@ -54,8 +54,14 @@ def _push(comandos, entidade, payload, multi, existing_id):
             comandos.append(migrador.command(f"crm.{entidade}.add", fields=payload, multi=multi))
 
 
-def processar(entidade, nome_display, registros, montar, id_field, nome_fn, log, batch_size=50):
-    """Upsert + diff + log para uma lista de registros de uma entidade."""
+def processar(entidade, nome_display, registros, montar, id_field, nome_fn, log, batch_size=None):
+    """Upsert + diff + log para uma lista de registros de uma entidade.
+
+    CRM nativo (company/contact/lead/deal) usa batch_size=10 porque o update
+    dispara automação (~3,6s/comando) e lotes maiores estouram os 60s do Bitrix.
+    SPAs (crm.item.*) e produto gravam ~0,5s/comando e seguem com 50."""
+    if batch_size is None:
+        batch_size = 50 if (entidade.startswith("item") or entidade == "product") else 10
     labels = carregar_labels(entidade)
     enum_items = carregar_enum_items(entidade)
     status_labels = status_labels_para(entidade)
@@ -249,7 +255,7 @@ def main():
     # 3. oportunidades
     cri, atu = buscar_delta(o, "opportunities", dias, extra_q="OptyId>0")
     print(f"Oportunidades: {len(cri)} criados, {len(atu)} atualizados", flush=True)
-    processar("deal", "Oportunidades", cri + atu, lambda r: montar_opp(r, ctx), "OptyId", "Name", log, batch_size=10)
+    processar("deal", "Oportunidades", cri + atu, lambda r: montar_opp(r, ctx), "OptyId", "Name", log)
 
     # 4. leads
     cri, atu = buscar_delta(o, "leads", dias)
