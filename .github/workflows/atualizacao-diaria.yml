@@ -2,14 +2,14 @@ name: Atualizacao diaria Bitrix
 
 on:
   schedule:
-    # 23:00 UTC = 20:00 horario de Brasilia (temporario; amanha voltar para 21:00 UTC / 18:00)
-    - cron: "0 23 * * *"
+    # 20:00 UTC = 17:00 horario de Brasilia
+    - cron: "0 20 * * *"
   workflow_dispatch:
     inputs:
       dias:
-        description: "Janela em dias (ex.: 7 = 1 semana)"
+        description: "Janela em dias (ex.: 2 = 2 dias)"
         required: false
-        default: "7"
+        default: "2"
 
 jobs:
   sync:
@@ -42,4 +42,4 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
-        run: python atualizacao_diaria.py --dias ${{ github.event.inputs.dias || '7' }}
+        run: python atualizacao_diaria.py --dias ${{ github.event.inputs.dias || '2' }}
