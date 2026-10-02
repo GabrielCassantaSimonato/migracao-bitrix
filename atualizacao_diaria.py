@@ -200,7 +200,7 @@ def processar_opps(ctx, log, dias):
 
 def montar_lead(rec, ctx):
     return migrar_lead.migrar_lead_rec(
-        ctx["o"], rec, ctx["val_lead"], ctx["lazy_company"], ctx["label_map"], incluir_descricao=False)
+        ctx["o"], rec, ctx["val_lead"], ctx["lazy_company"], ctx["label_map"], incluir_descricao=True)
 
 
 def montar_spv(rec, ctx):

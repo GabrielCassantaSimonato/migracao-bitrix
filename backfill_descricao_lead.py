@@ -1,5 +1,6 @@
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timedelta, timezone
 
 import migrar_lead as ml
 import migrador
@@ -9,6 +10,7 @@ from oracle_client import OracleClient
 
 def main():
     limite = None
+    dias = None
     args = sys.argv[1:]
     for i, a in enumerate(args):
         if a == "--limite" and i + 1 < len(args):
@@ -21,12 +23,31 @@ def main():
                 limite = int(a.split("=", 1)[1])
             except ValueError:
                 pass
+        elif a == "--dias" and i + 1 < len(args):
+            try:
+                dias = int(args[i + 1])
+            except ValueError:
+                pass
+        elif a.startswith("--dias="):
+            try:
+                dias = int(a.split("=", 1)[1])
+            except ValueError:
+                pass
 
     o = OracleClient()
     existentes = migrador.carregar_existentes_crm("crm.lead.list", CAMPO_ID_ORACLE["lead"])
     print(f"leads existentes: {len(existentes)}", flush=True)
 
     items = list(existentes.items())
+
+    if dias is not None:
+        agora = datetime.now(timezone.utc)
+        corte = (agora - timedelta(days=dias)).strftime("%Y-%m-%dT%H:%M:%S")
+        recentes = {str(r.get("LeadId")) for r in o.registros_todos(
+            "leads", fields=["LeadId"], q=f"LastUpdateDate>='{corte}'")}
+        items = [it for it in items if it[0] in recentes]
+        print(f"  janela {dias} dia(s): {len(items)} leads a considerar", flush=True)
+
     if limite:
         items = items[:limite]
         print(f"  limite aplicado: {len(items)} leads", flush=True)
