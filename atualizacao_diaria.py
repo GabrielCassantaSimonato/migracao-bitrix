@@ -205,7 +205,8 @@ def montar_lead(rec, ctx):
 
 def montar_spv(rec, ctx):
     return migrar_spv.montar_payload(
-        rec, ctx["val_spv"], ctx["lazy_company"], ctx["lazy_deal"], None)
+        rec, ctx["val_spv"], ctx["lazy_company"], ctx["lazy_deal"], None,
+        ctx.get("det_spv"))
 
 
 def montar_parceiro(rec, ctx):
@@ -315,7 +316,9 @@ def main():
     # 5. SPVs
     cri, atu = buscar_delta(o, "serviceRequests", dias)
     print(f"SPVs: {len(cri)} criados, {len(atu)} atualizados", flush=True)
-    processar("item1216", "SPVs", cri + atu, lambda r: montar_spv(r, ctx), "SrId", "Title", log)
+    registros_spv = cri + atu
+    ctx["det_spv"] = migrar_spv.buscar_detalhamentos(registros_spv, o) if registros_spv else {}
+    processar("item1216", "SPVs", registros_spv, lambda r: montar_spv(r, ctx), "SrId", "Title", log)
 
     # 6. parceiros
     cri, atu = buscar_delta(o, "partners", dias)

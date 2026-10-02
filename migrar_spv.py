@@ -142,7 +142,32 @@ def carregar_opty_para_conta(o):
     return mapa
 
 
-def montar_payload(rec, val_map, empresas, deals, opty_para_conta=None):
+def buscar_detalhamentos(records, o, max_workers=8):
+    """Pré-busca os CLOBs DetalhamentoDasDespesas_c de uma lista de registros (paralelo).
+
+    Retorna {str(SrId): texto} (ignora registros sem conteúdo / enclosure 404)."""
+    det = {}
+
+    def _get(rec):
+        try:
+            srid = rec.get("SrId")
+            srn = rec.get("SrNumber")
+            v = o.enclosure("serviceRequests", srn, "DetalhamentoDasDespesas_c")
+            return str(srid), (v.strip() if v else None)
+        except Exception:
+            return str(rec.get("SrId")), None
+
+    alvos = [r for r in records if r.get("SrId") is not None and r.get("SrNumber")]
+    with ThreadPoolExecutor(max_workers=max_workers) as ex:
+        futs = {ex.submit(_get, r): r for r in alvos}
+        for f in as_completed(futs):
+            srid, val = f.result()
+            if val:
+                det[srid] = val
+    return det
+
+
+def montar_payload(rec, val_map, empresas, deals, opty_para_conta=None, detalhamentos=None):
     p = {}
     p["title"] = rec.get("Title") or f"SPV {rec.get('SrNumber')}"
     p[ID_FIELD] = str(rec.get("SrId"))
@@ -186,6 +211,11 @@ def montar_payload(rec, val_map, empresas, deals, opty_para_conta=None):
     # descricao
     if rec.get("ProblemDescription"):
         p[CAMPO_DESCRICAO] = rec["ProblemDescription"]
+
+    # detalhamento das despesas (CLOB via enclosure, pre-buscado em paralelo)
+    det = detalhamentos.get(str(rec.get("SrId"))) if detalhamentos else None
+    if det:
+        p[CAMPO_DETALHAMENTO_DESPESAS] = det
 
     # datas
     for oracle_f, campo in (
@@ -384,13 +414,25 @@ def main():
     o = OracleClient()
     val_map = build_value_mapping("serviceRequests", "item1216")
 
+    dias = None
+    if "--dias" in sys.argv:
+        i = sys.argv.index("--dias")
+        if i + 1 < len(sys.argv):
+            dias = int(sys.argv[i + 1])
+
     empresas = carregar_mapa_entidade("crm.company.list", CAMPO_ID_ORACLE["company"])
     deals = carregar_mapa_entidade("crm.deal.list", CAMPO_ID_ORACLE["deal"])
     opty_para_conta = carregar_opty_para_conta(o)
     print(f"empresas={len(empresas)} deals={len(deals)} opty_para_conta={len(opty_para_conta)}")
 
-    dados = o.registros_todos("serviceRequests")
-    print(f"{len(dados)} SPVs no Oracle")
+    if dias is not None:
+        from incremental import buscar_delta
+        cri, atu = buscar_delta(o, "serviceRequests", dias)
+        dados = cri + atu
+        print(f"{len(dados)} SPVs nos ultimos {dias} dias")
+    else:
+        dados = o.registros_todos("serviceRequests")
+        print(f"{len(dados)} SPVs no Oracle")
 
     existentes = migrador.carregar_existentes_item("item1216")
     print(f"  {len(existentes)} ja existentes")
@@ -404,11 +446,14 @@ def main():
             continue
         alvos.append(rec)
 
+    print(f"Buscando detalhamento das despesas (CLOB) de {len(alvos)} SPVs (paralelo)...", flush=True)
+    detalhamentos = buscar_detalhamentos(alvos, o)
+
     comandos = []
     metas = []
     for rec in alvos:
         sr_id = rec.get("SrId")
-        payload = montar_payload(rec, val_map, empresas, deals, opty_para_conta)
+        payload = montar_payload(rec, val_map, empresas, deals, opty_para_conta, detalhamentos)
         existing = existentes.get(str(sr_id))
         if existing:
             comandos.append(migrador.command("crm.item.update", fields=payload, extra={"entityTypeId": EID, "id": existing}))
