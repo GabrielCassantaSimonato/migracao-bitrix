@@ -70,6 +70,26 @@ VALORES_MANUAIS = {
     "ufCrm79_1779884392": {  # Pré-venda (item1216) - Carlos Roberto saiu, não está mais na LOV
         "CARLOS_ROBERTO": "13383",
     },
+    # Motivo da devolução da conta (empresa): LOV do Oracle divergente dos itens do
+    # campo Bitrix (que eram os motivos de rejeição do lead). Campo recriado com os 9
+    # significados do Oracle; cobre também as variantes antigas de código (meaning
+    # transformado em código).
+    "UF_CRM_1779458537282": {
+        "ACEITE_EQUIVOCADO": "13927",
+        "BAIXA_PRIORIDADE": "13929",
+        "BAIXA_PRIORIDADE_NO_PROJETO": "13929",
+        "CLIENTE_PESQUISANDO_MERCADO": "13931",
+        "EMPRESA_OPTOU_SOLUCAO": "13933",
+        "EMPRESA_OPTOU_POR_SOLUCAO_DE_MERCADO": "13933",
+        "FALTA_BUDGET": "13935",
+        "FALTA_DE_BUDGET": "13935",
+        "NECESSIDADE_FORA_DO_ESCOPO": "13937",
+        "OUTROS": "13939",
+        "PERDA_CONTATO": "13941",
+        "PERDA_DE_COMUNICACAO_COM_O_CONTATO": "13941",
+        "PROCESSO_ADIADO": "13943",
+        "PROCESSO_DE_COMPRA_FOI_ADIADO": "13943",
+    },
 }
 
 

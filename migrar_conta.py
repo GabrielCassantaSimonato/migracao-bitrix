@@ -21,6 +21,7 @@ CAMPO_CONTA_PAI = "UF_CRM_1779458340"
 CAMPO_GERENTE_CS = "UF_CRM_1779458529"
 CAMPO_DESCRICAO = "UF_CRM_1779459867870"
 CAMPO_HISTORICO = "UF_CRM_1779459961463"
+CAMPO_DESCRICAO_MOTIVO = "UF_CRM_1779458579405"
 
 
 def load(name):
@@ -43,7 +44,7 @@ def build_payload(oracle_obj, bitrix_ent, rec, val_map):
         if c.get("transform") in ("fk", "fk_company"):
             continue
         val = mapeamento.aplicar_transform(c["oracle"], bfield, c.get("transform"), rec)
-        if val in (None, ""):
+        if val is None or val == "" or str(val).strip() in ("", '""'):
             continue
         if btype == "enumeration" and bfield in val_map:
             de_para = val_map[bfield]["de_para"]
@@ -127,6 +128,9 @@ def _build_conta(rec, val_acc, val_ct):
     historico = contatos_mod.buscar_historico_conquista(rec.get("PartyNumber"))
     if historico:
         p[CAMPO_HISTORICO] = historico
+    desc_motivo = contatos_mod.buscar_descricao_motivo(rec.get("PartyNumber"))
+    if desc_motivo and desc_motivo.strip():
+        p[CAMPO_DESCRICAO_MOTIVO] = desc_motivo
 
     contatos_lista = contatos_mod.buscar_contatos_conta(rec.get("PartyId"))
     primary_party = rec.get("PrimaryContactPartyId")

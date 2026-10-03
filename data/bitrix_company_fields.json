@@ -1574,28 +1574,40 @@
     "isDynamic": true,
     "items": [
       {
-        "ID": "5675",
-        "VALUE": "Contato inacessível"
+        "ID": "13927",
+        "VALUE": "Aceite Equivocado"
       },
       {
-        "ID": "5677",
-        "VALUE": "Empresa fora dos valores da Synchro"
+        "ID": "13929",
+        "VALUE": "Baixa prioridade no projeto"
       },
       {
-        "ID": "5679",
-        "VALUE": "Fora do público alvo (definido para a empresa de prospecção)"
+        "ID": "13931",
+        "VALUE": "Cliente Pesquisando Mercado"
       },
       {
-        "ID": "5681",
-        "VALUE": "Necessidade fora do escopo da Synchro"
+        "ID": "13933",
+        "VALUE": "Empresa optou por solução de mercado"
       },
       {
-        "ID": "5683",
-        "VALUE": "Recusou-se a ouvir a Synchro"
+        "ID": "13935",
+        "VALUE": "Falta de budget"
       },
       {
-        "ID": "5685",
-        "VALUE": "Sondando para compra futura"
+        "ID": "13937",
+        "VALUE": "Necessidade Fora do Escopo"
+      },
+      {
+        "ID": "13939",
+        "VALUE": "Outros"
+      },
+      {
+        "ID": "13941",
+        "VALUE": "Perda de comunicação com o contato"
+      },
+      {
+        "ID": "13943",
+        "VALUE": "Processo de compra foi adiado"
       }
     ],
     "title": "UF_CRM_1779458537282",

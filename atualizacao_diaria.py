@@ -129,6 +129,9 @@ def montar_conta(rec, ctx):
     h = contatos_mod.buscar_historico_conquista(rec.get("PartyNumber"))
     if h:
         p[migrar_conta.CAMPO_HISTORICO] = h
+    dm = contatos_mod.buscar_descricao_motivo(rec.get("PartyNumber"))
+    if dm and dm.strip():
+        p[migrar_conta.CAMPO_DESCRICAO_MOTIVO] = dm
     return p
 
 

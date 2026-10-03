@@ -102,6 +102,14 @@ def buscar_historico_conquista(party_number):
     return o.enclosure("accounts", party_number, "OrganizationDEO_HistoricoDeConquistaDaConta_c")
 
 
+def buscar_descricao_motivo(party_number):
+    """Lê o CLOB 'Descrição do motivo da devolução da conta' via enclosure (PartyNumber)."""
+    if not party_number:
+        return None
+    o = OracleClient()
+    return o.enclosure("accounts", party_number, "OrganizationDEO_DescricaoMotivo_c")
+
+
 def id_bitrix_contato(party_id):
     """ID Bitrix do contato com esse PartyId Oracle (ou None)."""
     if party_id is None:
