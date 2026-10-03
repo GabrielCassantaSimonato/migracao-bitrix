@@ -338,6 +338,15 @@ def aplicar_anexos_spv(bid, anexos, sr_number):
         return False
 
 
+def _id_do_resultado(r):
+    """Extrai o ID Bitrix do resultado de um crm.item.add/update no batch
+    (crm.item.add devolve {'item': {'id': ...}})."""
+    if isinstance(r, dict):
+        item = r.get("item") or {}
+        return item.get("id") or r.get("id")
+    return r
+
+
 def anexos_todos(limite=None, so_faltantes=False):
     """Passada separada: sobe os anexos das SPVs ja migradas (idempotente)."""
     o = OracleClient()
@@ -450,28 +459,49 @@ def main():
     detalhamentos = buscar_detalhamentos(alvos, o)
 
     comandos = []
-    metas = []
+    metas = []  # (sr_id, name, action, sr_number, bitrix_id)
     for rec in alvos:
         sr_id = rec.get("SrId")
         payload = montar_payload(rec, val_map, empresas, deals, opty_para_conta, detalhamentos)
+        srn = rec.get("SrNumber")
         existing = existentes.get(str(sr_id))
         if existing:
             comandos.append(migrador.command("crm.item.update", fields=payload, extra={"entityTypeId": EID, "id": existing}))
-            metas.append((sr_id, rec.get("AccountPartyName"), "updated"))
+            metas.append((sr_id, rec.get("AccountPartyName"), "updated", srn, existing))
         else:
             comandos.append(migrador.command("crm.item.add", fields=payload, extra={"entityTypeId": EID}))
-            metas.append((sr_id, rec.get("AccountPartyName"), "created"))
+            metas.append((sr_id, rec.get("AccountPartyName"), "created", srn, None))
 
     criados = atualizados = erros = 0
+    alvo_anexos = []  # (bitrix_id, sr_number)
     res, errs = migrador.batch(comandos)
-    for (sr_id, name, action), r, e in zip(metas, res, errs):
+    for (sr_id, name, action, srn, existing), r, e in zip(metas, res, errs):
         if e:
             erros += 1
             print(f"  ERRO {sr_id} {name}: {e.get('error_description') or e.get('error')}", flush=True)
-        elif action == "created":
+            continue
+        bid = existing if existing else _id_do_resultado(r)
+        if action == "created":
             criados += 1
         else:
             atualizados += 1
+        if bid and srn:
+            alvo_anexos.append((bid, srn))
+
+    # ---- anexos das SPVs processadas (criadas E atualizadas) ----
+    if alvo_anexos:
+        print(f"Aplicando anexos em {len(alvo_anexos)} SPVs...", flush=True)
+        anexos_map = {}
+        with ThreadPoolExecutor(max_workers=8) as ex:
+            fut = {ex.submit(anexos_spv, o, srn): (bid, srn) for bid, srn in alvo_anexos}
+            for f in as_completed(fut):
+                bid, srn = fut[f]
+                try:
+                    anexos_map[srn] = f.result()
+                except Exception:
+                    anexos_map[srn] = []
+        for bid, srn in alvo_anexos:
+            aplicar_anexos_spv(bid, anexos_map.get(srn, []), srn)
 
     print("=" * 60)
     print(f"criados={criados} atualizados={atualizados} erros={erros}")

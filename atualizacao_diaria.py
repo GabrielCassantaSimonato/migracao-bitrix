@@ -212,6 +212,61 @@ def montar_spv(rec, ctx):
         ctx.get("det_spv"))
 
 
+def processar_spv(ctx, log, dias):
+    """SPVs: upsert + diff + log, e aplica anexos (criação E atualização)."""
+    o = ctx["o"]
+    cri, atu = buscar_delta(o, "serviceRequests", dias)
+    print(f"SPVs: {len(cri)} criados, {len(atu)} atualizados", flush=True)
+    registros = cri + atu
+    ctx["det_spv"] = migrar_spv.buscar_detalhamentos(registros, o) if registros else {}
+
+    labels = carregar_labels("item1216")
+    enum_items = carregar_enum_items("item1216")
+    status_labels = status_labels_para("item1216")
+
+    comandos, metas = [], []
+    for rec in registros:
+        sr_id = rec.get("SrId")
+        if sr_id is None:
+            continue
+        nome = rec.get("Title") or f"SPV {rec.get('SrNumber')}"
+        try:
+            p = montar_spv(rec, ctx)
+        except Exception as e:
+            log.erro("SPVs")
+            print(f"  !! SPVs montar {sr_id}: {e}", flush=True)
+            continue
+        existing = migrador.find_existing("item1216", str(sr_id))
+        if existing is None:
+            _push(comandos, "item1216", p, None, None)
+            metas.append(("SPVs", str(sr_id), nome, "created", None, rec.get("SrNumber"), None))
+        else:
+            atual = obter_atual("item1216", existing)
+            mud = diferenciar(atual, p, labels, enum_items, status_labels)
+            if mud:
+                _push(comandos, "item1216", p, None, existing)
+                metas.append(("SPVs", str(sr_id), nome, "updated", mud, rec.get("SrNumber"), existing))
+            else:
+                log.sem_alteracao("SPVs")
+
+    res, errs = migrador.batch(comandos)
+
+    for meta, r, e in zip(metas, res, errs):
+        nome_display, sr_id, nome, action, mud, srn, bitrix_id = meta
+        if e:
+            log.erro(nome_display)
+            print(f"  ERRO {nome_display} {sr_id} {nome}: {e.get('error_description') or e.get('error')}", flush=True)
+            continue
+        if action == "created":
+            log.criado(nome_display, nome)
+            bitrix_id = migrar_spv._id_do_resultado(r)
+        else:
+            log.atualizado(nome_display, nome, mud)
+        if bitrix_id and srn:
+            anexos = migrar_spv.anexos_spv(o, srn)
+            migrar_spv.aplicar_anexos_spv(bitrix_id, anexos, srn)
+
+
 def montar_parceiro(rec, ctx):
     return migrar_parceiro.montar_payload(rec, ctx["val_parc"])
 
@@ -317,11 +372,7 @@ def main():
     processar("lead", "Leads", cri + atu, lambda r: montar_lead(r, ctx), "LeadId", "Name", log)
 
     # 5. SPVs
-    cri, atu = buscar_delta(o, "serviceRequests", dias)
-    print(f"SPVs: {len(cri)} criados, {len(atu)} atualizados", flush=True)
-    registros_spv = cri + atu
-    ctx["det_spv"] = migrar_spv.buscar_detalhamentos(registros_spv, o) if registros_spv else {}
-    processar("item1216", "SPVs", registros_spv, lambda r: montar_spv(r, ctx), "SrId", "Title", log)
+    processar_spv(ctx, log, dias)
 
     # 6. parceiros
     cri, atu = buscar_delta(o, "partners", dias)
