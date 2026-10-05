@@ -776,12 +776,20 @@
   },
   "UF_CRM_1779799488": {
     "type": "enumeration",
-    "isRequired": true,
+    "isRequired": false,
     "isReadOnly": false,
     "isImmutable": false,
     "isMultiple": false,
     "isDynamic": true,
     "items": [
+      {
+        "ID": "13801",
+        "VALUE": "AE"
+      },
+      {
+        "ID": "13945",
+        "VALUE": "AE+GOA"
+      },
       {
         "ID": "6619",
         "VALUE": "AMS"
@@ -803,6 +811,10 @@
         "VALUE": "CredPIS"
       },
       {
+        "ID": "13967",
+        "VALUE": "CTe"
+      },
+      {
         "ID": "6629",
         "VALUE": "DFe Manager"
       },
@@ -819,16 +831,20 @@
         "VALUE": "ECF"
       },
       {
+        "ID": "13969",
+        "VALUE": "EFD Contribuições"
+      },
+      {
+        "ID": "13971",
+        "VALUE": "EFD ICMS IPI"
+      },
+      {
         "ID": "6637",
         "VALUE": "EFD PIS/COFINS Synchro4Me"
       },
       {
         "ID": "6639",
         "VALUE": "Emissor Fiscal"
-      },
-      {
-        "ID": "6641",
-        "VALUE": "FIS+CON+DFE+EXP"
       },
       {
         "ID": "6643",
@@ -839,6 +855,10 @@
         "VALUE": "Fis+Con"
       },
       {
+        "ID": "6641",
+        "VALUE": "Fis+Con+DFe+EXP"
+      },
+      {
         "ID": "6647",
         "VALUE": "Fis+DFe"
       },
@@ -847,12 +867,20 @@
         "VALUE": "Fis+Gov"
       },
       {
+        "ID": "13947",
+        "VALUE": "GDT"
+      },
+      {
         "ID": "6651",
-        "VALUE": "Governança"
+        "VALUE": "GOA"
       },
       {
         "ID": "6653",
         "VALUE": "Inbound"
+      },
+      {
+        "ID": "13949",
+        "VALUE": "Insight"
       },
       {
         "ID": "6655",
@@ -871,20 +899,36 @@
         "VALUE": "Monitoramento"
       },
       {
+        "ID": "13973",
+        "VALUE": "NFSe"
+      },
+      {
+        "ID": "13975",
+        "VALUE": "NFe"
+      },
+      {
         "ID": "6663",
         "VALUE": "Obrigações"
       },
       {
         "ID": "6665",
-        "VALUE": "Opecon"
+        "VALUE": "OPECON"
       },
       {
         "ID": "6667",
         "VALUE": "REINF"
       },
       {
+        "ID": "13951",
+        "VALUE": "Recebimento Fiscal"
+      },
+      {
         "ID": "6669",
         "VALUE": "Recup ST"
+      },
+      {
+        "ID": "13953",
+        "VALUE": "Sustentação"
       },
       {
         "ID": "6671",

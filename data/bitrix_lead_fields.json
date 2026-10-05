@@ -1068,6 +1068,10 @@
         "VALUE": "AE+GOA"
       },
       {
+        "ID": "13977",
+        "VALUE": "AMS"
+      },
+      {
         "ID": "6315",
         "VALUE": "CIAP"
       },
@@ -1076,16 +1080,20 @@
         "VALUE": "CNPJs Adicionais"
       },
       {
-        "ID": "6319",
-        "VALUE": "CTe"
-      },
-      {
         "ID": "6321",
-        "VALUE": "Contab"
+        "VALUE": "CONTAB"
       },
       {
         "ID": "6323",
         "VALUE": "CredPIS"
+      },
+      {
+        "ID": "6319",
+        "VALUE": "CTe"
+      },
+      {
+        "ID": "13955",
+        "VALUE": "DFe Manager"
       },
       {
         "ID": "6325",
@@ -1106,6 +1114,10 @@
       {
         "ID": "6333",
         "VALUE": "EFD ICMS IPI"
+      },
+      {
+        "ID": "13957",
+        "VALUE": "EFD PIS/COFINS Synchro4Me"
       },
       {
         "ID": "6335",
@@ -1172,12 +1184,12 @@
         "VALUE": "NFe"
       },
       {
-        "ID": "6367",
-        "VALUE": "OPECON"
-      },
-      {
         "ID": "6369",
         "VALUE": "Obrigações"
+      },
+      {
+        "ID": "6367",
+        "VALUE": "OPECON"
       },
       {
         "ID": "6371",
@@ -1196,12 +1208,20 @@
         "VALUE": "Sustentação"
       },
       {
-        "ID": "6379",
-        "VALUE": "Synchro4TDF"
+        "ID": "13979",
+        "VALUE": "Synchro4DFe"
+      },
+      {
+        "ID": "13981",
+        "VALUE": "Synchro4DRC"
       },
       {
         "ID": "6381",
-        "VALUE": "Synchro4me"
+        "VALUE": "Synchro4Me"
+      },
+      {
+        "ID": "6379",
+        "VALUE": "Synchro4TDF"
       },
       {
         "ID": "6383",
@@ -1209,9 +1229,9 @@
       }
     ],
     "title": "UF_CRM_1779735693",
-    "listLabel": "Família de produtos",
-    "formLabel": "Família de produtos",
-    "filterLabel": "Família de produtos",
+    "listLabel": "Família de produto - lead",
+    "formLabel": "Família de produto - lead",
+    "filterLabel": "Família de produto - lead",
     "settings": {
       "DISPLAY": "UI",
       "LIST_HEIGHT": 5,

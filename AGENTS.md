@@ -398,6 +398,15 @@ atualização de registros com de-para de campos e de valores (listas/lookups).
     `Tracao_c` (0 divergências) — ignorar. Dono "Lucas Fernando dos Santos da Silva" (Bitrix 2128)
     resolve por e-mail `lucas.fernando@synchro.com.br`; não houve atividades dele no Oracle
     (a dúvida do usuário se resolveu na própria atualização).
+56. Família de produto (deal `UF_CRM_1779799488` "Família de produto" × lead `UF_CRM_1779735693`
+    "Família de produto - lead"): as listas foram **unificadas** (mesmos 42 itens nos dois campos)
+    via `_unificar_familia.py` (união + rótulos canônicos, ex.: `CONTAB`/`Contab`→`CONTAB`,
+    `Opecon`→`OPECON`, `Synchro4me`→`Synchro4Me`, `FIS+CON+DFE+EXP`→`Fis+Con+DFe+EXP`,
+    `AE + GOA`→`AE+GOA`). As LOVs Oracle são DIFERENTES por entidade (`FamiliaDeProdutos_c`
+    no deal, `FamiliaProdutos_c` no lead), então o de-para continua por entidade: deal via
+    `FAMILIA_MAP` (código→ID) e lead via `build_value_mapping` (meaning→VALUE, case-insensitive).
+    Atenção: o item deal `6651` foi renomeado de "Governança" para "GOA" (decisão do usuário),
+    então o código Oracle `GOVERNANCA` agora grava como "GOA".
 
 ## STATUS atual
 - CONTA (empresa) — RESOLVIDA: tipo de conta, campos de lista (por ID), conta pai,
