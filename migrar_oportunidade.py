@@ -59,6 +59,7 @@ CAMPO_HORAS = {
 }
 
 CAMPO_FAMILIA = "UF_CRM_1779799488"                  # "Família de produto" (enumeration)
+CAMPO_FAMILIA_LEAD = "UF_CRM_6AB51E4E5474B"          # "Família de produto - lead" (enumeration)
 CAMPO_FAMILIA_ERRADO = "UF_CRM_1768850832"           # campo antigo (nao usar)
 CAMPO_CONCORRENTES = "UF_CRM_1789560499"             # "Concorrentes" (enumeration, multiple)
 CAMPO_CONTA_REFERENCIA = "UF_CRM_1779805434"         # "Conta informada para referência" (crm company)
@@ -112,6 +113,66 @@ FAMILIA_MAP = {
     "SYNCHRO_4ME": "6675",
     "SYNCHRO4TDF": "6677",
     "TAX_ENGINE": "6679",
+    # códigos legados presentes nos dados (fora da LOV atual, mas com item no Bitrix)
+    "AE": "13801",
+    "AE_GOA": "13945",
+    "CTE": "13967",
+    "EFD_CONTRIBUICOES": "13969",
+    "EFD_ICMS_IPI": "13971",
+    "GDT": "13947",
+    "GOA": "6651",
+    "INSIGHT": "13949",
+    "NFE": "13975",
+    "NFSE": "13973",
+}
+
+# De-para do MESMO campo (Família de produto) para o campo "Família de produto - lead"
+# (UF_CRM_6AB51E4E5474B) do negócio. Ambos os campos recebem o valor da oportunidade.
+FAMILIA_LEAD_MAP = {
+    "AMS": "13983",
+    "CIAP": "13409",
+    "CNPJ_ADICIONAL": "13411",
+    "CONTAB": "13415",
+    "CREDPIS": "13417",
+    "DFE_MANAGER": "13963",
+    "ECD": "13419",
+    "ECD_ECF": "13421",
+    "ECF": "13423",
+    "EFD_PIS_COFINS_SYNCHRO4ME": "13965",
+    "EMISSOR_FISCAL": "13429",
+    "FIS_CON_DFE_EXP": "13435",
+    "FIS": "13431",
+    "FIS_CON": "13433",
+    "FIS_DFE": "13437",
+    "FIS_GOV": "13439",
+    "GOVERNANCA": "13443",
+    "INBOUND": "13445",
+    "INT_ORA": "13449",
+    "INT_SAP": "13451",
+    "MDEST": "13453",
+    "MONITORAMENTO": "13455",
+    "OBRIGACOES": "13463",
+    "OPECON": "13461",
+    " OPECON": "13461",
+    "REINF": "13465",
+    "RECUP_ST": "13469",
+    "SYNCHRO4DFE": "13985",
+    "SYNCHRO4DRC": "13987",
+    "SYNCHRO4ME": "13475",
+    "SYNCHRO_4ME": "13475",
+    "SYNCHRO4TDF": "13473",
+    "TAX_ENGINE": "13477",
+    # códigos legados presentes nos dados (fora da LOV atual, mas com item no Bitrix)
+    "AE": "13405",
+    "AE_GOA": "13407",
+    "CTE": "13413",
+    "EFD_CONTRIBUICOES": "13425",
+    "EFD_ICMS_IPI": "13427",
+    "GDT": "13441",
+    "GOA": "13443",
+    "INSIGHT": "13447",
+    "NFE": "13459",
+    "NFSE": "13457",
 }
 
 _user_cache = {}
@@ -453,13 +514,17 @@ def montar_extra(o, rec, payload, empresas=None):
         if itens:
             payload[CAMPO_PREVENDA] = itens
 
-    # familia de produto -> campo correto UF_CRM_1779799488 (remove o campo antigo do de-para)
+    # familia de produto -> campos UF_CRM_1779799488 ("Família de produto") e
+    # UF_CRM_6AB51E4E5474B ("Família de produto - lead"), ambos com o mesmo valor.
     payload.pop(CAMPO_FAMILIA_ERRADO, None)
     fam = rec.get("FamiliaDeProdutos_c")
     if fam:
         item = FAMILIA_MAP.get(str(fam))
         if item:
             payload[CAMPO_FAMILIA] = item
+        item_lead = FAMILIA_LEAD_MAP.get(str(fam))
+        if item_lead:
+            payload[CAMPO_FAMILIA_LEAD] = item_lead
 
     # data de fechamento
     fech = rec.get("EffectiveDate")
@@ -892,11 +957,143 @@ def reparar_contatos():
     print(f"contato principal preenchido; deals atualizados={atualizados} erros={erros} contatos_criados={criados}")
 
 
+def _valor_item(v):
+    """Extrai o ID do item de um campo enum (single) que vem como dict {value: ID}."""
+    if isinstance(v, dict):
+        return v.get("value")
+    return v
+
+
+def _parse_limite(argv):
+    for i, a in enumerate(argv):
+        if a == "--limite" and i + 1 < len(argv):
+            try:
+                return int(argv[i + 1])
+            except ValueError:
+                return None
+        elif a.startswith("--limite="):
+            try:
+                return int(a.split("=", 1)[1])
+            except ValueError:
+                return None
+    return None
+
+
+def backfill_familia_lead():
+    """Preenche o campo "Família de produto - lead" (UF_CRM_6AB51E4E5474B) nos negócios
+    já migrados, a partir da família de produto da oportunidade (FamiliaDeProdutos_c).
+    Também garante o campo "Família de produto" (UF_CRM_1779799488) — ambos recebem o
+    mesmo valor. Idempotente: só atualiza quando algum dos dois diverge.
+
+    Filtra as oportunidades criadas/atualizadas nos últimos `--anos` (default 10) anos,
+    via LastUpdateDate no Oracle. Flags: --limite N (teste), --shard <i> <N>."""
+    shard, shards = _parse_shard(sys.argv)
+    limite = _parse_limite(sys.argv)
+    anos = 10
+    for i, a in enumerate(sys.argv):
+        if a == "--anos" and i + 1 < len(sys.argv):
+            try:
+                anos = int(sys.argv[i + 1])
+            except ValueError:
+                pass
+        elif a.startswith("--anos="):
+            try:
+                anos = int(a.split("=", 1)[1])
+            except ValueError:
+                pass
+
+    from datetime import datetime, timedelta, timezone
+    corte = (datetime.now(timezone.utc) - timedelta(days=365 * anos)).strftime("%Y-%m-%dT%H:%M:%S")
+
+    o = OracleClient()
+
+    deals_map = {}  # opty_id -> (deal_id, familia_atual, familia_lead_atual)
+    start = 0
+    while True:
+        r = migrador._get("crm.deal.list", params=[
+            ("select[]", "ID"), ("select[]", CAMPO_ID_ORACLE["deal"]),
+            ("select[]", CAMPO_FAMILIA), ("select[]", CAMPO_FAMILIA_LEAD), ("start", start)])
+        res = r.get("result", [])
+        for c in res:
+            v = c.get(CAMPO_ID_ORACLE["deal"])
+            oid = v.get("value") if isinstance(v, dict) else v
+            if oid:
+                deals_map[str(oid)] = (int(c["ID"]),
+                                       _valor_item(c.get(CAMPO_FAMILIA)),
+                                       _valor_item(c.get(CAMPO_FAMILIA_LEAD)))
+        if len(res) < 50:
+            break
+        start += 50
+    print(f"Deals existentes: {len(deals_map)} | janela: ultimos {anos} anos (desde {corte})", flush=True)
+
+    todas = o.registros_todos(
+        "opportunities",
+        q=f"OptyId>0;LastUpdateDate>='{corte}'",
+        fields=["OptyId", "FamiliaDeProdutos_c", "Name"])
+
+    alvo = []
+    for rec in todas:
+        fam = rec.get("FamiliaDeProdutos_c")
+        if not fam:
+            continue
+        item = FAMILIA_MAP.get(str(fam))
+        item_lead = FAMILIA_LEAD_MAP.get(str(fam))
+        if not item and not item_lead:
+            continue
+        d = deals_map.get(str(rec.get("OptyId")))
+        if not d:
+            continue
+        deal_id, atual, atual_lead = d
+        campos = {}
+        if item and str(atual) != str(item):
+            campos[CAMPO_FAMILIA] = item
+        if item_lead and str(atual_lead) != str(item_lead):
+            campos[CAMPO_FAMILIA_LEAD] = item_lead
+        if campos:
+            alvo.append((rec, deal_id, campos))
+
+    alvo.sort(key=lambda x: int(x[0].get("OptyId") or 0))
+    if shard is not None and shards:
+        alvo = [x for idx, x in enumerate(alvo) if idx % shards == shard]
+        print(f"  shard {shard}/{shards}: {len(alvo)} negocios", flush=True)
+    if limite:
+        alvo = alvo[:limite]
+        print(f"  limite aplicado: {len(alvo)} negocios", flush=True)
+
+    print(f"{len(alvo)} negocios para atualizar familia", flush=True)
+
+    comandos = []
+    metas = []
+    for rec, deal_id, campos in alvo:
+        comandos.append(migrador.command("crm.deal.update", fields=campos, extra={"id": deal_id}))
+        metas.append((rec.get("OptyId"), rec.get("Name")))
+
+    atualizados = erros = 0
+    GRUPO = 500
+    for base in range(0, len(comandos), GRUPO):
+        sub_c = comandos[base:base + GRUPO]
+        sub_m = metas[base:base + GRUPO]
+        res, errs = migrador.batch(sub_c, batch_size=10)
+        for meta, r, e in zip(sub_m, res, errs):
+            opty_id, name = meta
+            if e:
+                erros += 1
+                print(f"  ERRO deal {opty_id} {name}: {e.get('error_description') or e.get('error')}", flush=True)
+            else:
+                atualizados += 1
+        print(f"  ... {min(base + GRUPO, len(comandos))}/{len(comandos)} | atualizados={atualizados} erros={erros}", flush=True)
+
+    print("=" * 60)
+    print(f"familia de produto (lead) preenchida; deals atualizados={atualizados} erros={erros}")
+
+
 if __name__ == "__main__":
     import sys
     if "--produtos-anexos" in sys.argv:
         produtos_anexos_todos()
     elif "--contatos" in sys.argv:
         reparar_contatos()
+    elif "--familia-lead" in sys.argv:
+        backfill_familia_lead()
     else:
         criar_faltantes()

@@ -160,9 +160,12 @@ atualização de registros com de-para de campos e de valores (listas/lookups).
     `crm.item.update` + nome do campo em camelCase (`ufCrmAnexos`).
 20. Adicionar itens a campo enum: `crm.deal.userfield.update` com `fields[LIST]` (itens existentes
     com `ID`, novos com `ID="n0","n1",...`).
-21. Família de produto do negócio: campo correto é `UF_CRM_1779799488` ("Família de produto").
-    O `UF_CRM_1768850832` ("Família de produtos") está vazio/desativado — não usar.
-    De-para de códigos em `FAMILIA_MAP` (inclui variante `SYNCHRO_4ME` vs LOV `SYNCHRO4ME`).
+21. Família de produto do negócio: campos corretos são `UF_CRM_1779799488` ("Família de produto")
+    e `UF_CRM_6AB51E4E5474B` ("Família de produto - lead", campo criado no negócio) — AMBOS recebem
+    o MESMO valor da oportunidade (`FamiliaDeProdutos_c`). O `UF_CRM_1768850832` ("Família de
+    produtos") está vazio/desativado — não usar. De-para de códigos em `FAMILIA_MAP` (deal) e
+    `FAMILIA_LEAD_MAP` (campo "-lead"; IDs de item diferentes, ex.: AMS=6619 vs 13983).
+    Inclui variante `SYNCHRO_4ME` vs LOV `SYNCHRO4ME`.
 22. Pré-venda (`UF_CRM_1789490557`, enum multiple): `PreVenda_c` pode ter valores separados por
     vírgula (múltiplos). De-para em `PREVENDA_MAP`; itens Richard Donzel (13255), Luis Garcia
     (13257), Flavio Pitta (13259) foram adicionados via `crm.deal.userfield.update`.
@@ -407,6 +410,13 @@ atualização de registros com de-para de campos e de valores (listas/lookups).
     `FAMILIA_MAP` (código→ID) e lead via `build_value_mapping` (meaning→VALUE, case-insensitive).
     Atenção: o item deal `6651` foi renomeado de "Governança" para "GOA" (decisão do usuário),
     então o código Oracle `GOVERNANCA` agora grava como "GOA".
+57. Família de produto - lead no NEGÓCIO: além do campo `UF_CRM_1779799488` ("Família de produto"),
+    o negócio tem o campo `UF_CRM_6AB51E4E5474B` ("Família de produto - lead", enum single, 42 itens
+    com IDs próprios: AMS=13983, ...). A migração grava o MESMO valor da oportunidade
+    (`FamiliaDeProdutos_c`) nos DOIS campos: `FAMILIA_MAP` (deal) e `FAMILIA_LEAD_MAP` ("-lead").
+    Backfill dos negócios já migrados (últimos 10 anos por `LastUpdateDate`):
+    `python migrar_oportunidade.py --familia-lead` (idempotente; flags `--limite N`/`--shard i N`/
+    `--anos N`).
 
 ## STATUS atual
 - CONTA (empresa) — RESOLVIDA: tipo de conta, campos de lista (por ID), conta pai,
@@ -419,9 +429,9 @@ atualização de registros com de-para de campos e de valores (listas/lookups).
   de fora). "Descrição" (CLOB) pulada na carga em massa por performance — backfill com
   `python migrar_contato.py --descricao`. Contato principal vinculado em 3.227 contas.
 - NEGÓCIO (deal) — RESOLVIDO: todos os campos (agente de prospecção, contato envio nota/ativação,
-  parceiro principal, pré-venda, família de produto, demais contatos da opp, CLOBs, datas,
-  duração, horas AF/CF/GP/CT, valores por grupo, produtos, anexos, concorrentes e conta
-  informada para referência). Usar `migrar_oportunidade.py`.
+  parceiro principal, pré-venda, família de produto (+ "Família de produto - lead"), demais contatos
+  da opp, CLOBs, datas, duração, horas AF/CF/GP/CT, valores por grupo, produtos, anexos,
+  concorrentes e conta informada para referência). Usar `migrar_oportunidade.py`.
   Owner de opp FECHADA sem usuário no Bitrix → `USUARIO_DESATIVADO` (5403).
   Fluxos automáticos do Bitrix: usuário ajustou (condição `ORIGINATOR_ID ≠ "oracle"` ou
   PRICE×QUANTITY no cálculo de valores).
