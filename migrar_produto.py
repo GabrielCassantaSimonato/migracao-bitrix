@@ -7,7 +7,7 @@ import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-from config import BITRIX_WEBHOOK
+from config import BITRIX_WEBHOOK, PRODUTO_GRUPO_CODE, PRODUTO_GRUPOS
 from oracle_client import OracleClient
 import migrador
 
@@ -39,6 +39,42 @@ def carregar_grupos_salvos():
     return mapa
 
 
+def obter_propriedade_grupo():
+    """Retorna (campo, {grupo -> id_item}) da propriedade de lista "Grupo de produto",
+    criando-a no Bitrix se ainda não existir (idempotente)."""
+    r = requests.get(f"{WB}/crm.product.property.list", timeout=120)
+    r.raise_for_status()
+    prop = None
+    for p in r.json().get("result", []):
+        if (p.get("CODE") or "") == PRODUTO_GRUPO_CODE:
+            prop = p
+            break
+    if prop is None:
+        params = {
+            "fields[NAME]": "Grupo de produto",
+            "fields[PROPERTY_TYPE]": "L",
+            "fields[CODE]": PRODUTO_GRUPO_CODE,
+            "fields[ACTIVE]": "Y",
+            "fields[SORT]": "600",
+        }
+        for i, g in enumerate(PRODUTO_GRUPOS):
+            params[f"fields[VALUES][{i}][VALUE]"] = g
+            params[f"fields[VALUES][{i}][SORT]"] = str((i + 1) * 100)
+        r = requests.post(f"{WB}/crm.product.property.add", data=params, timeout=120)
+        r.raise_for_status()
+        prop = {"ID": str(r.json().get("result"))}
+    r = requests.get(f"{WB}/crm.product.property.get", params={"id": prop["ID"]}, timeout=120)
+    r.raise_for_status()
+    values = r.json().get("result", {}).get("VALUES") or {}
+    if isinstance(values, dict):
+        values = list(values.values())
+    mapa = {}
+    for v in values:
+        if isinstance(v, dict) and v.get("VALUE") is not None:
+            mapa[str(v["VALUE"])] = v["ID"]
+    return f"PROPERTY_{prop['ID']}", mapa
+
+
 def carregar_existentes():
     """PROPERTY_305 (valor) -> ID Bitrix dos produtos ja existentes."""
     mapa = {}
@@ -64,6 +100,10 @@ def carregar_existentes():
 
 def main():
     o = OracleClient()
+
+    print("Garantindo propriedade 'Grupo de produto' ...")
+    grupo_campo, grupo_id_map = obter_propriedade_grupo()
+    print(f"  {grupo_campo} ({len(grupo_id_map)} opcoes)")
 
     print("Carregando mapeamento produto->grupo ...")
     prod_grupos = carregar_grupos_salvos()
@@ -100,6 +140,11 @@ def main():
             "DESCRIPTION": desc,
             "PROPERTY_305": str(iid),
         }
+        if grupos:
+            grupo = sorted(grupos)[0]
+            gid = grupo_id_map.get(grupo)
+            if gid is not None:
+                payload[grupo_campo] = gid
         existing = existentes.get(str(iid))
         if existing:
             comandos.append(migrador.command("crm.product.update", fields=payload, extra={"id": existing}))

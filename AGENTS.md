@@ -417,6 +417,14 @@ atualização de registros com de-para de campos e de valores (listas/lookups).
     Backfill dos negócios já migrados (últimos 10 anos por `LastUpdateDate`):
     `python migrar_oportunidade.py --familia-lead` (idempotente; flags `--limite N`/`--shard i N`/
     `--anos N`).
+58. Produtos NÃO usam userfield (`crm.product.userfield.*` → 404): campos custom são **propriedades**
+    (`crm.product.property.*`). O campo "Grupo de produto" é uma propriedade de LISTA
+    (`PROPERTY_TYPE="L"`), criada idempotentemente por `migrar_produto.obter_propriedade_grupo()`
+    (CODE `GRUPO_PRODUTO` → campo `PROPERTY_307`; opções LU/MA/CLOUD/SE/AMS/SLA/MONITORAMENTO/ALL).
+    Grava-se pelo **ID do item** do enum (mapa `{VALUE -> ID}` lido de `crm.product.property.get`;
+    ex.: LU=345, ALL=359). Aplicado em `migrar_produto.py` (carga completa) e
+    `atualizacao_diaria.montar_produto` (sync diária). 1.448 produtos preenchidos (56 sem grupo;
+    MONITORAMENTO=0 hoje).
 
 ## STATUS atual
 - CONTA (empresa) — RESOLVIDA: tipo de conta, campos de lista (por ID), conta pai,
@@ -436,8 +444,8 @@ atualização de registros com de-para de campos e de valores (listas/lookups).
   Fluxos automáticos do Bitrix: usuário ajustou (condição `ORIGINATOR_ID ≠ "oracle"` ou
   PRICE×QUANTITY no cálculo de valores).
 - PRODUTOS — RESOLVIDO: grupo no nome (`[GRUPO]`), via `catalogProductGroups` + `productGroupProducts`
-  (mapa em `data/produto_grupo.json`). Usar `migrar_produto.py`. Vínculo opp→produtos via
-  `ChildRevenue` (OptyNumber) + `crm.deal.productrows.set`.
+  (mapa em `data/produto_grupo.json`), e campo "Grupo de produto" (`PROPERTY_307`, lista). Usar
+  `migrar_produto.py`. Vínculo opp→produtos via `ChildRevenue` (OptyNumber) + `crm.deal.productrows.set`.
 - PARCEIROS — RESOLVIDO: proprietário, contato principal, telefone/e-mail, CNPJ, endereço,
   tipo/status/selos. Usar `migrar_parceiro.py`. "usuários parceiros" fica vazio (contatos
   externos ainda não são usuários Bitrix).

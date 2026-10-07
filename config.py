@@ -81,3 +81,9 @@ DEMAIS_CONTATOS = {
 # Proprietário para registros cujo owner original não existe mais no Bitrix
 # (usuário desligado). E-mail: crm.inativos@synchro.com.br
 USUARIO_DESATIVADO = "5403"
+
+# Propriedade (lista) de "Grupo de produto" no crm.product. Produtos usam
+# crm.product.property.* (NÃO userfield). O campo real é PROPERTY_<id> (auto);
+# o CODE abaixo é o identificador estável usado para localizar/criar a propriedade.
+PRODUTO_GRUPO_CODE = "GRUPO_PRODUTO"
+PRODUTO_GRUPOS = ["LU", "MA", "CLOUD", "SE", "AMS", "SLA", "MONITORAMENTO", "ALL"]

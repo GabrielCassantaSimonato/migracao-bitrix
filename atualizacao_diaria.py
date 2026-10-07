@@ -305,7 +305,14 @@ def montar_produto(rec, ctx):
     desc = rec.get("Description") or ""
     grupos = ctx["prod_grupos"].get(iid, set())
     nome_final = migrar_produto.normalizar_nome(name, sorted(grupos)[0]) if grupos else name
-    return {"NAME": nome_final, "DESCRIPTION": desc, "PROPERTY_305": str(iid)}
+    payload = {"NAME": nome_final, "DESCRIPTION": desc, "PROPERTY_305": str(iid)}
+    if grupos:
+        grupo = sorted(grupos)[0]
+        grupo_campo, grupo_id_map = ctx["prod_grupo_campo"]
+        gid = grupo_id_map.get(grupo)
+        if grupo_campo and gid is not None:
+            payload[grupo_campo] = gid
+    return payload
 
 
 def _nome_contato(rec):
@@ -359,6 +366,7 @@ def main():
         "label_map": migrar_lead.build_label_map(),
         "solucao_atual_map": migrar_campanha_synchro.build_solucao_atual_map(),
         "prod_grupos": migrar_produto.carregar_grupos_salvos(),
+        "prod_grupo_campo": migrar_produto.obter_propriedade_grupo(),
     }
     print(f"  ok. janela = {dias} dia(s)", flush=True)
 

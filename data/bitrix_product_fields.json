@@ -198,5 +198,50 @@
     "propertyType": "S",
     "userType": "",
     "title": "Id produtos oracle"
+  },
+  "PROPERTY_307": {
+    "type": "product_property",
+    "isRequired": false,
+    "isReadOnly": false,
+    "isImmutable": false,
+    "isMultiple": false,
+    "isDynamic": true,
+    "propertyType": "L",
+    "userType": "",
+    "title": "Grupo de produto",
+    "values": {
+      "345": {
+        "ID": "345",
+        "VALUE": "LU"
+      },
+      "347": {
+        "ID": "347",
+        "VALUE": "MA"
+      },
+      "349": {
+        "ID": "349",
+        "VALUE": "CLOUD"
+      },
+      "351": {
+        "ID": "351",
+        "VALUE": "SE"
+      },
+      "353": {
+        "ID": "353",
+        "VALUE": "AMS"
+      },
+      "355": {
+        "ID": "355",
+        "VALUE": "SLA"
+      },
+      "357": {
+        "ID": "357",
+        "VALUE": "MONITORAMENTO"
+      },
+      "359": {
+        "ID": "359",
+        "VALUE": "ALL"
+      }
+    }
   }
 }
