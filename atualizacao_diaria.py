@@ -154,6 +154,7 @@ def processar_opps(ctx, log, dias):
     lazy_product = ctx["lazy_product"]
 
     comandos, metas = [], []
+    reprodutos = []  # (deal_id, opty_number, linhas, opty_id) para re-aplicar produtos mesmo sem alteracao
     for rec in registros:
         oid = rec.get("OptyId")
         if oid is None:
@@ -181,6 +182,7 @@ def processar_opps(ctx, log, dias):
                 metas.append(("Oportunidades", str(oid), nome, "updated", mud, opty_number, linhas, opty_id, existing))
             else:
                 log.sem_alteracao("Oportunidades")
+                reprodutos.append((existing, opty_number, linhas, opty_id))
 
     res, errs = migrador.batch(comandos, batch_size=10)
 
@@ -199,6 +201,13 @@ def processar_opps(ctx, log, dias):
             migrar_oportunidade.aplicar_produtos(deal_id, linhas, lazy_product, opty_id)
             anexos = migrar_oportunidade.anexos_oportunidade(o, opty_number)
             migrar_oportunidade.aplicar_anexos(deal_id, anexos, opty_id)
+
+    # Negocios sem alteracao de campos: ainda re-aplica produtos/anexos, para corrigir
+    # registros cujo ChildRevenue veio vazio numa rodada anterior (produtos ficaram sem migrar).
+    for deal_id, opty_number, linhas, opty_id in reprodutos:
+        migrar_oportunidade.aplicar_produtos(deal_id, linhas, lazy_product, opty_id)
+        anexos = migrar_oportunidade.anexos_oportunidade(o, opty_number)
+        migrar_oportunidade.aplicar_anexos(deal_id, anexos, opty_id)
 
 
 def montar_lead(rec, ctx):
