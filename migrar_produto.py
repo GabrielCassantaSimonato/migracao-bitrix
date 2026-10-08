@@ -7,7 +7,7 @@ import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-from config import BITRIX_WEBHOOK, PRODUTO_GRUPO_CODE, PRODUTO_GRUPOS
+from config import BITRIX_WEBHOOK, PRODUTO_GRUPO_CODE, PRODUTO_GRUPOS, PRODUTO_GRUPO_BITRIX
 from oracle_client import OracleClient
 import migrador
 
@@ -37,6 +37,11 @@ def carregar_grupos_salvos():
     for iid, nomes in raw.items():
         mapa[int(iid)] = set(nomes)
     return mapa
+
+
+def traduzir_grupo(grupo):
+    """Nome do grupo no Oracle -> label do grupo no Bitrix (ex.: CLOUD -> CL)."""
+    return PRODUTO_GRUPO_BITRIX.get(grupo, grupo)
 
 
 def obter_propriedade_grupo():
@@ -142,7 +147,7 @@ def main():
         }
         if grupos:
             grupo = sorted(grupos)[0]
-            gid = grupo_id_map.get(grupo)
+            gid = grupo_id_map.get(traduzir_grupo(grupo))
             if gid is not None:
                 payload[grupo_campo] = gid
         existing = existentes.get(str(iid))

@@ -420,11 +420,12 @@ atualização de registros com de-para de campos e de valores (listas/lookups).
 58. Produtos NÃO usam userfield (`crm.product.userfield.*` → 404): campos custom são **propriedades**
     (`crm.product.property.*`). O campo "Grupo de produto" é uma propriedade de LISTA
     (`PROPERTY_TYPE="L"`), criada idempotentemente por `migrar_produto.obter_propriedade_grupo()`
-    (CODE `GRUPO_PRODUTO` → campo `PROPERTY_307`; opções LU/MA/CLOUD/SE/AMS/SLA/MONITORAMENTO/ALL).
+    (CODE `GRUPO_PRODUTO` → campo `PROPERTY_309`; opções LU/MA/CL/SE/AMS/SLA/MONITORAMENTO/ALL).
     Grava-se pelo **ID do item** do enum (mapa `{VALUE -> ID}` lido de `crm.product.property.get`;
-    ex.: LU=345, ALL=359). Aplicado em `migrar_produto.py` (carga completa) e
-    `atualizacao_diaria.montar_produto` (sync diária). 1.448 produtos preenchidos (56 sem grupo;
-    MONITORAMENTO=0 hoje).
+    ex.: LU=395, ALL=409, CL=399). O grupo CLOUD do Oracle é exibido como "CL" no Bitrix
+    (`PRODUTO_GRUPO_BITRIX` em config.py → `migrar_produto.traduzir_grupo`). Aplicado em
+    `migrar_produto.py` (carga completa) e `atualizacao_diaria.montar_produto` (sync diária).
+    1.448 produtos preenchidos (65 sem grupo; MONITORAMENTO=0 hoje).
 
 ## STATUS atual
 - CONTA (empresa) — RESOLVIDA: tipo de conta, campos de lista (por ID), conta pai,

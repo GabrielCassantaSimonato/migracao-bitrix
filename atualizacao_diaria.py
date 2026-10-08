@@ -309,7 +309,7 @@ def montar_produto(rec, ctx):
     if grupos:
         grupo = sorted(grupos)[0]
         grupo_campo, grupo_id_map = ctx["prod_grupo_campo"]
-        gid = grupo_id_map.get(grupo)
+        gid = grupo_id_map.get(migrar_produto.traduzir_grupo(grupo))
         if grupo_campo and gid is not None:
             payload[grupo_campo] = gid
     return payload

@@ -86,4 +86,10 @@ USUARIO_DESATIVADO = "5403"
 # crm.product.property.* (NÃO userfield). O campo real é PROPERTY_<id> (auto);
 # o CODE abaixo é o identificador estável usado para localizar/criar a propriedade.
 PRODUTO_GRUPO_CODE = "GRUPO_PRODUTO"
-PRODUTO_GRUPOS = ["LU", "MA", "CLOUD", "SE", "AMS", "SLA", "MONITORAMENTO", "ALL"]
+PRODUTO_GRUPOS = ["LU", "MA", "CL", "SE", "AMS", "SLA", "MONITORAMENTO", "ALL"]
+
+# De-para do nome do grupo no Oracle para a label usada no Bitrix (campo "Grupo de
+# produto"). Ex.: o grupo CLOUD do Oracle é exibido como "CL" no Bitrix.
+PRODUTO_GRUPO_BITRIX = {
+    "CLOUD": "CL",
+}
