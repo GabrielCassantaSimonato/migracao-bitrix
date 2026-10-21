@@ -234,6 +234,7 @@ def processar_spv(ctx, log, dias):
     status_labels = status_labels_para("item1216")
 
     comandos, metas = [], []
+    deal_ids_afetados = set()
     for rec in registros:
         sr_id = rec.get("SrId")
         if sr_id is None:
@@ -245,12 +246,20 @@ def processar_spv(ctx, log, dias):
             log.erro("SPVs")
             print(f"  !! SPVs montar {sr_id}: {e}", flush=True)
             continue
+        opty = rec.get("Oportunidade_Id_c")
+        novo_deal = ctx["lazy_deal"].get(opty) if opty is not None else None
+        if novo_deal:
+            deal_ids_afetados.add(int(novo_deal))
         existing = migrador.find_existing("item1216", str(sr_id))
         if existing is None:
             _push(comandos, "item1216", p, None, None)
             metas.append(("SPVs", str(sr_id), nome, "created", None, rec.get("SrNumber"), None))
         else:
             atual = obter_atual("item1216", existing)
+            old_p = atual.get("parentId2")
+            old_deal = old_p.get("value") if isinstance(old_p, dict) else old_p
+            if old_deal:
+                deal_ids_afetados.add(int(old_deal))
             mud = diferenciar(atual, p, labels, enum_items, status_labels)
             if mud:
                 _push(comandos, "item1216", p, None, existing)
@@ -274,6 +283,13 @@ def processar_spv(ctx, log, dias):
         if bitrix_id and srn:
             anexos = migrar_spv.anexos_spv(o, srn)
             migrar_spv.aplicar_anexos_spv(bitrix_id, anexos, srn)
+
+    # vínculo SPV -> negócio (campo "SPVs da oportunidade" no deal)
+    if deal_ids_afetados:
+        atu, errs_v = migrar_spv.vincular_spvs_negocios(deal_ids_afetados)
+        print(f"  SPVs -> negocio: {atu} negocios atualizados, {errs_v} erros", flush=True)
+        for _ in range(errs_v):
+            log.erro("SPVs (negócio)")
 
 
 def montar_parceiro(rec, ctx):

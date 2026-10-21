@@ -48,6 +48,7 @@ CAMPO_HORAS_DESLOC = "ufCrm79_1779890839"        # enum (Cobrável/Embutido na p
 CAMPO_BASES = "ufCrm79_1779890878"               # enum multiple (Bases em que a Synchro deve atuar)
 CAMPO_DETALHAMENTO_DESPESAS = "ufCrm79_1779892326431"  # string (Detalhamento das despesas)
 CAMPO_ANEXOS_SPV = "ufCrm79_1790593724"  # file (MULTIPLE) - "Anexos (migracao)"
+CAMPO_SPV_OPORTUNIDADE = "UF_CRM_1792538652"  # "SPVs da oportunidade" no deal (crm multiple -> item1216)
 
 # De-para manual de enums do item1216 que não têm título e não casam com o de-para automático.
 TIPO_PROPOSTA_MAP = {
@@ -299,6 +300,101 @@ def montar_payload(rec, val_map, empresas, deals, opty_para_conta=None, detalham
             p[CAMPO_BASES] = ids
 
     return p
+
+
+# ---------------------------------------------------------------------------
+# Vínculo SPV -> negócio (campo "SPVs da oportunidade" no deal)
+# ---------------------------------------------------------------------------
+
+def spvs_todas_por_negocio():
+    """{deal_id (int) -> [spv_id (str), ...]} de todas as SPVs com parentId2 preenchido."""
+    mapa = {}
+    start = 0
+    while True:
+        r = migrador.get_json("crm.item.list", [
+            ("entityTypeId", EID), ("select[]", "id"), ("select[]", "parentId2"), ("start", start)])
+        items = (r.get("result") or {}).get("items", [])
+        if not items:
+            break
+        for it in items:
+            p = it.get("parentId2")
+            v = p.get("value") if isinstance(p, dict) else p
+            if v:
+                mapa.setdefault(int(v), []).append(str(it["id"]))
+        if len(items) < 50:
+            break
+        start += 50
+    for k in mapa:
+        mapa[k] = sorted(set(mapa[k]))
+    return mapa
+
+
+def spvs_do_negocio(deal_id):
+    """IDs (str) das SPVs atreladas a um negócio (parentId2), ordenados."""
+    ids = []
+    start = 0
+    while True:
+        r = migrador.get_json("crm.item.list", [
+            ("entityTypeId", EID), ("filter[parentId2]", str(deal_id)),
+            ("select[]", "id"), ("start", start)])
+        items = (r.get("result") or {}).get("items", [])
+        if not items:
+            break
+        for it in items:
+            ids.append(str(it["id"]))
+        if len(items) < 50:
+            break
+        start += 50
+    return sorted(set(ids))
+
+
+def _campo_spv_atual(deal_id):
+    """Valor atual do campo 'SPVs da oportunidade' do negócio (lista de str)."""
+    r = migrador.get_json("crm.deal.get", [("id", deal_id)])
+    v = (r.get("result") or {}).get(CAMPO_SPV_OPORTUNIDADE)
+    if not v:
+        return []
+    if isinstance(v, dict):
+        v = v.get("value") or v.get("ID") or []
+    if isinstance(v, str):
+        v = [v]
+    return sorted({str(x) for x in v if str(x) != ""})
+
+
+def _listas_iguais(a, b):
+    return [str(x) for x in a] == [str(x) for x in b]
+
+
+def comando_vincular_spv(deal_id, spv_ids):
+    """Comando crm.deal.update para gravar a lista de SPVs no campo do negócio."""
+    val = spv_ids if spv_ids else [""]
+    return migrador.command("crm.deal.update",
+                            fields={CAMPO_SPV_OPORTUNIDADE: val},
+                            extra={"id": deal_id})
+
+
+def vincular_spvs_negocios(deal_ids, batch_size=10):
+    """Atualiza o campo 'SPVs da oportunidade' (UF_CRM_1792538652) de cada negócio com a
+    lista de SPVs atreladas via parentId2. Só grava onde diverge do atual (idempotente).
+
+    Retorna (atualizados, erros)."""
+    comandos, metas = [], []
+    for deal_id in sorted({int(d) for d in deal_ids if d}):
+        alvo = spvs_do_negocio(deal_id)
+        atual = _campo_spv_atual(deal_id)
+        if _listas_iguais(atual, alvo):
+            continue
+        comandos.append(comando_vincular_spv(deal_id, alvo))
+        metas.append(deal_id)
+    if not comandos:
+        return 0, 0
+    res, errs = migrador.batch(comandos, batch_size=batch_size)
+    erros = 0
+    for deal_id, r, e in zip(metas, res, errs):
+        if e:
+            erros += 1
+            print(f"  ERRO vincular SPV deal {deal_id}: {e.get('error_description') or e.get('error')}", flush=True)
+    return len(comandos) - erros, erros
 
 
 def anexos_spv(o, sr_number):
