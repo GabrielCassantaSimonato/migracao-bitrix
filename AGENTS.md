@@ -51,13 +51,17 @@ atualização de registros com de-para de campos e de valores (listas/lookups).
 - **reparar_owner_campanha.py** — re-atrela `assignedById` das campanhas synchro (de-para de
   proprietário divergente; ver #51).
 - **migrar_spv.py** — carga do item1216 (serviceRequests/SPV) das contas já migradas, com vínculo
-  empresa/negócio e proprietário.
+  empresa/negócio e proprietário. Também hospeda os helpers de vínculo SPV→negócio
+  (`spvs_todas_por_negocio`, `spvs_do_negocio`, `vincular_spvs_negocios`) — ver #59.
 - **migrar_parcela.py** — carga do item1212 (Parcelas_c) das oportunidades já migradas, com vínculo
   negócio e proprietário.
 - **migrar_contato.py** — carga em massa de crm.contact (só CRIAÇÃO dos faltantes; `--limite N`
   para teste, `--descricao` para incluir o CLOB "Descrição"). Não atualiza contas.
 - **vincular_contato_conta.py** — vincula o contato principal (`UF_CRM_1768849939`) nas empresas
   (idempotente: re-lê o valor atual e só atualiza quem diverge).
+- **vincular_spv_negocio.py** — vincula as SPVs ao negócio no campo `UF_CRM_1792538652`
+  ("SPVs da oportunidade", crm multiple → item1216). Idempotente (re-lê o valor atual e só
+  atualiza quem diverge). Flag `--limite N` (teste). Backfill completo já rodado (2.401 negócios, 0 erros).
 - **data/produto_grupo.json** — mapa InventoryItemId → grupo (gerado por `_mapear_grupos.py`).
 - Testes/piloto: importar_oportunidade.py, teste_concreto.py, reaproveitar_deal.py,
   teste_conta.py, corrigir_conta.py.
@@ -426,6 +430,18 @@ atualização de registros com de-para de campos e de valores (listas/lookups).
     (`PRODUTO_GRUPO_BITRIX` em config.py → `migrar_produto.traduzir_grupo`). Aplicado em
     `migrar_produto.py` (carga completa) e `atualizacao_diaria.montar_produto` (sync diária).
     1.448 produtos preenchidos (65 sem grupo; MONITORAMENTO=0 hoje).
+59. SPV → negócio (campo "SPVs da oportunidade" `UF_CRM_1792538652`): o vínculo SPV→deal fica
+    no campo reverso nativo `PARENT_ID_1216` (single, "SPV"), que **fica vazio** mesmo quando a
+    SPV tem `parentId2` preenchido via API. O usuário criou um fluxo no Bitrix para preencher isso,
+    e para o backfill histórico usou o campo custom `UF_CRM_1792538652` ("SPVs da oportunidade",
+    tipo `crm` **multiple**, `isDynamic`, settings `DYNAMIC_1216: "Y"`). Valor = **lista de strings
+    com o ID da SPV** (ex.: `["14967"]`; SEM prefixo `DYNAMIC_1216_`). Helpers em `migrar_spv.py`:
+    `spvs_todas_por_negocio()` (varre todas as SPVs → `{deal_id: [spv_id, ...]}`), `spvs_do_negocio(deal_id)`
+    (via `crm.item.list` com `filter[parentId2]`), `_campo_spv_atual`, `comando_vincular_spv` e
+    `vincular_spvs_negocios(deal_ids)` (grava onde diverge, idempotente). Backfill
+    `vincular_spv_negocio.py` (2.401 negócios, 0 erros) + integrado ao `atualizacao_diaria.py`
+    (`processar_spv` coleta os negócios afetados — novo E antigo `parentId2` — e re-vincula no
+    final). Gravar lista de IDs (strings) via `fields[UF_CRM_1792538652][]`; para limpar, `[""]`.
 
 ## STATUS atual
 - CONTA (empresa) — RESOLVIDA: tipo de conta, campos de lista (por ID), conta pai,
@@ -476,7 +492,9 @@ atualização de registros com de-para de campos e de valores (listas/lookups).
 - SPV (item1216) — RESOLVIDO: vínculo empresa/negócio, "Relatado por" (`ReportedBy`→
   `assignedById`), "Atribuído A" (`Assignee`→`ufCrm79_1779884865`), etapa (`StatusCd`→`stageId`),
   Tipo/Pré-venda/Local (enums), descrição, datas, horas (início/fim), strings, booleanos. Usar
-  `migrar_spv.py` (só importa SPVs das contas já migradas).
+  `migrar_spv.py` (só importa SPVs das contas já migradas). Vínculo SPV→negócio no campo
+  "SPVs da oportunidade" (`UF_CRM_1792538652`, multiple): backfill `vincular_spv_negocio.py`
+  (2.401 negócios, 0 erros) + atualização automática no `atualizacao_diaria.py` (#59).
 - PARCELAS (item1212) — RESOLVIDO: vínculo negócio (`Oportunidade_Id_c`→`parentId2`),
   proprietário (`Proprietario_c`), número da parcela, tipo de oportunidade (enum), valor
   (`opportunity`+moeda), datas, divisão de parcelas, pró-rata, descrição (CLOB). Usar
