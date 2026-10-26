@@ -1,20 +1,39 @@
+import sys
+
 import migrador
 from config import CAMPO_ID_ORACLE, CONTATO_PRINCIPAL
 from oracle_client import OracleClient
 
 
+def _parse_desde(argv):
+    """Data mínima (YYYY-MM-DD) de criação da empresa no Bitrix, ou None."""
+    for i, a in enumerate(argv):
+        if a == "--desde":
+            return argv[i + 1] if i + 1 < len(argv) else None
+        if a.startswith("--desde="):
+            return a.split("=", 1)[1]
+    return None
+
+
 def main():
+    desde = _parse_desde(sys.argv[1:])
     o = OracleClient()
 
     contatos = migrador.carregar_existentes_crm("crm.contact.list", CAMPO_ID_ORACLE["contact"])
     print(f"contatos no Bitrix: {len(contatos)}")
 
+    filtros = [
+        ("select[]", "ID"), ("select[]", CAMPO_ID_ORACLE["company"]),
+        ("select[]", CONTATO_PRINCIPAL["company"]),
+    ]
+    if desde:
+        filtros.append(("filter[>=DATE_CREATE]", f"{desde}T00:00:00"))
+        print(f"filtro: empresas criadas desde {desde}")
+
     empresas = {}
     start = 0
     while True:
-        r = migrador._get("crm.company.list", params=[
-            ("select[]", "ID"), ("select[]", CAMPO_ID_ORACLE["company"]),
-            ("select[]", CONTATO_PRINCIPAL["company"]), ("start", start)])
+        r = migrador._get("crm.company.list", params=filtros + [("start", start)])
         res = r.get("result", [])
         for c in res:
             v = c.get(CAMPO_ID_ORACLE["company"])

@@ -11,7 +11,7 @@ Uso:
 
 import sys
 
-from config import ENTIDADE_ITEM, USUARIO_DESATIVADO
+from config import ENTIDADE_ITEM, USUARIO_DESATIVADO, CONTATO_PRINCIPAL
 from de_para_valores import build_value_mapping
 from oracle_client import OracleClient
 import mapeamento
@@ -139,6 +139,41 @@ def montar_contato(rec, ctx):
     acct = rec.get("AccountPartyId")
     company_id = ctx["lazy_company"].get(acct) if acct is not None else None
     return contatos_mod.montar_contato_payload(rec, ctx["val_ct"], company_id=company_id, incluir_descricao=False)
+
+
+def vincular_contato_principal(registros):
+    """Vincula o contato principal (`PrimaryContactPartyId`) ao campo
+    `CONTATO_PRINCIPAL["company"]` das empresas do período. Deve rodar DEPOIS da
+    migração dos contatos (o contato precisa existir no Bitrix para resolver o ID).
+    Retorna (atualizados, erros). Idempotente: re-lê o valor atual e só atualiza quem diverge."""
+    comandos, metas = [], []
+    for rec in registros:
+        primary = rec.get("PrimaryContactPartyId")
+        if primary is None:
+            continue
+        company_id = migrador.find_existing("company", str(rec.get("PartyId")))
+        if not company_id:
+            continue
+        contact_id = migrador.find_existing("contact", str(primary))
+        if not contact_id:
+            continue
+        atual = obter_atual("company", company_id)
+        cur = atual.get(CONTATO_PRINCIPAL["company"])
+        cur_val = cur.get("value") if isinstance(cur, dict) else cur
+        if cur_val is not None and str(cur_val) == str(contact_id):
+            continue
+        comandos.append(migrador.command("crm.company.update",
+                                         fields={CONTATO_PRINCIPAL["company"]: contact_id},
+                                         extra={"id": company_id}))
+        metas.append((rec.get("PartyId"), rec.get("OrganizationName")))
+    if not comandos:
+        return 0, 0
+    _, errs = migrador.batch(comandos, batch_size=10)
+    erros = sum(1 for e in errs if e)
+    for (pid, nome), e in zip(metas, errs):
+        if e:
+            print(f"  ERRO contato principal {pid} {nome}: {e.get('error_description') or e.get('error')}", flush=True)
+    return len(comandos) - erros, erros
 
 
 def processar_opps(ctx, log, dias):
@@ -388,13 +423,20 @@ def main():
 
     # 1. contas
     cri, atu = buscar_delta(o, "accounts", dias)
+    registros_conta = cri + atu
     print(f"Contas: {len(cri)} criados, {len(atu)} atualizados", flush=True)
-    processar("company", "Contas", cri + atu, lambda r: montar_conta(r, ctx), "PartyId", "OrganizationName", log)
+    processar("company", "Contas", registros_conta, lambda r: montar_conta(r, ctx), "PartyId", "OrganizationName", log)
 
     # 2. contatos
     cri, atu = buscar_delta(o, "contacts", dias)
     print(f"Contatos: {len(cri)} criados, {len(atu)} atualizados", flush=True)
     processar("contact", "Contatos", cri + atu, lambda r: montar_contato(r, ctx), "PartyId", _nome_contato, log)
+
+    # 2b. contato principal das contas (após os contatos: o contato precisa existir)
+    atu_cp, errs_cp = vincular_contato_principal(registros_conta)
+    print(f"Contato principal das contas: {atu_cp} atualizados, {errs_cp} erros", flush=True)
+    for _ in range(errs_cp):
+        log.erro("Contas (contato principal)")
 
     # 3. oportunidades
     processar_opps(ctx, log, dias)
