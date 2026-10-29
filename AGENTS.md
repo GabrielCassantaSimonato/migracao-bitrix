@@ -442,6 +442,17 @@ atualização de registros com de-para de campos e de valores (listas/lookups).
     `vincular_spv_negocio.py` (2.401 negócios, 0 erros) + integrado ao `atualizacao_diaria.py`
     (`processar_spv` coleta os negócios afetados — novo E antigo `parentId2` — e re-vincula no
     final). Gravar lista de IDs (strings) via `fields[UF_CRM_1792538652][]`; para limpar, `[""]`.
+60. Contato "untitled": contatos Oracle sem `FirstName`/`LastName` eram criados no Bitrix sem nome
+    (virava "untitled" e vazio). `contatos.nome_contato(ct)` agora usa `ContactName` como fallback
+    (divide primeira palavra / restante) e `montar_contato_payload` retorna `None` quando não há
+    nome utilizável — os callers (`migrar_conta._build_conta`, `migrar_oportunidade.garantir_contato`
+    e o reparo de contato principal, `migrar_lead.criar_contato`) pulam a criação.
+61. Exclusões de Parcelas (item1212) e CampanhasSynchro (item1208): o Oracle não expõe flag de
+    "deletado" nesses objetos, então a detecção é um **snapshot completo** — IDs presentes no Bitrix
+    mas ausentes no Oracle são apagados via `crm.item.delete`. Roda no `atualizacao_diaria.py`
+    (`processar_exclusoes`) DEPOIS das criações/atualizações e antes do relatório; sem a flag
+    `--excluir` só registra os candidatos (dry-run) na aba "Exclusões" do xlsx e no e-mail. O campo
+    `CriarCampanha (item1204)` NÃO é verificado (decisão do usuário).
 
 ## STATUS atual
 - CONTA (empresa) — RESOLVIDA: tipo de conta, campos de lista (por ID), conta pai,

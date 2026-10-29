@@ -283,7 +283,11 @@ def garantir_contato(o, party_id, val_ct, empresas=None, company_bitrix_id=None)
     acct = ct.get("AccountPartyId")
     if empresas and acct is not None:
         company_id = empresas.get(str(acct)) or company_id
-    pc, multi = contatos.montar_contato_payload(ct, val_ct, company_id=company_id)
+    res = contatos.montar_contato_payload(ct, val_ct, company_id=company_id)
+    if res is None:
+        _contact_cache[key] = None
+        return None
+    pc, multi = res
     method, params = migrador.command("crm.contact.add", fields=pc, multi=multi)
     r = migrador._post_data(method, params)
     new_id = r.get("result")
@@ -924,16 +928,18 @@ def reparar_contatos():
             ct = contatos.buscar_contato_oracle(party_id)
             if ct:
                 company_id = empresas.get(str(rec.get("TargetPartyId")))
-                pc, multi = contatos.montar_contato_payload(ct, val_ct, company_id=company_id)
-                method, params = migrador.command("crm.contact.add", fields=pc, multi=multi)
-                r = migrador._post_data(method, params)
-                new_id = r.get("result")
-                if new_id:
-                    contatos_map[str(party_id)] = int(new_id)
-                    cid = int(new_id)
-                    criados += 1
-                else:
-                    print(f"  !! erro ao criar contato {party_id}: {r.get('error_description') or r.get('error')}", flush=True)
+                res = contatos.montar_contato_payload(ct, val_ct, company_id=company_id)
+                if res is not None:
+                    pc, multi = res
+                    method, params = migrador.command("crm.contact.add", fields=pc, multi=multi)
+                    r = migrador._post_data(method, params)
+                    new_id = r.get("result")
+                    if new_id:
+                        contatos_map[str(party_id)] = int(new_id)
+                        cid = int(new_id)
+                        criados += 1
+                    else:
+                        print(f"  !! erro ao criar contato {party_id}: {r.get('error_description') or r.get('error')}", flush=True)
         if cid is None:
             continue
         comandos.append(migrador.command(

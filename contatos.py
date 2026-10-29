@@ -164,11 +164,31 @@ def build_payload_contato(ct, val_ct):
     return payload
 
 
+def nome_contato(ct):
+    """(first, last) do contato com fallback para ContactName; (None, None) se vazio.
+
+    Sem isso, contatos sem FirstName/LastName são criados no Bitrix como "untitled"."""
+    first = (ct.get("FirstName") or "").strip()
+    last = (ct.get("LastName") or "").strip()
+    if first or last:
+        return first, last
+    full = (ct.get("ContactName") or "").strip()
+    if not full:
+        return None, None
+    parts = full.split(" ", 1)
+    return parts[0], (parts[1] if len(parts) > 1 else "")
+
+
 def montar_contato_payload(ct, val_ct, company_id=None, incluir_descricao=True):
-    """Monta (payload, multi) de um crm.contact a partir do registro Oracle."""
+    """Monta (payload, multi) de um crm.contact a partir do registro Oracle.
+
+    Retorna None quando o contato não tem nome utilizável (evita criar "untitled")."""
+    first, last = nome_contato(ct)
+    if not first and not last:
+        return None
     pc = build_payload_contato(ct, val_ct)
-    pc["NAME"] = ct.get("FirstName")
-    pc["LAST_NAME"] = ct.get("LastName")
+    pc["NAME"] = first
+    pc["LAST_NAME"] = last
     owner_id = mapeamento.resolver_usuario(ct.get("OwnerEmailAddress"), ct.get("OwnerName"))
     if owner_id:
         pc["ASSIGNED_BY_ID"] = owner_id

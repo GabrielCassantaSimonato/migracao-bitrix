@@ -138,7 +138,10 @@ def _build_conta(rec, val_acc, val_ct):
     for ct in contatos_lista:
         if ct.get("PartyId") is None:
             continue
-        pc, multi = _build_contato(ct, val_ct)
+        res = _build_contato(ct, val_ct)
+        if res is None:
+            continue
+        pc, multi = res
         is_primary = primary_party is not None and str(ct.get("PartyId")) == str(primary_party)
         ct_payloads.append((pc, multi, str(ct.get("PartyId")), is_primary))
     return p, ct_payloads

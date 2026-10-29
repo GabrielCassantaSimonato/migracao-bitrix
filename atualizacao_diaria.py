@@ -7,11 +7,12 @@ Uso:
   python atualizacao_diaria.py --dias 14          # primeira rodada (2 semanas)
   python atualizacao_diaria.py --dias 1           # delta diario
   python atualizacao_diaria.py --dias 14 --sem-email   # so gera o xlsx, sem enviar
+  python atualizacao_diaria.py --dias 1 --excluir      # aplica exclusões (sem a flag, só dry-run)
 """
 
 import sys
 
-from config import ENTIDADE_ITEM, USUARIO_DESATIVADO, CONTATO_PRINCIPAL
+from config import ENTIDADE_ITEM, USUARIO_DESATIVADO, CONTATO_PRINCIPAL, CAMPO_ID_ORACLE
 from de_para_valores import build_value_mapping
 from oracle_client import OracleClient
 import mapeamento
@@ -378,9 +379,56 @@ def _nome_atividade(rec):
     return rec.get("Subject") or f"Atividade {rec.get('ActivityNumber')}"
 
 
+def processar_exclusoes(o, log, aplicar):
+    """Verifica exclusões no Oracle (parcelas e campanhas synchro) e remove no Bitrix.
+
+    O Oracle não expõe flag de "deletado" nesses objetos (não há DeleteFlag), então a
+    detecção é um snapshot completo: IDs presentes no Bitrix mas ausentes no Oracle são
+    apagados. Sem a flag --excluir apenas registra/loga os candidatos (dry-run)."""
+    for entidade, obj, nome_display in [
+        ("item1212", "Parcelas_c", "Parcelas"),
+        ("item1208", "CampanhasSynchro_c", "CampanhasSynchro"),
+    ]:
+        oracle_ids = {str(r["Id"]) for r in o.registros_todos(obj, fields=["Id"]) if r.get("Id") is not None}
+        eid = ENTIDADE_ITEM[entidade]
+        id_field = CAMPO_ID_ORACLE[entidade]
+
+        existentes = {}  # oracle_id -> (bitrix_id, titulo)
+        start = 0
+        while True:
+            r = migrador._get("crm.item.list", params=[
+                ("entityTypeId", eid), ("select[]", "id"),
+                ("select[]", id_field), ("select[]", "title"), ("start", start)])
+            items = (r.get("result") or {}).get("items", [])
+            for it in items:
+                v = it.get(id_field)
+                val = v.get("value") if isinstance(v, dict) else v
+                if val:
+                    existentes[str(val)] = (int(it["id"]), it.get("title", ""))
+            if len(items) < 50:
+                break
+            start += 50
+
+        a_apagar = [(bid, titulo, oid) for oid, (bid, titulo) in existentes.items() if oid not in oracle_ids]
+        print(f"{nome_display}: {len(a_apagar)} para excluir" + ("" if aplicar else " (dry-run)"), flush=True)
+        for bid, titulo, oid in a_apagar:
+            log.excluido(nome_display, titulo or f"{nome_display} {oid}", oid, bid, aplicar)
+
+        if aplicar and a_apagar:
+            comandos = [migrador.command("crm.item.delete", extra={"entityTypeId": eid, "id": bid})
+                        for bid, _t, _o in a_apagar]
+            _, errs = migrador.batch(comandos)
+            for (bid, titulo, oid), e in zip(a_apagar, errs):
+                if e:
+                    log.erro(nome_display)
+                    print(f"  ERRO excluir {nome_display} {titulo or oid} ({bid}): "
+                          f"{e.get('error_description') or e.get('error')}", flush=True)
+
+
 def main():
     dias = 14
     sem_email = "--sem-email" in sys.argv
+    excluir = "--excluir" in sys.argv
     for i, a in enumerate(sys.argv):
         if a == "--dias" and i + 1 < len(sys.argv):
             try:
@@ -480,6 +528,9 @@ def main():
     cri, atu = buscar_delta(o, "activities", dias, fields=migrar_atividade._activity_fields())
     print(f"Atividades: {len(cri)} criados, {len(atu)} atualizados", flush=True)
     processar("item1220", "Atividades", cri + atu, lambda r: montar_atividade(r, ctx), "ActivityId", _nome_atividade, log)
+
+    # 12. exclusões (após cria/atualiza): parcelas e campanhas synchro sumidas do Oracle
+    processar_exclusoes(o, log, excluir)
 
     # ---- relatorio (xlsx + email) ----
     print("=" * 60, flush=True)

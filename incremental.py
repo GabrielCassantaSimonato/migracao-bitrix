@@ -259,6 +259,7 @@ def obter_atual(entidade, bid):
 class Log:
     def __init__(self):
         self.entidades = {}  # entidade -> {"criados": [(nome, data)], "atualizados": [(nome, mudancas)], "sem_alteracao": N, "erros": N}
+        self.exclusoes = []  # [(entidade, nome, oracle_id, bitrix_id, aplicado)]
 
     def _slot(self, entidade):
         return self.entidades.setdefault(entidade, {"criados": [], "atualizados": [], "sem_alteracao": 0, "erros": 0})
@@ -274,6 +275,9 @@ class Log:
 
     def erro(self, entidade):
         self._slot(entidade)["erros"] += 1
+
+    def excluido(self, entidade, nome, oracle_id, bitrix_id, aplicado):
+        self.exclusoes.append((entidade, nome, str(oracle_id), str(bitrix_id), aplicado))
 
     def resumo(self):
         linhas = []
@@ -307,9 +311,21 @@ class Log:
             for col, w in zip("ABCDEF", (16, 40, 16, 30, 30, 30)):
                 ws.column_dimensions[col].width = w
 
-        if not self.entidades:
+        if not self.entidades and not self.exclusoes:
             ws = wb.create_sheet(title="vazio")
             ws.append(["Nenhuma alteração no período"])
+
+        if self.exclusoes:
+            ws = wb.create_sheet(title="Exclusões")
+            ws.append(["Entidade", "Nome", "Oracle ID", "Bitrix ID", "Status"])
+            for c in ws[1]:
+                c.fill, c.font = hdr_fill, hdr_font
+            for entidade, nome, oracle_id, bitrix_id, aplicado in self.exclusoes:
+                ws.append([entidade, nome, oracle_id, bitrix_id,
+                           "Excluído" if aplicado else "Candidato (dry-run)"])
+            for col, w in zip("ABCDE", (20, 44, 22, 14, 24)):
+                ws.column_dimensions[col].width = w
+
         wb.save(caminho)
         return caminho
 
@@ -366,6 +382,7 @@ def montar_corpo(log, dias):
     tot_atualizados = sum(r[2] for r in resumo)
     tot_sem = sum(r[3] for r in resumo)
     tot_erros = sum(r[4] for r in resumo)
+    tot_exclusoes = len(log.exclusoes)
 
     linhas = []
     for entidade, criados, atualizados, sem, erros in resumo:
@@ -375,10 +392,15 @@ def montar_corpo(log, dias):
             f"<td align='right'>{erros}</td></tr>"
         )
 
+    exc_linha = ""
+    if tot_exclusoes:
+        exc_linha = f"<p>Exclusões detectadas: <b>{tot_exclusoes}</b> (ver aba 'Exclusões' no anexo).</p>"
+
     html = f"""<html><body style="font-family: Arial, sans-serif; font-size: 14px;">
 <h3>Atualização diária Bitrix — {periodo(dias)}</h3>
 <p>Total: <b>{tot_criados} criados</b>, <b>{tot_atualizados} atualizados</b>,
 {tot_sem} sem alteração, {tot_erros} erros.</p>
+{exc_linha}
 <table border="1" cellpadding="4" cellspacing="0" style="border-collapse: collapse;">
 <tr style="background:#4472C4;color:#fff;">
 <th>Entidade</th><th>Criados</th><th>Atualizados</th><th>Sem alteração</th><th>Erros</th>

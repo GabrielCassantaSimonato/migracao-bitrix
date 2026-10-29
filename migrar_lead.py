@@ -12,6 +12,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 from config import BITRIX_WEBHOOK, CAMPO_ID_ORACLE, ORACLE_CRM_BASE
 import mapeamento
 import migrador
+import contatos as contatos_mod
 from de_para_valores import build_value_mapping, norm, norm_loose, oracle_lov_values, load as _load_data
 from oracle_client import OracleClient
 
@@ -215,9 +216,13 @@ def criar_contato(o, party_id, company_id):
         if not ct:
             return None
 
+        first, last = contatos_mod.nome_contato(ct)
+        if not first and not last:
+            return None
+
         pc = {
-            "NAME": ct.get("FirstName") or "",
-            "LAST_NAME": ct.get("LastName") or "",
+            "NAME": first,
+            "LAST_NAME": last,
             "ORIGINATOR_ID": "oracle",
             "ORIGIN_ID": str(ct.get("PartyId")),
             "COMPANY_ID": company_id,
