@@ -356,14 +356,18 @@ def _oracle_get_child(o, path, params, timeout=120, tentativas=4):
 
 
 def produtos_oportunidade(o, opty_number):
-    """Linhas de receita (ChildRevenue) da oportunidade."""
+    """Linhas de receita (ChildRevenue) da oportunidade.
+
+    Retorna a lista de linhas, [] quando o negócio realmente não tem produtos, ou
+    None quando a busca no Oracle falhou (timeout/throttle) — para não confundir
+    "sem produtos" com "falha ao buscar"."""
     try:
         data = _oracle_get_child(
             o, f"/opportunities/{opty_number}/child/ChildRevenue",
             {"limit": 200, "onlyData": "true"}, timeout=120)
         return data.get("items", [])
     except Exception:
-        return []
+        return None
 
 
 def concorrentes_oportunidade(o, opty_number):
@@ -412,7 +416,7 @@ def id_concorrente(nome):
 def valores_por_grupo(linhas):
     """Soma RevnAmount por grupo (GrupoProduto_c) das linhas de receita."""
     soma = {}
-    for ln in linhas:
+    for ln in (linhas or []):
         grupo = (ln.get("GrupoProduto_c") or ln.get("ProdGroupName") or "").strip().upper()
         if not grupo:
             continue
@@ -422,7 +426,9 @@ def valores_por_grupo(linhas):
 
 
 def anexos_oportunidade(o, opty_number):
-    """Anexos da oportunidade (Attachment child), com conteudo base64 via FileContents."""
+    """Anexos da oportunidade (Attachment child), com conteudo base64 via FileContents.
+
+    Retorna [] quando não há anexos, ou None quando a busca no Oracle falhou."""
     try:
         data = _oracle_get_child(
             o, f"/opportunities/{opty_number}/child/Attachment",
@@ -435,7 +441,7 @@ def anexos_oportunidade(o, opty_number):
                 out.append({"name": nome, "content": conteudo})
         return out
     except Exception:
-        return []
+        return None
 
 
 def buscar_clob(o, opty_number, attr):
@@ -622,6 +628,8 @@ def montar_payload_opp(o, rec, val_map, empresas, company_bitrix_id):
 
 def aplicar_produtos(bid, linhas, produtos_bitrix, opty_id):
     """Sobe productrows.set de um deal (ChildRevenue). Retorna True em sucesso."""
+    if not linhas:
+        return True
     try:
         rows = []
         for ln in linhas:
@@ -665,6 +673,49 @@ def aplicar_anexos(bid, anexos, opty_id):
     except Exception as e:
         print(f"  !! anexos {opty_id}: {e}", flush=True)
         return False
+
+
+def aplicar_produtos_anexos(o, alvo, produtos_bitrix):
+    """Aplica produtos (ChildRevenue) e anexos (Attachment) numa lista de
+    (deal_id, opty_number, opty_id). Busca em paralelo e detecta (em vez de engolir)
+    falhas de busca no Oracle e de escrita no Bitrix. Retorna (sucessos, falhas),
+    com falhas = [(opty_id, motivo)]."""
+    falhas = []
+    sucessos = 0
+    BATCH = 200
+    for base in range(0, len(alvo), BATCH):
+        grupo = alvo[base:base + BATCH]
+        linhas_map = {}
+        anexos_map = {}
+        with ThreadPoolExecutor(max_workers=4) as ex:
+            fut = {}
+            for _deal_id, on, _oid in grupo:
+                fut[ex.submit(produtos_oportunidade, o, on)] = ("linhas", on)
+                fut[ex.submit(anexos_oportunidade, o, on)] = ("anexos", on)
+            for f in as_completed(fut):
+                kind, on = fut[f]
+                try:
+                    val = f.result()
+                except Exception:
+                    val = None
+                if kind == "linhas":
+                    linhas_map[on] = val
+                else:
+                    anexos_map[on] = val
+        for deal_id, on, oid in grupo:
+            linhas = linhas_map.get(on)
+            anexos = anexos_map.get(on)
+            if linhas is None or anexos is None:
+                falhas.append((oid, "busca Oracle falhou"))
+                continue
+            ok_p = aplicar_produtos(deal_id, linhas, produtos_bitrix, oid)
+            ok_a = aplicar_anexos(deal_id, anexos, oid)
+            if ok_p and ok_a:
+                sucessos += 1
+            else:
+                falhas.append((oid, "produtos" if not ok_p else "anexos"))
+        print(f"  ... {base + len(grupo)}/{len(alvo)}", flush=True)
+    return sucessos, falhas
 
 
 def criar_faltantes():
@@ -784,8 +835,25 @@ def _parse_shard(argv):
     return shard, shards
 
 
+def _parse_dias(argv):
+    """Lê --dias N (ou --dias=N) da linha de comando; retorna int ou None."""
+    for i, a in enumerate(argv):
+        if a == "--dias" and i + 1 < len(argv):
+            try:
+                return int(argv[i + 1])
+            except ValueError:
+                return None
+        elif a.startswith("--dias="):
+            try:
+                return int(a.split("=", 1)[1])
+            except ValueError:
+                return None
+    return None
+
+
 def produtos_anexos_todos():
     shard, shards = _parse_shard(sys.argv)
+    dias = _parse_dias(sys.argv)
 
     o = OracleClient()
     empresas = carregar_empresas()
@@ -793,9 +861,15 @@ def produtos_anexos_todos():
     deals_map = migrador.carregar_existentes_crm("crm.deal.list", CAMPO_ID_ORACLE["deal"])
     print(f"Empresas: {len(empresas)} | produtos: {len(produtos_bitrix)} | deals: {len(deals_map)}")
 
-    todas = o.registros_todos("opportunities", q="OptyId>0")
+    q = "OptyId>0"
+    if dias:
+        from datetime import datetime, timedelta, timezone
+        corte = (datetime.now(timezone.utc) - timedelta(days=dias)).strftime("%Y-%m-%dT%H:%M:%S")
+        q = f"OptyId>0;LastUpdateDate>='{corte}'"
+        print(f"  filtro: atualizados nos ultimos {dias} dia(s) (desde {corte})")
+    todas = o.registros_todos("opportunities", q=q)
 
-    alvo = []
+    alvo = []  # (deal_id, opty_number, opty_id)
     for rec in todas:
         if rec.get("OptyId") is None:
             continue
@@ -804,10 +878,10 @@ def produtos_anexos_todos():
             continue
         if not empresas.get(str(rec.get("TargetPartyId"))):
             continue
-        alvo.append((rec, deal_id))
+        alvo.append((deal_id, rec.get("OptyNumber"), rec.get("OptyId")))
 
     # sharding determinístico por OptyId (sem sobreposição entre webhooks)
-    alvo.sort(key=lambda x: int(x[0].get("OptyId") or 0))
+    alvo.sort(key=lambda x: int(x[2] or 0))
     if shard is not None:
         alvo = migrador.shard_items(alvo, shard, shards)
 
@@ -816,38 +890,12 @@ def produtos_anexos_todos():
     else:
         print(f"{len(alvo)} oportunidades para produtos/anexos")
 
-    erros = 0
-    BATCH = 200
-    for base in range(0, len(alvo), BATCH):
-        grupo = alvo[base:base + BATCH]
-        linhas_map = {}
-        anexos_map = {}
-        with ThreadPoolExecutor(max_workers=4) as ex:
-            fut = {}
-            for rec, deal_id in grupo:
-                on = rec.get("OptyNumber")
-                fut[ex.submit(produtos_oportunidade, o, on)] = ("linhas", on)
-                fut[ex.submit(anexos_oportunidade, o, on)] = ("anexos", on)
-            for f in as_completed(fut):
-                kind, on = fut[f]
-                try:
-                    val = f.result()
-                except Exception:
-                    val = []
-                if kind == "linhas":
-                    linhas_map[on] = val
-                else:
-                    anexos_map[on] = val
-        for rec, deal_id in grupo:
-            on = rec.get("OptyNumber")
-            ok_p = aplicar_produtos(deal_id, linhas_map.get(on, []), produtos_bitrix, rec.get("OptyId"))
-            ok_a = aplicar_anexos(deal_id, anexos_map.get(on, []), rec.get("OptyId"))
-            if not (ok_p and ok_a):
-                erros += 1
-        print(f"  ... {base + len(grupo)}/{len(alvo)}", flush=True)
+    sucessos, falhas = aplicar_produtos_anexos(o, alvo, produtos_bitrix)
+    for oid, motivo in falhas:
+        print(f"  !! {motivo} {oid}", flush=True)
 
     print("=" * 60)
-    print(f"processados={len(alvo)} erros={erros} | falhas_busca_oracle={_FALHAS_ORACLE}")
+    print(f"processados={len(alvo)} sucessos={sucessos} falhas={len(falhas)} | falhas_busca_oracle={_FALHAS_ORACLE}")
 
 
 def carregar_contatos():

@@ -187,10 +187,10 @@ def processar_opps(ctx, log, dias):
     labels = carregar_labels("deal")
     enum_items = carregar_enum_items("deal")
     status_labels = status_labels_para("deal")
-    lazy_product = ctx["lazy_product"]
+    produtos_bitrix = ctx["produtos_bitrix"]
 
     comandos, metas = [], []
-    reprodutos = []  # (deal_id, opty_number, linhas, opty_id) para re-aplicar produtos mesmo sem alteracao
+    reprodutos = []  # (deal_id, opty_number, opty_id) para re-aplicar produtos mesmo sem alteracao
     for rec in registros:
         oid = rec.get("OptyId")
         if oid is None:
@@ -200,7 +200,7 @@ def processar_opps(ctx, log, dias):
         if not cid:
             continue
         try:
-            payload, opty_id, opty_number, linhas = migrar_oportunidade.montar_payload_opp(
+            payload, opty_id, opty_number, _linhas = migrar_oportunidade.montar_payload_opp(
                 o, rec, ctx["val_opp"], ctx["lazy_company"], cid)
         except Exception as e:
             log.erro("Oportunidades")
@@ -209,21 +209,22 @@ def processar_opps(ctx, log, dias):
         existing = migrador.find_existing("deal", str(oid))
         if existing is None:
             _push(comandos, "deal", payload, None, None)
-            metas.append(("Oportunidades", str(oid), nome, "created", None, opty_number, linhas, opty_id, None))
+            metas.append(("Oportunidades", str(oid), nome, "created", None, opty_number, opty_id, None))
         else:
             atual = obter_atual("deal", existing)
             mud = diferenciar(atual, payload, labels, enum_items, status_labels)
             if mud:
                 _push(comandos, "deal", payload, None, existing)
-                metas.append(("Oportunidades", str(oid), nome, "updated", mud, opty_number, linhas, opty_id, existing))
+                metas.append(("Oportunidades", str(oid), nome, "updated", mud, opty_number, opty_id, existing))
             else:
                 log.sem_alteracao("Oportunidades")
-                reprodutos.append((existing, opty_number, linhas, opty_id))
+                reprodutos.append((existing, opty_number, opty_id))
 
     res, errs = migrador.batch(comandos, batch_size=10)
 
+    alvo = []  # (deal_id, opty_number, opty_id)
     for meta, r, e in zip(metas, res, errs):
-        nome_display, oid, nome, action, mud, opty_number, linhas, opty_id, deal_id = meta
+        nome_display, oid, nome, action, mud, opty_number, opty_id, deal_id = meta
         if e:
             log.erro(nome_display)
             print(f"  ERRO {nome_display} {oid} {nome}: {e.get('error_description') or e.get('error')}", flush=True)
@@ -234,16 +235,19 @@ def processar_opps(ctx, log, dias):
         else:
             log.atualizado(nome_display, nome, mud)
         if deal_id:
-            migrar_oportunidade.aplicar_produtos(deal_id, linhas, lazy_product, opty_id)
-            anexos = migrar_oportunidade.anexos_oportunidade(o, opty_number)
-            migrar_oportunidade.aplicar_anexos(deal_id, anexos, opty_id)
+            alvo.append((deal_id, opty_number, opty_id))
 
     # Negocios sem alteracao de campos: ainda re-aplica produtos/anexos, para corrigir
     # registros cujo ChildRevenue veio vazio numa rodada anterior (produtos ficaram sem migrar).
-    for deal_id, opty_number, linhas, opty_id in reprodutos:
-        migrar_oportunidade.aplicar_produtos(deal_id, linhas, lazy_product, opty_id)
-        anexos = migrar_oportunidade.anexos_oportunidade(o, opty_number)
-        migrar_oportunidade.aplicar_anexos(deal_id, anexos, opty_id)
+    alvo.extend(reprodutos)
+
+    # aplica produtos + anexos (fetch paralelo, com detecção/registro de falha)
+    sucessos, falhas = migrar_oportunidade.aplicar_produtos_anexos(o, alvo, produtos_bitrix)
+    for oid, motivo in falhas:
+        log.erro("Oportunidades (produtos/anexos)")
+        print(f"  ERRO produtos/anexos {oid}: {motivo}", flush=True)
+    if alvo:
+        print(f"  produtos/anexos: {sucessos}/{len(alvo)} ok, {len(falhas)} falhas", flush=True)
 
 
 def montar_lead(rec, ctx):
@@ -461,7 +465,7 @@ def main():
         "lazy_lead": LazyMap("lead"),
         "lazy_1196": LazyMap("item1196"),
         "lazy_1204": LazyMap("item1204"),
-        "lazy_product": LazyMap("product"),
+        "produtos_bitrix": migrar_oportunidade.carregar_produtos_bitrix(),
         "label_map": migrar_lead.build_label_map(),
         "solucao_atual_map": migrar_campanha_synchro.build_solucao_atual_map(),
         "prod_grupos": migrar_produto.carregar_grupos_salvos(),
