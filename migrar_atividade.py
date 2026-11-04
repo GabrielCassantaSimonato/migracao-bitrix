@@ -223,6 +223,8 @@ def _ler_ids_erro(log_path):
 def sincronizar():
     limite = None
     reparar_erros = None  # None = não; False = log default; str = caminho do log
+    desde = None  # YYYY-MM-DD (filtro LastUpdateDate >=)
+    ate = None    # YYYY-MM-DD (filtro LastUpdateDate <=, aplicado localmente)
     args = sys.argv[1:]
     for i, a in enumerate(args):
         if a == "--limite" and i + 1 < len(args):
@@ -239,6 +241,14 @@ def sincronizar():
             reparar_erros = False
         elif a.startswith("--reparar-erros="):
             reparar_erros = a.split("=", 1)[1]
+        elif a == "--desde" and i + 1 < len(args):
+            desde = args[i + 1]
+        elif a.startswith("--desde="):
+            desde = a.split("=", 1)[1]
+        elif a == "--ate" and i + 1 < len(args):
+            ate = args[i + 1]
+        elif a.startswith("--ate="):
+            ate = a.split("=", 1)[1]
 
     shard, shards = _parse_shard(sys.argv)
 
@@ -258,7 +268,19 @@ def sincronizar():
     existentes = migrador.carregar_existentes_item("item1220")
     print(f"existentes={len(existentes)}", flush=True)
 
-    dados = o.registros_todos("activities", fields=_activity_fields())
+    fields = _activity_fields()
+    q = None
+    if desde:
+        q = f"LastUpdateDate>='{desde}'"
+    if ate:
+        # o Oracle não combina >= e <= no `q` (retorna tudo), então o limite
+        # superior é aplicado localmente; para isso precisa buscar LastUpdateDate.
+        fields = sorted(set(fields + ["LastUpdateDate"]))
+    dados = o.registros_todos("activities", fields=fields, q=q)
+    if ate:
+        dados = [r for r in dados if (r.get("LastUpdateDate") or "")[:10] <= ate]
+    if desde or ate:
+        print(f"  janela: LastUpdateDate de {desde or '(inicio)'} ate {ate or '(hoje)'}", flush=True)
     print(f"{len(dados)} atividades no Oracle")
 
     dados = [r for r in dados if r.get("ActivityId") is not None]
