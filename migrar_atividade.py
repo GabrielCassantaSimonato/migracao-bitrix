@@ -327,8 +327,138 @@ def sincronizar():
     return criados, atualizados, erros
 
 
+def _campo_val(v):
+    """Valor 'puro' de um campo (dict {'value': x} -> x)."""
+    if isinstance(v, dict):
+        return v.get("value")
+    return v
+
+
+def _data_parte(s):
+    """Parte 'YYYY-MM-DD' de uma data/datetime (ou '' se vazio)."""
+    if isinstance(s, str) and len(s) >= 10 and s[4] == "-" and s[:4].isdigit():
+        return s[:10]
+    return s or ""
+
+
+def _items_do_resultado(res):
+    """Extrai a lista de itens do resultado (list ou dict) de um crm.item.list em batch."""
+    if isinstance(res, list):
+        return res
+    if isinstance(res, dict):
+        if "items" in res:
+            return res.get("items") or []
+        inner = res.get("result")
+        if isinstance(inner, dict):
+            return inner.get("items") or []
+        if isinstance(inner, list):
+            return inner
+    return []
+
+
+def reparar_vencimento_tracao():
+    """Repara 'Data de vencimento' e 'Tração' das atividades que divergem do Oracle.
+
+    Só varre as atividades com LastUpdateDate recente (--dias N, default 120) no
+    Oracle e busca no Bitrix apenas essas (filtro pelo ID Oracle), evitando ler as
+    33 mil atividades. Atualiza SOMENTE os campos divergentes (limpando o campo
+    quando o Oracle está vazio). Flags: --dias N, --dry-run, --limite N."""
+    import argparse
+    from datetime import datetime, timedelta, timezone
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dias", type=int, default=120)
+    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--limite", type=int, default=None)
+    args, _ = parser.parse_known_args()
+
+    o = OracleClient()
+
+    # 1. Oracle: só as atividades da janela (filtro no servidor)
+    corte = (datetime.now(timezone.utc) - timedelta(days=args.dias)).strftime("%Y-%m-%dT%H:%M:%S")
+    q = f"LastUpdateDate>='{corte}'"
+    dados = o.registros_todos("activities", fields=["ActivityId", "Subject", "DueDate", "Tracao_c"], q=q)
+    dados = [r for r in dados if r.get("ActivityId") is not None]
+    print(f"{len(dados)} atividades no Oracle (ultimos {args.dias} dias)", flush=True)
+    if args.limite:
+        dados = dados[:args.limite]
+        print(f"  (teste) limitado a {len(dados)}", flush=True)
+
+    # 2. Bitrix: vencimento/tracao atuais dessas atividades (crm.item.list em batch)
+    comandos = [
+        ("crm.item.list", [
+            ("entityTypeId", EID),
+            (f"filter[{ID_FIELD}]", str(r["ActivityId"])),
+            ("select[]", "id"),
+            ("select[]", CAMPO_VENCIMENTO),
+            ("select[]", CAMPO_TRACAO),
+        ])
+        for r in dados
+    ]
+    res, errs = migrador.batch(comandos, batch_size=50)
+
+    # 3. compara e monta updates (só os campos divergentes)
+    atualizacoes = []
+    nao_migrado = 0
+    for r, rr, e in zip(dados, res, errs):
+        oid = r["ActivityId"]
+        subject = r.get("Subject") or ""
+        if e:
+            print(f"  !! listar {oid}: {e.get('error_description') or e.get('error')}", flush=True)
+            continue
+        items = _items_do_resultado(rr)
+        if not items or not items[0].get("id"):
+            nao_migrado += 1
+            continue
+        it = items[0]
+        bid = it["id"]
+        bvenc = _campo_val(it.get(CAMPO_VENCIMENTO)) or ""
+        btrac = _campo_val(it.get(CAMPO_TRACAO)) or ""
+
+        od = mapeamento.normalizar_data(r.get("DueDate")) or ""
+        ot = TRACAO_MAP.get(str(r["Tracao_c"]), r["Tracao_c"]) if r.get("Tracao_c") else ""
+
+        campos = {}
+        if _data_parte(bvenc) != od:
+            campos[CAMPO_VENCIMENTO] = od
+        if btrac != ot:
+            campos[CAMPO_TRACAO] = ot
+        if campos:
+            atualizacoes.append((oid, subject, bid, campos))
+
+    print(f"divergentes: {len(atualizacoes)} | nao_migrados: {nao_migrado}", flush=True)
+
+    if args.dry_run:
+        for oid, subject, bid, campos in atualizacoes[:50]:
+            print(f"  [dry-run] {oid} {subject[:50]}: {campos}", flush=True)
+        print(f"(dry-run) nada gravado; {len(atualizacoes)} atividades divergentes", flush=True)
+        return len(atualizacoes)
+
+    comandos_upd = [
+        migrador.command("crm.item.update", fields=campos, extra={"entityTypeId": EID, "id": bid})
+        for _oid, _subject, bid, campos in atualizacoes
+    ]
+    metas_upd = [(oid, subject, campos) for oid, subject, _bid, campos in atualizacoes]
+
+    atualizados = erros = 0
+    res2, errs2 = migrador.batch(comandos_upd, batch_size=50)
+    for (oid, subject, campos), r2, e2 in zip(metas_upd, res2, errs2):
+        if e2:
+            erros += 1
+            print(f"  ERRO {oid} {subject[:50]}: {e2.get('error_description') or e2.get('error')}", flush=True)
+        else:
+            atualizados += 1
+
+    print("=" * 60)
+    print(f"vencimento/tracao: atualizados={atualizados} erros={erros} | nao_migrados={nao_migrado}")
+    return atualizados
+
+
 def main():
-    sincronizar()
+    if "--vencimento-tracao" in sys.argv:
+        reparar_vencimento_tracao()
+    else:
+        sincronizar()
 
 
 if __name__ == "__main__":
