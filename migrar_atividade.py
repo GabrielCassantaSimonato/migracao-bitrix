@@ -390,18 +390,29 @@ def reparar_vencimento_tracao():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--dias", type=int, default=120)
+    parser.add_argument("--desde", type=str, default=None)
+    parser.add_argument("--ate", type=str, default=None)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--limite", type=int, default=None)
     args, _ = parser.parse_known_args()
 
     o = OracleClient()
 
-    # 1. Oracle: só as atividades da janela (filtro no servidor)
-    corte = (datetime.now(timezone.utc) - timedelta(days=args.dias)).strftime("%Y-%m-%dT%H:%M:%S")
-    q = f"LastUpdateDate>='{corte}'"
-    dados = o.registros_todos("activities", fields=["ActivityId", "Subject", "DueDate", "Tracao_c"], q=q)
+    # 1. Oracle: só as atividades da janela (filtro no servidor + limite superior local)
+    fields = ["ActivityId", "Subject", "DueDate", "Tracao_c"]
+    q = None
+    if args.desde:
+        q = f"LastUpdateDate>='{args.desde}'"
+    elif args.dias:
+        corte = (datetime.now(timezone.utc) - timedelta(days=args.dias)).strftime("%Y-%m-%dT%H:%M:%S")
+        q = f"LastUpdateDate>='{corte}'"
+    if args.ate:
+        fields = sorted(set(fields + ["LastUpdateDate"]))
+    dados = o.registros_todos("activities", fields=fields, q=q)
+    if args.ate:
+        dados = [r for r in dados if (r.get("LastUpdateDate") or "")[:10] <= args.ate]
     dados = [r for r in dados if r.get("ActivityId") is not None]
-    print(f"{len(dados)} atividades no Oracle (ultimos {args.dias} dias)", flush=True)
+    print(f"{len(dados)} atividades no Oracle", flush=True)
     if args.limite:
         dados = dados[:args.limite]
         print(f"  (teste) limitado a {len(dados)}", flush=True)
